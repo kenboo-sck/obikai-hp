@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
 
                 if (!verifyJson.success || (verifyJson.score !== undefined && verifyJson.score < 0.5)) {
                     console.warn(`[Warning] reCAPTCHA check failed or low score. Score: ${verifyJson.score}, Success: ${verifyJson.success}`);
-                    // return NextResponse.json({ success: false, error: 'Spam detected' }, { status: 400 }); // 緊急対応のためコメントアウト
+                    return NextResponse.json({ success: false, error: 'Spam detected' }, { status: 400 }); // 緊急対応のためコメントアウト
                 }
             } catch (e) {
                 console.warn("[Warning] reCAPTCHA verification error:", e);
