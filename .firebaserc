@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "alma-gym-osaka"
-  }
+    "default": "alma-gym-osaka",
+    "new-site": "obikai"
+  },
+  "targets": {},
+  "etags": {}
 }

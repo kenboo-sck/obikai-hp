@@ -493,9 +493,9 @@ export default function HomeContent() {
                                     <h2 className="text-sm md:text-base font-black italic uppercase group-hover:text-orange-600 transition-colors mb-1 md:mb-2 leading-tight">
                                         {item.title}
                                     </h2>
-                                    <p className="text-gray-500 text-[10px] font-bold line-clamp-2 italic">
+                                    <div className="text-gray-500 text-[10px] font-bold line-clamp-2 italic">
                                         {item.content?.replace(/<[^>]*>?/gm, '')}
-                                    </p>
+                                    </div>
                                 </div>
                             </Link>
                         ))}

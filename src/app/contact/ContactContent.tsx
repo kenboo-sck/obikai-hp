@@ -119,32 +119,13 @@ function ContactFormContent() {
         try {
             // 1. reCAPTCHAトークンを取得
             const recaptchaToken = await executeRecaptcha('contact_form');
-
-            // 2. バックエンドでreCAPTCHA検証
-            const verifyResponse = await fetch('/api/verify-recaptcha', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ token: recaptchaToken }),
-            });
-
-            const verifyResult = await verifyResponse.json();
-
-            if (!verifyResult.success) {
-                alert('セキュリティチェックに失敗しました。もう一度お試しください。');
+            if (!recaptchaToken) {
+                alert("reCAPTCHAの取得に失敗しました。再読み込みして再度お試しください。");
                 setIsSubmitting(false);
                 return;
             }
 
-            // 3. スコアチェック（0.5以上なら人間と判定）
-            if (verifyResult.score < 0.5) {
-                alert('不正なリクエストが検出されました。');
-                setIsSubmitting(false);
-                return;
-            }
-
-            // 4. Firebaseに保存
+            // 2. Firebaseに保存
             await addDoc(collection(db, "inquiries"), {
                 subject: formData.subject,
                 experience: formData.experience,
@@ -156,9 +137,22 @@ function ContactFormContent() {
                 zip: formData.zip,
                 address: `${formData.prefecture}${formData.city}${formData.address}`,
                 message: formData.message,
-                recaptchaScore: verifyResult.score, // スコアも保存
+                recaptchaToken: recaptchaToken,
                 createdAt: serverTimestamp(),
             });
+
+            // 3. メール送信APIを呼び出し (Vercel Serverless Function)
+            const emailRes = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...formData, recaptchaToken })
+            });
+
+            if (!emailRes.ok) {
+                console.error("メール送信失敗", await emailRes.text());
+                // DB保存は成功しているので、ユーザーには完了と伝えるか、警告を出すか。
+                // ここでは完了とするがログに残す
+            }
 
             alert("お問い合わせを送信しました。ありがとうございました!");
             setIsConfirm(false);
