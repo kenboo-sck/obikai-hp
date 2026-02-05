@@ -62,13 +62,18 @@ export async function POST(req: NextRequest) {
     `;
 
         // 3. 送信処理（管理者へ）
-        await resend.emails.send({
-            from: "ALMA GYM <onboarding@resend.dev>",
-            to: adminTo,
-            subject: adminSubject,
-            html: adminHtml,
-            replyTo: email
-        });
+        try {
+            await resend.emails.send({
+                from: "ALMA GYM <onboarding@resend.dev>",
+                to: adminTo,
+                subject: adminSubject,
+                html: adminHtml,
+                replyTo: email
+            });
+        } catch (adminError: any) {
+            console.error("Admin mail failed:", adminError);
+            return NextResponse.json({ success: false, error: adminError.message || JSON.stringify(adminError) }, { status: 500 });
+        }
 
         // 4. 送信処理（ユーザーへ自動返信） - 失敗してもエラーにしない
         if (email) {

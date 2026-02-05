@@ -149,9 +149,11 @@ function ContactFormContent() {
             });
 
             if (!emailRes.ok) {
-                console.error("メール送信失敗", await emailRes.text());
-                // DB保存は成功しているので、ユーザーには完了と伝えるか、警告を出すか。
-                // ここでは完了とするがログに残す
+                const errorText = await emailRes.text();
+                console.error("メール送信失敗", errorText);
+                alert(`メール送信エラー詳細: ${errorText}`); // 詳細を表示
+                setIsSubmitting(false);
+                return;
             }
 
             alert("お問い合わせを送信しました。ありがとうございました!");
