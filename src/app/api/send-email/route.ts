@@ -34,24 +34,24 @@ export async function POST(req: NextRequest) {
 
         // 2. メール本文の作成
         const adminTo = "kenzo_y@sputnikworks.co.jp";
-        const adminSubject = `【ALMA FIGHT GYM 大阪本町】新規お問い合わせ：${name} 様`;
+        const adminSubject = `【帯会】新規お問い合わせ：${name} 様`;
 
         const adminHtml = `
       <h2>新規お問い合わせ</h2>
       <p>以下の内容で受け付けました。</p>
       <hr>
       <p><strong>件名：</strong>${subject}</p>
-      <p><strong>お名前：</strong>${name}</p>
+      <p><strong>お名前：：</strong>${name}</p>
       <p><strong>メール：</strong>${email}</p>
       <p><strong>電話番号：</strong>${phone}</p>
-      <p><strong>連絡方法：</strong>${contactMethod}</p>
+      <p><strong>連絡方法：：</strong>${contactMethod}</p>
       <p><strong>経験：</strong>${experience}</p>
       <p><strong>性別：</strong>${gender}</p>
       <p><strong>住所：</strong>〒${zip} ${address}</p>
       <p><strong>内容：</strong><br>${(message || "").replace(/\n/g, '<br>')}</p>
     `;
 
-        const userSubject = "【ALMA GYM】お問い合わせありがとうございます（自動返信）";
+        const userSubject = "【帯会】お問い合わせありがとうございます（自動返信）";
         const userHtml = `
       <p>${name} 様</p>
       <p>お問い合わせありがとうございます。<br>以下の内容で受け付けました。</p>
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
         // 3. 送信処理（管理者へ）
         try {
             await resend.emails.send({
-                from: "ALMA GYM <onboarding@resend.dev>",
+                from: "帯会 <onboarding@resend.dev>",
                 to: adminTo,
                 subject: adminSubject,
                 html: adminHtml,
@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
         if (email) {
             try {
                 await resend.emails.send({
-                    from: "ALMA GYM <onboarding@resend.dev>",
+                    from: "帯会 <onboarding@resend.dev>",
                     to: email,
                     subject: userSubject,
                     html: userHtml
