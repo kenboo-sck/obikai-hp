@@ -125,6 +125,9 @@ function ContactFormContent() {
                 return;
             }
 
+            // 帯会HPでは /api/verify-recaptcha は使わず、/api/send-email 内で検証を行うため
+            // 事前検証フェーズはスキップする
+
             // 2. Firebaseに保存
             await addDoc(collection(db, "inquiries"), {
                 subject: formData.subject,
