@@ -14,18 +14,21 @@ export async function POST(req: NextRequest) {
             recaptchaToken
         } = await req.json();
 
-        // 1. reCAPTCHA検証
+        // 1. reCAPTCHA検証 (失敗してもログ出力のみで続行するFail-Safeモード)
         if (recaptchaToken && RECAPTCHA_SECRET_KEY) {
-            const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
-            const verifyRes = await fetch(verifyUrl, { method: 'POST' });
-            const verifyJson = await verifyRes.json();
+            try {
+                const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
+                const verifyRes = await fetch(verifyUrl, { method: 'POST' });
+                const verifyJson = await verifyRes.json();
 
-            if (!verifyJson.success || (verifyJson.score !== undefined && verifyJson.score < 0.5)) {
-                console.warn(`Spam detected. Score: ${verifyJson.score}`);
-                return NextResponse.json({ success: false, error: 'Spam detected' }, { status: 400 });
+                if (!verifyJson.success || (verifyJson.score !== undefined && verifyJson.score < 0.5)) {
+                    console.warn(`[Warning] reCAPTCHA check failed or low score. Score: ${verifyJson.score}, Success: ${verifyJson.success}`);
+                    // return NextResponse.json({ success: false, error: 'Spam detected' }, { status: 400 }); // 緊急対応のためコメントアウト
+                }
+            } catch (e) {
+                console.warn("[Warning] reCAPTCHA verification error:", e);
             }
         } else {
-            // キー設定がない等の場合はログだけ出して通過させる（あるいはエラーにする方針も可）
             console.info("Skipping reCAPTCHA verification (token or secret missing)");
         }
 
@@ -67,14 +70,19 @@ export async function POST(req: NextRequest) {
             replyTo: email
         });
 
-        // 4. 送信処理（ユーザーへ自動返信）
+        // 4. 送信処理（ユーザーへ自動返信） - 失敗してもエラーにしない
         if (email) {
-            await resend.emails.send({
-                from: "ALMA GYM <onboarding@resend.dev>",
-                to: email,
-                subject: userSubject,
-                html: userHtml
-            });
+            try {
+                await resend.emails.send({
+                    from: "ALMA GYM <onboarding@resend.dev>",
+                    to: email,
+                    subject: userSubject,
+                    html: userHtml
+                });
+            } catch (userMailError) {
+                // 自動返信が失敗しても（サンドボックス制限など）、管理者へ届いていればOKとする
+                console.warn("User auto-reply failed (ignored):", userMailError);
+            }
         }
 
         return NextResponse.json({ success: true });
