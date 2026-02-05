@@ -61,8 +61,7 @@ export async function POST(req: NextRequest) {
       <p>担当者より通常1〜2営業日以内にご連絡いたします。</p>
     `;
 
-        // 3. 送信処理（管理者へ） - デバッグのため一時的にスキップ
-        /*
+        // 3. 送信処理（管理者へ）
         try {
             await resend.emails.send({
                 from: "ALMA GYM <onboarding@resend.dev>",
@@ -72,11 +71,9 @@ export async function POST(req: NextRequest) {
                 replyTo: email
             });
         } catch (adminError: any) {
-             console.error("Admin mail failed:", adminError);
-             return NextResponse.json({ success: false, error: adminError.message || JSON.stringify(adminError) }, { status: 500 });
+            console.error("Admin mail failed:", adminError);
+            return NextResponse.json({ success: false, error: adminError.message || JSON.stringify(adminError) }, { status: 500 });
         }
-        */
-        console.log("Mock Email Sent to Admin:", adminTo);
 
         // 4. 送信処理（ユーザーへ自動返信） - 失敗してもエラーにしない
         if (email) {
