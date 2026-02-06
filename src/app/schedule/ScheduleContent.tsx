@@ -1,135 +1,178 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { useState, useEffect } from "react";
 import Link from 'next/link';
+import Image from 'next/image';
+import { FaLocationDot } from "react-icons/fa6";
+import { collection, query, getDocs, orderBy } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+
+// スケジュールデータの型定義
+type ScheduleItem = {
+    id: string;
+    dayOfWeek: number; // 0: Mon, 1: Tue, ... 6: Sun
+    startTime: string;
+    endTime: string;
+    title: string;
+    location: string;
+    target?: string; // 対象（年中〜小1など）
+    color: string;
+    coach?: string;
+};
+
+type ClassInfoItem = {
+    id: string;
+    title: string;
+    description: string;
+    recommended: string[];
+    color: string;
+    image?: string;
+};
 
 export default function ScheduleContent() {
-    const [schedules, setSchedules] = useState<any[]>([]);
-    const [classInfo, setClassInfo] = useState<any[]>([]);
-    const [selectedClass, setSelectedClass] = useState<any | null>(null);
-    const [loading, setLoading] = useState(true);
+    const [selectedClass, setSelectedClass] = useState<ClassInfoItem | null>(null);
+    const [schedules, setSchedules] = useState<ScheduleItem[]>([]);
 
     useEffect(() => {
         const fetchSchedules = async () => {
             try {
-                // スケジュールとクラス情報の両方を取得
-                const scheduleQuery = query(
-                    collection(db, "schedules"),
-                    orderBy("startTime", "asc")
-                );
-
-                const classQuery = query(
-                    collection(db, "class_info"),
-                    orderBy("order", "asc")
-                );
-
-                const [scheduleSnap, classSnap] = await Promise.all([
-                    getDocs(scheduleQuery),
-                    getDocs(classQuery)
-                ]);
-
-                const scheduleData = scheduleSnap.docs.map(doc => {
-                    const raw = doc.data();
-                    return {
-                        id: doc.id,
-                        ...raw,
-                        dayOfWeek: Number(raw.dayOfWeek ?? 0),
-                        startTime: raw.startTime || "",
-                        endTime: raw.endTime || ""
-                    };
-                });
-
-                // デバッグログの強化
-                const classData = classSnap.docs.map((doc) => ({
+                const q = query(collection(db, "schedules"), orderBy("startTime", "asc"));
+                const querySnapshot = await getDocs(q);
+                const data = querySnapshot.docs.map(doc => ({
                     id: doc.id,
-                    ...doc.data(),
+                    ...doc.data()
+                })) as any[];
+
+                // Map to ScheduleItem type
+                const formattedData: ScheduleItem[] = data.map(item => ({
+                    id: item.id,
+                    dayOfWeek: Number(item.dayOfWeek),
+                    startTime: item.startTime,
+                    endTime: item.endTime,
+                    title: item.title,
+                    location: item.location || "",
+                    target: item.target,
+                    color: item.color || "#fb923c",
+                    coach: item.coach
                 }));
 
-                console.log("Fetched Schedules:", scheduleData.length);
-                console.log("Fetched Class Info:", classData.length);
+                // Sort by day of week just in case
+                formattedData.sort((a, b) => a.dayOfWeek - b.dayOfWeek);
 
-                setSchedules(scheduleData);
-                setClassInfo(classData);
+                setSchedules(formattedData);
             } catch (error) {
-                console.error("Firebase Error:", error);
-            } finally {
-                setLoading(false);
+                console.error("Error fetching schedules:", error);
             }
         };
+
         fetchSchedules();
     }, []);
 
-    if (loading) return (
-        <div className="pt-40 text-center font-[family-name:var(--font-oswald)] font-black italic animate-pulse text-3xl">
-            LOADING...
-        </div>
-    );
+    // クラス情報（詳細ポップアップ用）
+    const classInfo: ClassInfoItem[] = [
+        {
+            id: 'class-general',
+            title: '全体稽古クラス',
+            description: '基本的な動作から応用まで、幅広い年齢層で一緒に汗を流すクラスです。',
+            recommended: ['運動不足を解消したい', '親子で参加したい', '基本から学びたい'],
+            color: '#fb923c',
+            image: '/o-1003.jpg'
+        },
+        {
+            id: 'class-kids',
+            title: 'キッズクラス',
+            description: '年中〜小学1年生を対象とした、楽しみながら礼儀と基本を学ぶクラスです。あそび要素も取り入れながら、空手を好きになってもらうことを第一に考えています。',
+            recommended: ['初めての習い事として', '礼儀作法を身につけたい', '楽しく体を動かしたい'],
+            color: '#ef4444',
+            image: '/o-001.jpg'
+        },
+        {
+            id: 'class-basic',
+            title: '基本稽古クラス',
+            description: '小学2年生から一般の方を対象としたクラスです。基本技の習得を中心に、体力作りや精神修養を行います。',
+            recommended: ['基礎をしっかり固めたい', '強くなりたい', '集中力を高めたい'],
+            color: '#f97316',
+            image: '/o-1004.jpg'
+        },
+        {
+            id: 'class-sparring',
+            title: 'スパーリング＆グローブ空手クラス',
+            description: '実戦形式の練習を中心に行うクラスです。グローブ空手（キックボクシング要素）も取り入れ、より実戦的な技術を磨きます。',
+            recommended: ['試合に出たい', 'もっと強くなりたい', '実戦技術を学びたい'],
+            color: '#c2410c',
+            image: '/o-1005.jpg'
+        }
+    ];
 
     const weekLabels = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
     const weekDaysJP = ["月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日", "日曜日"];
 
-    // class_infoが空の場合、スケジュールから一意のクラスを抽出して表示する（デバッグ兼バックアップ）
-    const uniqueClassesFromSchedules = Array.from(new Map(schedules.map(s => [s.title, s])).values())
-        .map(s => ({
-            id: `temp-${s.title}`,
-            title: s.title,
-            color: s.color,
-            description: "Firebaseの 'class_info' コレクションにこのクラスの説明文を登録してください。"
-        }));
-
-    const displayClasses = classInfo.length > 0 ? classInfo : uniqueClassesFromSchedules;
-
     return (
-        <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto font-[family-name:var(--font-oswald)]">
-
+        <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto font-sans text-gray-800">
             {/* ヘッダー */}
             <section className="mb-16">
-                <div className="border-l-8 border-orange-600 pl-6 mb-12">
-                    <h1 className="text-4xl md:text-6xl font-black italic tracking-tighter uppercase leading-none text-gray-900">
-                        WEEKLY <span className="text-orange-600">SCHEDULE</span>
+                <div className="border-l-8 border-orange-500 pl-6 mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
+                        WEEKLY <span className="text-orange-500">SCHEDULE</span>
                     </h1>
-                    <p className="text-gray-400 font-bold mt-2 tracking-[0.2em] uppercase">スケジュール</p>
+                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">週間スケジュール・実施場所</p>
+                </div>
+                <div className="bg-orange-50 border border-orange-100 p-6 rounded-xl text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl">
+                    <p className="font-bold text-orange-800 mb-2 flex items-center gap-2">
+                        <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded">INFO</span>
+                        稽古場所について
+                    </p>
+                    <p>
+                        曜日によって稽古を行う場所（教室）が異なりますのでご注意ください。<br />
+                        見学・体験をご希望の方は、ご希望の曜日の開催場所へ直接お越しいただくか、フォームよりお問い合わせください。
+                    </p>
                 </div>
             </section>
 
             {/* PC版：週間グリッド (md以上) */}
             <div className="hidden md:block">
-                <div className="grid grid-cols-7 gap-px bg-gray-200 border border-gray-200 overflow-hidden shadow-2xl">
-                    {weekLabels.map(day => (
-                        <div key={day} className="bg-black text-white py-6 text-center font-black italic text-sm tracking-[0.3em]">{day}</div>
+                <div className="grid grid-cols-7 gap-px bg-gray-200 border border-gray-200 overflow-hidden shadow-lg rounded-lg">
+                    {weekLabels.map((day, idx) => (
+                        <div key={day} className={`py-4 text-center font-bold text-sm tracking-widest text-white ${idx === 6 ? 'bg-pink-500' : idx === 5 ? 'bg-orange-400' : 'bg-stone-800'}`}>
+                            {day}
+                        </div>
                     ))}
                     {weekLabels.map((_, index) => {
-                        const daySchedules = schedules.filter(s => s.dayOfWeek === index);
+                        const daySchedules = schedules.filter(s => s.dayOfWeek === index).sort((a, b) => a.startTime.localeCompare(b.startTime));
 
                         return (
-                            <div key={index} className="bg-white min-h-[400px] p-3 transition-colors hover:bg-gray-50 border-r border-gray-100 last:border-r-0 flex flex-col">
-                                <div className="space-y-3 flex-1">
+                            <div key={index} className="bg-white min-h-[400px] p-2 transition-colors hover:bg-gray-50 border-r border-gray-100 last:border-r-0 flex flex-col">
+                                <div className="space-y-2 flex-1">
                                     {daySchedules.length > 0 ? (
                                         daySchedules.map(item => (
                                             <div
                                                 key={item.id}
-                                                style={{ borderLeftColor: item.color || '#ea580c' }}
-                                                className="bg-white border-l-4 p-3 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                                                style={{ borderLeftColor: item.color }}
+                                                className="bg-white border-l-4 p-3 shadow-sm border border-gray-100 hover:shadow-md transition-shadow rounded-r"
                                             >
-                                                <div style={{ color: item.color || '#ea580c' }} className="font-black text-[15px] leading-tight mb-1">
-                                                    {item.startTime}-{item.endTime}
+                                                <div style={{ color: item.color }} className="font-bold text-lg leading-tight mb-1">
+                                                    {item.startTime}
+                                                    <span className="text-xs text-gray-400 font-normal mx-1">-</span>
+                                                    {item.endTime}
                                                 </div>
-                                                <div className="font-black text-[13px] leading-tight mb-2 uppercase italic">
+                                                <div className="font-bold text-sm leading-tight mb-1 text-gray-900">
                                                     {item.title}
                                                 </div>
-                                                <div className="text-[10px] text-gray-400 font-bold italic flex flex-col gap-1">
-                                                    {item.coach && <span className="text-gray-900 opacity-60">Coach: {item.coach}</span>}
+                                                {item.target && (
+                                                    <div className="text-xs font-bold text-red-500 mb-2">
+                                                        {item.target}
+                                                    </div>
+                                                )}
+                                                <div className="text-[10px] text-gray-500 flex items-start gap-1 mt-2 border-t border-dashed border-gray-100 pt-2">
+                                                    <FaLocationDot className="shrink-0 mt-0.5" />
+                                                    <span className="leading-tight">{item.location}</span>
                                                 </div>
                                             </div>
                                         ))
-                                    ) : index === 6 ? (
-                                        <div className="h-full flex items-center justify-center py-20">
-                                            <span className="text-gray-200 font-black italic text-4xl rotate-[-15deg] tracking-widest">CLOSE</span>
-                                        </div>
                                     ) : (
-                                        null
+                                        <div className="h-full flex items-center justify-center">
+                                            <span className="text-gray-100 font-bold text-xl -rotate-45 tracking-widest select-none">OFF</span>
+                                        </div>
                                     )}
                                 </div>
                             </div>
@@ -139,39 +182,43 @@ export default function ScheduleContent() {
             </div>
 
             {/* スマホ版：曜日別リスト (md未満) */}
-            <div className="md:hidden space-y-10">
+            <div className="md:hidden space-y-8">
                 {weekLabels.map((label, index) => {
-                    const daySchedules = schedules.filter(s => s.dayOfWeek === index);
-                    if (daySchedules.length === 0 && index !== 6) return null;
+                    const daySchedules = schedules.filter(s => s.dayOfWeek === index).sort((a, b) => a.startTime.localeCompare(b.startTime));
+                    if (daySchedules.length === 0) return null;
 
                     return (
                         <div key={label} className="animate-in fade-in slide-in-from-bottom-4 duration-500">
                             <div className="flex items-center gap-4 mb-4">
-                                <span className="text-5xl font-black italic text-gray-200 leading-none">{label}</span>
+                                <span className={`text-4xl font-bold leading-none ${index === 6 ? 'text-pink-200' : index === 5 ? 'text-orange-200' : 'text-stone-300'}`}>
+                                    {label}
+                                </span>
+                                <span className="font-bold text-gray-500 text-sm">{weekDaysJP[index]}</span>
                                 <div className="h-[1px] flex-1 bg-gray-100"></div>
                             </div>
                             <div className="space-y-4">
-                                {daySchedules.length > 0 ? (
-                                    daySchedules.map(item => (
-                                        <div key={item.id} className="relative p-6 bg-white border border-gray-100 shadow-xl overflow-hidden">
-                                            <div style={{ backgroundColor: item.color || '#ea580c' }} className="absolute top-0 left-0 w-2 h-full"></div>
-                                            <div className="flex justify-between items-start mb-2">
-                                                <div className="text-3xl font-black italic leading-none" style={{ color: item.color || '#ea580c' }}>
-                                                    {item.startTime}-{item.endTime}
+                                {daySchedules.map(item => (
+                                    <div key={item.id} className="relative p-5 bg-white border border-gray-100 shadow-md rounded-lg overflow-hidden">
+                                        <div style={{ backgroundColor: item.color }} className="absolute top-0 left-0 w-1.5 h-full"></div>
+                                        <div className="pl-2">
+                                            <div className="flex justify-between items-center mb-2">
+                                                <div className="text-2xl font-bold leading-none text-gray-800 font-mono">
+                                                    {item.startTime}<span className="text-gray-300 text-lg mx-1">-</span>{item.endTime}
                                                 </div>
-                                                <span className="bg-black text-white text-[9px] px-3 py-1 font-black italic uppercase tracking-tighter">
-                                                    {item.status || 'OPEN'}
-                                                </span>
                                             </div>
-                                            <h3 className="text-xl font-black italic uppercase tracking-tight mb-1">{item.title}</h3>
-                                            {item.coach && <p className="text-sm text-gray-400 font-bold italic uppercase">Coach: <span className="text-black">{item.coach}</span></p>}
+                                            <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
+                                            {item.target && (
+                                                <span className="inline-block bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded font-bold mb-3">
+                                                    {item.target}
+                                                </span>
+                                            )}
+                                            <div className="flex items-start gap-2 text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mt-1">
+                                                <FaLocationDot className="shrink-0 mt-1 text-orange-500" />
+                                                <span className="font-bold text-xs leading-relaxed">{item.location}</span>
+                                            </div>
                                         </div>
-                                    ))
-                                ) : (
-                                    <div className="py-12 text-center border-2 border-dashed border-gray-100">
-                                        <span className="text-5xl font-black italic text-gray-200 uppercase tracking-widest">CLOSE</span>
                                     </div>
-                                )}
+                                ))}
                             </div>
                         </div>
                     );
@@ -180,53 +227,45 @@ export default function ScheduleContent() {
 
             {/* クラス説明セクション */}
             <section className="mt-24">
-                <div className="border-l-8 border-orange-600 pl-6 mb-12">
-                    <h2 className="text-3xl md:text-5xl font-black italic tracking-tighter uppercase leading-none text-gray-900">
-                        CLASS <span className="text-orange-600">DESCRIPTIONS</span>
+                <div className="border-l-8 border-orange-500 pl-6 mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
+                        CLASS <span className="text-orange-500">INFO</span>
                     </h2>
-                    <p className="text-gray-400 font-bold mt-2 tracking-[0.2em] uppercase">クラス紹介</p>
+                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">クラス詳細</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {displayClasses.length > 0 ? (
-                        displayClasses.map((cls) => (
-                            <div
-                                key={cls.id}
-                                onClick={() => setSelectedClass(cls)}
-                                className="group bg-white p-8 border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden cursor-pointer"
-                            >
-                                {/* 背景タイポグラフィ */}
-                                <div className="absolute -bottom-2 -right-2 select-none pointer-events-none z-0 opacity-[0.05] whitespace-nowrap group-hover:scale-110 transition-transform duration-700">
-                                    <span className="text-7xl font-black italic leading-none uppercase tracking-tighter">
-                                        {cls.title}
-                                    </span>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {classInfo.map((cls) => (
+                        <div
+                            key={cls.id}
+                            onClick={() => setSelectedClass(cls)}
+                            className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden cursor-pointer rounded-xl h-full flex flex-col"
+                        >
+                            {cls.image && (
+                                <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+                                    <Image
+                                        src={cls.image}
+                                        alt={cls.title}
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
-
-                                {/* ホバー時のアクセントグラデーション */}
-                                <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 pointer-events-none"
-                                    style={{ background: `radial-gradient(circle at top right, ${cls.color || '#ea580c'}, transparent)` }}
-                                />
-
-                                <div className="relative z-10">
-                                    <div className="flex items-center gap-4 mb-4">
-                                        <div
-                                            className="w-4 h-4 group-hover:scale-125 transition-transform duration-300"
-                                            style={{ backgroundColor: cls.color || '#ea580c' }}
-                                        />
-                                        <h3 className="text-2xl font-black italic uppercase tracking-tight">{cls.title}</h3>
-                                    </div>
-                                    <p className="text-gray-600 text-sm leading-relaxed font-bold italic">
-                                        {cls.description || `${cls.title}の説明文が設定されていません。`}
-                                    </p>
+                            )}
+                            <div className="p-6 flex flex-col flex-1">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div
+                                        className="w-3 h-3 rounded-full shrink-0"
+                                        style={{ backgroundColor: cls.color }}
+                                    />
+                                    <h3 className="text-lg font-bold text-gray-900 leading-tight">{cls.title}</h3>
                                 </div>
+                                <p className="text-gray-600 text-xs leading-relaxed line-clamp-3 mb-4 flex-1">
+                                    {cls.description}
+                                </p>
+                                <span className="text-orange-500 text-xs font-bold self-end group-hover:underline">詳細を見る →</span>
                             </div>
-                        ))
-                    ) : (
-                        <div className="col-span-full text-center py-12 bg-gray-50 border-2 border-dashed border-gray-200">
-                            <p className="text-gray-400 font-bold italic">クラス情報が見つかりません。Firebaseの「class_info」コレクションを確認してください。</p>
                         </div>
-                    )}
+                    ))}
                 </div>
             </section>
 
@@ -235,112 +274,217 @@ export default function ScheduleContent() {
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
                     {/* 背景オーバーレイ */}
                     <div
-                        className="absolute inset-0 bg-black/60 backdrop-blur-md animate-in fade-in duration-300"
+                        className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300"
                         onClick={() => setSelectedClass(null)}
                     />
 
                     {/* モーダル本体 */}
-                    <div className="relative bg-white w-full max-w-2xl max-h-[90vh] shadow-2xl overflow-y-auto animate-in zoom-in-95 slide-in-from-bottom-4 duration-300">
+                    <div className="relative bg-white w-full max-w-lg max-h-[90vh] shadow-2xl overflow-y-auto animate-in zoom-in-95 slide-in-from-bottom-4 duration-300 rounded-2xl">
                         {/* ヘッダー */}
-                        <div className="p-8 pb-0 flex justify-between items-start">
-                            <div className="border-l-8 pl-4" style={{ borderLeftColor: selectedClass.color || '#ea580c' }}>
-                                <h3 className="text-3xl font-black italic uppercase tracking-tighter leading-none">
+                        <div className="p-6 pb-4 border-b border-gray-100 flex justify-between items-start sticky top-0 bg-white z-10">
+                            <div className="border-l-4 pl-4" style={{ borderLeftColor: selectedClass.color }}>
+                                <h3 className="text-xl font-bold text-gray-900 leading-none">
                                     {selectedClass.title}
                                 </h3>
-                                <p className="text-orange-600 text-xs font-bold mt-1 tracking-widest uppercase">Class Details & Schedule</p>
+                                <p className="text-gray-400 text-[10px] font-bold mt-1 tracking-widest uppercase">Class Details</p>
                             </div>
                             <button
                                 onClick={() => setSelectedClass(null)}
-                                className="text-gray-400 hover:text-black transition-colors p-2"
+                                className="text-gray-400 hover:text-black transition-colors p-1"
                             >
-                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
                         </div>
 
+                        {selectedClass.image && (
+                            <div className="relative h-56 w-full bg-gray-100">
+                                <Image
+                                    src={selectedClass.image}
+                                    alt={selectedClass.title}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        )}
+
                         {/* コンテンツ */}
-                        <div className="p-8">
-                            {/* クラス説明 */}
-                            <div className="mb-8">
-                                <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 italic">Description / クラス概要</h4>
-                                <p className="text-gray-700 leading-relaxed font-sans">
+                        <div className="p-6">
+                            <div className="mb-6">
+                                <p className="text-gray-700 leading-relaxed text-sm">
                                     {selectedClass.description}
                                 </p>
                             </div>
 
                             {/* こんな方にお勧め */}
-                            {selectedClass.recommended && selectedClass.recommended.length > 0 && (
-                                <div className="mb-8 p-6 bg-gray-50">
-                                    <h4 className="text-sm font-black italic uppercase mb-4 tracking-widest text-orange-600">
-                                        こんな方にお勧め
-                                    </h4>
-                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                        {selectedClass.recommended.map((item: string, rIdx: number) => (
-                                            <li key={rIdx} className="flex items-center gap-3 text-sm font-bold italic text-gray-700">
-                                                <span className="flex-shrink-0 w-5 h-5 bg-orange-600 text-white flex items-center justify-center text-[10px]">✓</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {/* 週間スケジュール */}
-                            <div className="space-y-3">
-                                <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 italic">Weekly Schedule / 週間スケジュール</h4>
-                                {weekLabels.map((label, idx) => {
-                                    // タイトルの空白を除去し、小文字に変換して比較（より柔軟なマッチング）
-                                    const daySessions = schedules.filter(s =>
-                                        s.title?.trim().toLowerCase() === selectedClass.title?.trim().toLowerCase() &&
-                                        s.dayOfWeek === idx
-                                    );
-                                    if (daySessions.length === 0) return null;
-
-                                    return (
-                                        <div key={label} className="flex items-center gap-4 p-4 border border-gray-100 hover:bg-gray-50 transition-colors">
-                                            <div className="flex flex-col items-center justify-center min-w-[60px] border-r border-gray-100 pr-4">
-                                                <span className="text-xl font-black italic text-gray-900 leading-none">{label}</span>
-                                                <span className="text-[10px] font-bold text-gray-400 mt-1">{weekDaysJP[idx]}</span>
-                                            </div>
-                                            <div className="flex flex-wrap gap-2">
-                                                {daySessions.map(session => (
-                                                    <span key={session.id} className="bg-white px-4 py-1 text-sm font-black italic border border-gray-100 shadow-sm">
-                                                        {session.startTime} - {session.endTime}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                                {/* 全曜日通してスケジュールが存在するかチェック */}
-                                {schedules.filter(s =>
-                                    s.title?.trim().toLowerCase() === selectedClass.title?.trim().toLowerCase()
-                                ).length === 0 && (
-                                        <p className="text-center py-8 text-gray-400 font-bold italic">現在、このクラスの定期スケジュールはありません。</p>
-                                    )}
+                            <div className="mb-8 bg-orange-50/50 p-4 rounded-lg border border-orange-50">
+                                <h4 className="text-[10px] font-bold uppercase mb-3 tracking-widest text-orange-600">
+                                    こんな方にお勧め
+                                </h4>
+                                <ul className="space-y-2">
+                                    {selectedClass.recommended.map((item, rIdx) => (
+                                        <li key={rIdx} className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                                            <span className="text-orange-400 text-xs">●</span>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
 
-                            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                            {/* 開催スケジュール */}
+                            <div className="space-y-3">
+                                <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Weekly Schedule</h4>
+                                {schedules
+                                    .filter(s => s.title === selectedClass.title)
+                                    .map((session, idx) => (
+                                        <div key={idx} className="flex flex-col p-3 border border-gray-100 rounded-lg bg-gray-50">
+                                            <div className="flex justify-between items-center mb-1">
+                                                <div className="flex items-center gap-2">
+                                                    <span className="font-bold text-gray-900 text-lg">{weekLabels[session.dayOfWeek]}</span>
+                                                    <span className="text-xs text-gray-500">({weekDaysJP[session.dayOfWeek]})</span>
+                                                </div>
+                                                <span className="font-mono font-bold text-orange-600 text-lg">
+                                                    {session.startTime}-{session.endTime}
+                                                </span>
+                                            </div>
+                                            <div className="flex items-start gap-1.5 text-xs text-gray-600 pt-2 border-t border-gray-200/50 mt-1">
+                                                <FaLocationDot className="shrink-0 mt-0.5 text-gray-400" />
+                                                <span>{session.location}</span>
+                                            </div>
+                                            {session.target && <div className="text-xs font-bold text-red-500 mt-1 pl-5">※ 対象: {session.target}</div>}
+                                        </div>
+                                    ))}
+                            </div>
+
+                            <div className="mt-8">
                                 <a
-                                    href="https://picro.jp/sports/almafight/trials/entry/3284"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex-1 bg-orange-600 text-white text-center py-4 font-black italic uppercase tracking-widest hover:bg-orange-500 transition-colors shadow-xl shadow-orange-600/20"
+                                    href="#"
+                                    className="block w-full bg-orange-500 text-white text-center py-4 font-bold rounded-xl hover:bg-orange-600 transition-colors shadow-lg shadow-orange-200"
                                 >
-                                    Free Trial / 無料体験予約
+                                    無料体験を予約する
                                 </a>
-                                <button
-                                    onClick={() => setSelectedClass(null)}
-                                    className="flex-1 bg-black text-white py-4 font-black italic uppercase tracking-widest hover:bg-gray-800 transition-colors"
-                                >
-                                    Close
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             )}
+            {/* 稽古場所セクション */}
+            <section className="mt-24 mb-12">
+                <div className="border-l-8 border-orange-500 pl-6 mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
+                        LOCATIONS <span className="text-orange-500">/ ACCESS</span>
+                    </h2>
+                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">稽古場所へのアクセス</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* 川東教室 */}
+                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
+                        <div className="relative h-48 w-full bg-gray-200">
+                            <iframe
+                                title="Map: 川東教室"
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                scrolling="no"
+                                marginHeight={0}
+                                marginWidth={0}
+                                src="https://maps.google.com/maps?q=新潟県新発田市下羽津1938番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                className="absolute inset-0"
+                            ></iframe>
+                        </div>
+                        <div className="p-6 flex-1 flex flex-col">
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">川東教室</h3>
+                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 川東小学校 体育館
+                            </p>
+                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
+                                〒957-0341<br />
+                                新潟県新発田市下羽津1938番地
+                            </p>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市下羽津1938番地"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                            >
+                                Google Mapで開く
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* 七葉教室 */}
+                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
+                        <div className="relative h-48 w-full bg-gray-200">
+                            <iframe
+                                title="Map: 七葉教室"
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                scrolling="no"
+                                marginHeight={0}
+                                marginWidth={0}
+                                src="https://maps.google.com/maps?q=新潟県新発田市三日市862番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                className="absolute inset-0"
+                            ></iframe>
+                        </div>
+                        <div className="p-6 flex-1 flex flex-col">
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">七葉教室</h3>
+                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 七葉コミュニティセンター
+                            </p>
+                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
+                                〒957-0062<br />
+                                新潟県新発田市三日市862番地
+                            </p>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市三日市862番地"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                            >
+                                Google Mapで開く
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* 五十公野教室 */}
+                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
+                        <div className="relative h-48 w-full bg-gray-200">
+                            <iframe
+                                title="Map: 五十公野教室"
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                scrolling="no"
+                                marginHeight={0}
+                                marginWidth={0}
+                                src="https://maps.google.com/maps?q=新潟県新発田市五十公野4930番地1&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                className="absolute inset-0"
+                            ></iframe>
+                        </div>
+                        <div className="p-6 flex-1 flex flex-col">
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">五十公野教室</h3>
+                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 五十公野コミュニティセンター
+                            </p>
+                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
+                                〒957-0021<br />
+                                新潟県新発田市五十公野4930番地1
+                            </p>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市五十公野4930番地1"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                            >
+                                Google Mapで開く
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }

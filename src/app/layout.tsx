@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
-import { Oswald } from "next/font/google";
+import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-// フォントの設定（力強いウェイトを選択）
-const oswald = Oswald({
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-oswald",
+  weight: ["400", "500", "700"],
+  variable: "--font-noto-sans-jp",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "ALMA FIGHT GYM OSAKA HONMACHI",
-    template: "%s | ALMA FIGHT GYM OSAKA HONMACHI",
+    default: "実戦空手道 帯会",
+    template: "%s | 実戦空手道 帯会",
   },
-  description: "大阪・本町駅徒歩5分の格闘技ジム。ブラジリアン柔術・キックボクシング・MMAを全日本チャンピオンが直接指導。初心者歓迎、無料体験実施中。清潔な設備と充実のトレーニング環境で理想の自分へ。",
+  description: "空手とキックボクシングをどちらも学べる、親子で始める空手道場「帯会」。小学生・中学生を中心に、礼儀正しく、強く、優しい心を育みます。",
   icons: {
-    icon: "/afgoh_icon.png",
-    apple: "/afgoh_icon.png",
+    icon: "/logo-obikai2.png",
+    apple: "/logo-obikai2.png",
   },
 };
 
@@ -30,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja" suppressHydrationWarning={true}>
-      <body className={`${oswald.variable} antialiased`}>
+    <html lang="ja" suppressHydrationWarning={true} className={`${inter.variable} ${notoSansJP.variable}`}>
+      <body className="font-sans antialiased text-gray-800 bg-white">
         <Header />
         <Breadcrumbs />
         <main>{children}</main>

@@ -3,7 +3,7 @@ import InstructorsContent from './InstructorsContent';
 
 export const metadata: Metadata = {
   title: 'インストラクター',
-  description: 'JBJJF全日本選手権優勝・MMA戦績7戦5勝の井上啓太が直接指導。大阪本町で世界レベルのブラジリアン柔術・MMA技術を初心者にもわかりやすくレクチャー。',
+  description: '実戦空手道 帯会のインストラクター紹介。代表師範 田坂 貴満をはじめ、経験豊富な指導陣が子供から大人まで徹底サポートします。',
 };
 
 export default function InstructorsPage() {

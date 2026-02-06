@@ -44,8 +44,8 @@ export default function NewsDetailClient() {
         fetchNews();
     }, [params?.id]);
 
-    if (loading) return <div className="pt-40 text-center">読み込み中...</div>;
-    if (!news) return <div className="pt-40 text-center">記事が見つかりません。</div>;
+    if (loading) return <div className="pt-40 text-center text-orange-500 font-bold animate-pulse">読み込み中...</div>;
+    if (!news) return <div className="pt-40 text-center text-gray-500">記事が見つかりません。</div>;
 
     const imageUrl = news.image || news.imageUrl || news.thumbnail;
     const dateStr = news.date?.seconds
@@ -55,18 +55,18 @@ export default function NewsDetailClient() {
             : '';
 
     return (
-        <div className="pt-40 pb-20 px-4 max-w-[1000px] mx-auto font-[family-name:var(--font-oswald)]">
+        <div className="pt-40 pb-20 px-4 max-w-[1000px] mx-auto font-sans text-gray-800">
             <div className="mb-6 flex items-center gap-3">
-                {dateStr && <span className="text-gray-400 font-bold">{dateStr}</span>}
-                <span className="bg-black text-white text-xs px-2 py-1 font-black italic uppercase tracking-tighter">
+                {dateStr && <span className="text-gray-500 text-sm font-bold tracking-widest">{dateStr}</span>}
+                <span className="bg-orange-500 text-white text-xs px-3 py-1 font-bold rounded-full">
                     {news.category || "INFO"}
                 </span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-black italic mb-8 uppercase leading-tight">{news.title}</h1>
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-10 leading-tight border-b border-gray-100 pb-8">{news.title}</h1>
 
             {imageUrl && (
-                <div className="relative w-full aspect-video mb-10 bg-gray-100">
+                <div className="relative w-full aspect-video mb-12 bg-gray-50 rounded-xl overflow-hidden shadow-md">
                     <Image
                         src={imageUrl}
                         alt={news.title}
@@ -77,7 +77,10 @@ export default function NewsDetailClient() {
                 </div>
             )}
 
-            <div className="prose max-w-none prose-headings:font-black prose-headings:italic prose-a:text-orange-600" dangerouslySetInnerHTML={{ __html: news.content }} />
+            <div
+                className="prose max-w-none prose-lg text-gray-700 prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-orange-500 prose-strong:text-orange-900 prose-img:rounded-lg"
+                dangerouslySetInnerHTML={{ __html: news.content }}
+            />
         </div>
     );
 }

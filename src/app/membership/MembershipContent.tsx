@@ -5,308 +5,171 @@ import Link from 'next/link';
 
 export default function MembershipContent() {
     return (
-        <div className="pt-32 pb-20 font-[family-name:var(--font-oswald)]">
+        <div className="pt-32 pb-20 font-sans text-gray-800">
             {/* ヒーローセクション */}
             <section className="relative max-w-7xl mx-auto px-6 mb-16 overflow-hidden">
-                {/* 背景タイポグラフィ */}
-                <div className="absolute top-1/2 -translate-y-1/2 -left-10 select-none pointer-events-none z-0 opacity-[0.03] whitespace-nowrap">
-                    <span className="text-[12rem] md:text-[22rem] font-black italic leading-none uppercase tracking-tighter">
-                        JOIN US
-                    </span>
+                <div className="absolute top-1/2 -translate-y-1/2 -left-10 select-none pointer-events-none z-0 opacity-[0.05] whitespace-nowrap">
+                    <span className="text-[10rem] font-bold text-gray-900 uppercase">JOIN US</span>
                 </div>
 
                 <div className="relative z-10">
-                    <div className="border-l-8 border-orange-600 pl-6 mb-12">
-                        <h1 className="text-4xl md:text-6xl font-black italic tracking-tighter uppercase leading-none text-gray-900">
+                    <div className="border-l-8 border-orange-500 pl-6 mb-12">
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
                             MEMBERSHIP
                         </h1>
-                        <p className="text-gray-400 font-bold mt-2 tracking-[0.2em] uppercase">入会案内 / 料金プラン</p>
+                        <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">入会案内 / 料金プラン</p>
                     </div>
                 </div>
             </section>
 
             {/* キャンペーンセクション */}
             <section className="relative w-full mb-24 overflow-hidden">
-                <div className="bg-black py-16 md:py-20 text-white relative flex items-center min-h-[500px]">
-                    <Image
-                        src="/rc-0008.png"
-                        alt="Campaign Background"
-                        fill
-                        priority
-                        sizes="100vw"
-                        quality={60}
-                        className="object-cover grayscale opacity-45"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+                <div className="bg-gradient-to-r from-orange-400 to-pink-500 py-16 md:py-20 text-white relative flex items-center min-h-[400px]">
+                    <div className="absolute inset-0 bg-black/5 z-0"></div>
 
-                    <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
-                        <div className="inline-block bg-orange-600 text-white px-3 py-1 text-[10px] font-bold italic uppercase tracking-widest mb-6">
-                            Grand Opening Campaign
+                    <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center md:text-left">
+                        <div className="inline-block bg-white/20 px-4 py-1 text-xs font-bold uppercase tracking-widest mb-6 rounded-full backdrop-blur-md border border-white/30">
+                            New Member Campaign
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-black italic uppercase mb-8 tracking-tighter leading-none">
-                            <span className="text-orange-600">OPENING</span><br />CAMPAIGN
+                        <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight font-maru">
+                            <span className="text-white">START DOJO LIFE</span><br />
+                            入会キャンペーン実施中
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-                            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6">
-                                <p className="text-orange-500 text-[10px] font-bold uppercase tracking-widest mb-1">Benefit 01</p>
-                                <p className="text-xl font-black italic">入会金 ¥0</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 text-left max-w-4xl mx-auto">
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
+                                <p className="text-orange-100 text-xs font-bold uppercase tracking-widest mb-2">Benefit 01</p>
+                                <p className="text-xl font-bold font-maru">空手着プレゼント</p>
+                                <p className="text-sm font-bold bg-orange-500 inline-block px-3 py-1 rounded-full mt-2">12,000円相当</p>
                             </div>
-                            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6">
-                                <p className="text-orange-500 text-[10px] font-bold uppercase tracking-widest mb-1">Benefit 02</p>
-                                <p className="text-xl font-black italic">道着プレゼント</p>
-                            </div>
-                            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6">
-                                <p className="text-orange-500 text-[10px] font-bold uppercase tracking-widest mb-1">Benefit 03</p>
-                                <p className="text-xl font-black italic">月会費 2ヶ月無料</p>
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
+                                <p className="text-orange-100 text-xs font-bold uppercase tracking-widest mb-2">Benefit 02</p>
+                                <p className="text-xl font-bold font-maru">親子割り引き</p>
+                                <p className="text-sm font-bold bg-orange-500 inline-block px-3 py-1 rounded-full mt-2">毎月の月謝 -1,000円</p>
                             </div>
                         </div>
 
-                        <div className="mb-10">
-                            <p className="text-2xl md:text-3xl font-black italic text-white mb-2">
-                                先着 <span className="text-orange-600 underline decoration-white underline-offset-4">30名様</span> 限定
-                            </p>
-                            <p className="font-sans text-gray-400 max-w-xl leading-relaxed text-sm md:text-base">
-                                豪華特典をご用意しました。定員に達し次第終了となります。<br />
-                                <span className="text-[10px] text-gray-500 mt-1 block uppercase tracking-wider">※キャンペーンの適用には6ヶ月間の継続利用が条件となります。6か月以内に解約の場合は実費請求となります。</span>
+                        <div className="mb-10 text-left">
+                            <p className="text-sm font-medium text-white/90 max-w-xl leading-relaxed">
+                                ※キャンペーンの適用には一定期間の継続利用が条件となります。<br />
+                                ※定員に達し次第終了となりますのでお早めにお申し込みください。
                             </p>
                         </div>
 
-                        <a href="https://picro.jp/sports/almafight/trials/entry/3284" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black px-10 py-4 font-bold text-lg hover:bg-orange-600 hover:text-white transition-all uppercase italic shadow-2xl">
-                            Book a Trial Now
-                        </a>
+                        <div className="text-left">
+                            <a href="#" className="inline-block bg-white text-orange-500 px-10 py-4 font-bold text-lg hover:bg-orange-50 transition-all rounded-full shadow-lg font-maru">
+                                体験予約はこちら
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* 料金セクション */}
             <section className="bg-gray-50 py-24 mb-24 relative overflow-hidden">
-                {/* 背景装飾 */}
-                <div className="absolute top-0 right-0 w-96 h-96 bg-orange-600/5 blur-[120px] rounded-full"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/3 blur-[80px] rounded-full"></div>
-
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tight text-gray-900">PRICING</h2>
-                        <p className="text-orange-600 font-bold mt-2 tracking-widest uppercase">料金プラン</p>
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">PRICING</h2>
+                        <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">料金プラン</p>
                     </div>
 
-                    {/* 入会金 - 独立セクション */}
-                    <div className="mb-12 bg-gray-900 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-2xl">
-                        <div>
-                            <span className="text-[10px] text-orange-500 font-bold tracking-widest uppercase">One-time Fee</span>
-                            <h3 className="text-3xl md:text-4xl font-black italic uppercase text-white mt-1">Admission Fee</h3>
-                            <p className="text-gray-400 text-sm font-bold mt-1">入会金（初回のみ）</p>
-                        </div>
-                        <div className="flex items-baseline gap-2">
-                            <span className="text-5xl md:text-6xl font-black italic text-white">¥11,000</span>
-                            <span className="text-gray-400 text-sm font-bold">(税込)</span>
-                        </div>
-                    </div>
+
 
                     {/* 月額プラン見出し */}
                     <div className="mb-8">
-                        <h3 className="text-2xl font-black italic uppercase text-gray-900 border-l-4 border-orange-600 pl-4">Monthly Plans</h3>
-                        <p className="text-gray-400 text-sm font-bold mt-1 pl-5">月額プラン</p>
+                        <h3 className="text-2xl font-bold text-gray-900 border-l-4 border-orange-500 pl-4">Monthly Plans</h3>
+                        <p className="text-gray-500 text-sm mt-1 pl-5">月額会員プラン</p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {/* 大人 フルタイム - Popular */}
-                        <div className="group relative bg-gradient-to-br from-orange-600 to-orange-700 p-8 border-l-4 border-orange-400 shadow-2xl shadow-orange-900/50 hover:scale-[1.02] transition-all duration-300">
-                            <div className="absolute top-4 right-4 bg-black text-orange-500 px-3 py-1 text-[10px] font-black uppercase tracking-wider">Most Popular</div>
-                            <div className="mb-6">
-                                <span className="text-[10px] text-orange-200 font-bold tracking-widest uppercase">Monthly</span>
-                                <h3 className="text-2xl font-black italic uppercase text-white mt-1">Adult Full-time</h3>
-                                <p className="text-orange-100 text-sm font-bold mt-1">大人（フルタイム）</p>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        {/* 幼児 */}
+                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-yellow-400"></div>
+                            <div className="mb-4">
+                                <span className="text-xs text-yellow-500 font-bold tracking-widest uppercase">Toddler</span>
+                                <h3 className="text-xl font-bold text-gray-900 mt-1">幼 児</h3>
+                                <p className="text-gray-400 text-xs mt-1">年中〜年長</p>
                             </div>
-                            <div className="flex items-baseline gap-2 mb-4">
-                                <span className="text-5xl font-black italic text-white">¥14,300</span>
-                                <span className="text-orange-200 text-xs font-bold">/ month</span>
+                            <div className="flex items-baseline gap-1 mb-4">
+                                <span className="text-3xl font-bold text-gray-900">¥2,500</span>
+                                <span className="text-gray-400 text-[10px] font-bold">/ month</span>
                             </div>
-                            <div className="space-y-1 text-xs text-orange-100 font-sans border-t border-orange-500/30 pt-4">
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    全クラス参加可
-                                </p>
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    シャワー利用可能
-                                </p>
-                            </div>
+                            <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                                <li className="flex items-center gap-2"><span className="text-yellow-500">✓</span> 礼儀作法の習得</li>
+                                <li className="flex items-center gap-2"><span className="text-yellow-500">✓</span> 楽しく運動</li>
+                            </ul>
                         </div>
 
-                        {/* 大人 月8回 */}
-                        <div className="group bg-white p-8 border-l-4 border-gray-200 hover:border-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                            <div className="mb-6">
-                                <span className="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Monthly</span>
-                                <h3 className="text-2xl font-black italic uppercase text-gray-900 mt-1">Adult 8 Times</h3>
-                                <p className="text-gray-400 text-sm font-bold mt-1">大人（月8回）</p>
+                        {/* 小学生 */}
+                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-green-500"></div>
+                            <div className="mb-4">
+                                <span className="text-xs text-green-600 font-bold tracking-widest uppercase">Elementary</span>
+                                <h3 className="text-xl font-bold text-gray-900 mt-1">小学生</h3>
+                                <p className="text-gray-400 text-xs mt-1">1年生〜6年生</p>
                             </div>
-                            <div className="flex items-baseline gap-2 mb-4">
-                                <span className="text-5xl font-black italic text-gray-900 group-hover:text-orange-600 transition-colors">¥12,100</span>
-                                <span className="text-gray-400 text-xs font-bold">/ month</span>
+                            <div className="flex items-baseline gap-1 mb-4">
+                                <span className="text-3xl font-bold text-gray-900">¥3,000</span>
+                                <span className="text-gray-400 text-[10px] font-bold">/ month</span>
                             </div>
-                            <div className="space-y-1 text-xs text-gray-500 font-sans border-t border-gray-100 pt-4">
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    全クラス参加可
-                                </p>
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    シャワー利用可能
-                                </p>
-                            </div>
+                            <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                                <li className="flex items-center gap-2"><span className="text-green-500">✓</span> 基礎体力の向上</li>
+                                <li className="flex items-center gap-2"><span className="text-green-500">✓</span> 武道の精神を学ぶ</li>
+                            </ul>
                         </div>
 
-                        {/* 女性 */}
-                        <div className="group bg-white p-8 border-l-4 border-gray-200 hover:border-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                            <div className="mb-6">
-                                <span className="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Monthly</span>
-                                <h3 className="text-2xl font-black italic uppercase text-gray-900 mt-1">Women</h3>
-                                <p className="text-gray-400 text-sm font-bold mt-1">女性</p>
+                        {/* 中学生〜高校生 */}
+                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-orange-300"></div>
+                            <div className="mb-4">
+                                <span className="text-xs text-orange-500 font-bold tracking-widest uppercase">Student</span>
+                                <h3 className="text-xl font-bold text-gray-900 mt-1">中学生〜高校生</h3>
+                                <p className="text-gray-400 text-xs mt-1">中学1年〜高校3年</p>
                             </div>
-                            <div className="flex items-baseline gap-2 mb-4">
-                                <span className="text-5xl font-black italic text-gray-900 group-hover:text-orange-600 transition-colors">¥9,900</span>
-                                <span className="text-gray-400 text-xs font-bold">/ month</span>
+                            <div className="flex items-baseline gap-1 mb-4">
+                                <span className="text-3xl font-bold text-gray-900">¥3,500</span>
+                                <span className="text-gray-400 text-[10px] font-bold">/ month</span>
                             </div>
-                            <div className="space-y-1 text-xs text-gray-500 font-sans border-t border-gray-100 pt-4">
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    全クラス参加可
-                                </p>
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    シャワー利用可能
-                                </p>
-                            </div>
+                            <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                                <li className="flex items-center gap-2"><span className="text-orange-500">✓</span> 実戦技術の習得</li>
+                                <li className="flex items-center gap-2"><span className="text-orange-500">✓</span> 部活動との両立</li>
+                            </ul>
                         </div>
 
-                        {/* 学生 */}
-                        <div className="group bg-white p-8 border-l-4 border-gray-200 hover:border-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                            <div className="mb-6">
-                                <span className="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Monthly</span>
-                                <h3 className="text-2xl font-black italic uppercase text-gray-900 mt-1">Student</h3>
-                                <p className="text-gray-400 text-sm font-bold mt-1">学生（中学生〜）</p>
+                        {/* 社会人 */}
+                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-orange-400"></div>
+                            <div className="mb-4">
+                                <span className="text-xs text-orange-500 font-bold tracking-widest uppercase">Adult</span>
+                                <h3 className="text-xl font-bold text-gray-900 mt-1">社会人</h3>
+                                <p className="text-gray-400 text-xs mt-1">一般・シニア</p>
                             </div>
-                            <div className="flex items-baseline gap-2 mb-4">
-                                <span className="text-5xl font-black italic text-gray-900 group-hover:text-orange-600 transition-colors">¥9,900</span>
-                                <span className="text-gray-400 text-xs font-bold">/ month</span>
+                            <div className="flex items-baseline gap-1 mb-4">
+                                <span className="text-3xl font-bold text-gray-900">¥5,000</span>
+                                <span className="text-gray-400 text-[10px] font-bold">/ month</span>
                             </div>
-                            <div className="space-y-1 text-xs text-gray-500 font-sans border-t border-gray-100 pt-4">
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    全クラス参加可
-                                </p>
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    シャワー利用可能
-                                </p>
-                            </div>
+                            <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                                <li className="flex items-center gap-2"><span className="text-orange-500">✓</span> 健康維持・ストレス発散</li>
+                                <li className="flex items-center gap-2"><span className="text-orange-500">✓</span> 本格的な格闘技</li>
+                            </ul>
                         </div>
+                    </div>
 
-                        {/* キッズ */}
-                        <div className="group bg-white p-8 border-l-4 border-gray-200 hover:border-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                            <div className="mb-6">
-                                <span className="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Monthly</span>
-                                <h3 className="text-2xl font-black italic uppercase text-gray-900 mt-1">Kids</h3>
-                                <p className="text-gray-400 text-sm font-bold mt-1">キッズ（小学生）</p>
-                            </div>
-                            <div className="flex items-baseline gap-2 mb-4">
-                                <span className="text-5xl font-black italic text-gray-900 group-hover:text-orange-600 transition-colors">¥8,800</span>
-                                <span className="text-gray-400 text-xs font-bold">/ month</span>
-                            </div>
-                            <div className="space-y-1 text-xs text-gray-500 font-sans border-t border-gray-100 pt-4">
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    シャワー利用可能
-                                </p>
-                            </div>
+                    {/* 親子割引バナー */}
+                    <div className="bg-gradient-to-r from-pink-500 to-red-500 p-8 rounded-xl shadow-lg relative overflow-hidden mb-16 text-white text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-xl transition-shadow">
+                        <div>
+                            <span className="bg-white text-pink-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">Special Discount</span>
+                            <h3 className="text-2xl md:text-3xl font-bold mb-2">親子割引</h3>
+                            <p className="text-pink-100 text-sm font-medium">親子で入会されると、毎月の会費がお得になります。</p>
                         </div>
-
-                        {/* ビジター */}
-                        <div className="group bg-white p-8 border-l-4 border-gray-200 hover:border-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                            <div className="mb-6">
-                                <span className="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Per Session</span>
-                                <h3 className="text-2xl font-black italic uppercase text-gray-900 mt-1">Visitor</h3>
-                                <p className="text-gray-400 text-sm font-bold mt-1">ビジター</p>
-                            </div>
-                            <div className="flex items-baseline gap-2 mb-4">
-                                <span className="text-5xl font-black italic text-gray-900 group-hover:text-orange-600 transition-colors">¥5,500</span>
-                                <span className="text-gray-400 text-xs font-bold">/ session</span>
-                            </div>
-                            <div className="space-y-1 text-xs text-gray-500 font-sans border-t border-gray-100 pt-4">
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    シャワー利用可能
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* ビジター JBJJF */}
-                        <div className="group bg-white p-8 border-l-4 border-gray-200 hover:border-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                            <div className="mb-6">
-                                <span className="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Per Session</span>
-                                <h3 className="text-2xl font-black italic uppercase text-gray-900 mt-1">Visitor (JBJJF)</h3>
-                                <p className="text-gray-400 text-sm font-bold mt-1">ビジター（JBJJF加盟団体）</p>
-                            </div>
-                            <div className="flex items-baseline gap-2 mb-4">
-                                <span className="text-5xl font-black italic text-gray-900 group-hover:text-orange-600 transition-colors">¥3,300</span>
-                                <span className="text-gray-400 text-xs font-bold">/ session</span>
-                            </div>
-                            <div className="space-y-1 text-xs text-gray-500 font-sans border-t border-gray-100 pt-4">
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    シャワー利用可能
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* プライベートレッスン */}
-                        <div className="group bg-white p-8 border-l-4 border-gray-200 hover:border-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                            <div className="mb-6">
-                                <span className="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Per Hour</span>
-                                <h3 className="text-2xl font-black italic uppercase text-gray-900 mt-1">Private Lesson</h3>
-                                <p className="text-gray-400 text-sm font-bold mt-1">プライベートレッスン</p>
-                            </div>
-                            <div className="flex items-baseline gap-2 mb-4">
-                                <span className="text-5xl font-black italic text-gray-900 group-hover:text-orange-600 transition-colors">¥11,000</span>
-                                <span className="text-gray-400 text-xs font-bold">/ hour (税込)</span>
-                            </div>
-                            <div className="space-y-1 text-xs text-gray-500 font-sans border-t border-gray-100 pt-4">
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    シャワー利用可能
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* トレーニングプラン - 一番下右 */}
-                        <div className="group bg-white p-8 border-l-4 border-gray-200 hover:border-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                            <div className="mb-6">
-                                <span className="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Monthly</span>
-                                <h3 className="text-2xl font-black italic uppercase text-gray-900 mt-1">Training Plan</h3>
-                                <p className="text-gray-400 text-sm font-bold mt-1">トレーニングプラン</p>
-                            </div>
-                            <div className="flex items-baseline gap-2 mb-4">
-                                <span className="text-5xl font-black italic text-gray-900 group-hover:text-orange-600 transition-colors">¥6,600</span>
-                                <span className="text-gray-400 text-xs font-bold">/ month</span>
-                            </div>
-                            <div className="space-y-1 text-xs text-gray-500 font-sans border-t border-gray-100 pt-4">
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    トレーニングエリア利用可
-                                </p>
-                                <p className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                    シャワー利用可能
-                                </p>
-                                <p className="flex items-center gap-2 text-gray-400">
-                                    <svg className="w-4 h-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                                    クラス参加不可
-                                </p>
+                        <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/20">
+                            <div className="text-right">
+                                <p className="text-xs text-pink-100">毎月の会費から</p>
+                                <p className="text-3xl font-bold leading-none">-1,000<span className="text-sm">円</span></p>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -314,37 +177,36 @@ export default function MembershipContent() {
             <section className="max-w-7xl mx-auto px-6 mb-24">
                 <div className="grid md:grid-cols-2 gap-16">
                     <div>
-                        <h2 className="text-5xl font-black italic uppercase tracking-tight mb-8">HOW TO JOIN</h2>
-                        <p className="text-orange-600 font-bold mb-6 tracking-widest">ご入会について</p>
-                        <p className="font-sans text-gray-600 leading-relaxed mb-8">
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">HOW TO JOIN</h2>
+                        <p className="text-orange-500 font-bold mb-6 tracking-widest">ご入会について</p>
+                        <p className="text-gray-600 leading-relaxed mb-8">
                             ご入会はオンラインシステム上で完結いたします。
                             スマートフォンやPCから簡単にお手続きいただけます。
-                            ご不明な点がございましたら、お気軽にお問い合わせください。
+                            見学・無料体験も随時受け付けておりますので、まずはお気軽にお越しください。
                         </p>
                     </div>
-                    <div className="bg-white p-10 shadow-2xl border border-gray-100">
-                        <h3 className="text-2xl font-black italic uppercase mb-8 border-b-2 border-orange-600 pb-2 inline-block">Required Items</h3>
-                        <p className="text-gray-400 font-bold text-[10px] mb-6 uppercase tracking-widest">お手続きに必要なもの</p>
-                        <ul className="space-y-6 font-sans text-gray-700">
+                    <div className="bg-white p-10 shadow-lg border border-gray-100 rounded-xl">
+                        <h3 className="text-xl font-bold text-gray-900 mb-8 border-b-2 border-orange-500 pb-2 inline-block">推奨する持ち物・手続き</h3>
+                        <ul className="space-y-6 text-gray-700">
                             <li className="flex items-start gap-4">
-                                <span className="w-6 h-6 bg-orange-600 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">1</span>
+                                <span className="w-6 h-6 bg-orange-400 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold rounded-full">1</span>
                                 <div>
-                                    <p className="font-bold">スマートフォン・PC</p>
-                                    <p className="text-sm text-gray-500">オンラインシステムにアクセスしてお手続きいただきます。</p>
+                                    <p className="font-bold">スマートフォン</p>
+                                    <p className="text-sm text-gray-500">入会等の手続きはWEB上で行います。</p>
                                 </div>
                             </li>
                             <li className="flex items-start gap-4">
-                                <span className="w-6 h-6 bg-orange-600 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">2</span>
-                                <div>
-                                    <p className="font-bold">本人確認書類のコピー</p>
-                                    <p className="text-sm text-gray-500">運転免許証、保険証、マイナンバーカード等のコピーをお持ちください。</p>
-                                </div>
-                            </li>
-                            <li className="flex items-start gap-4">
-                                <span className="w-6 h-6 bg-orange-600 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">3</span>
+                                <span className="w-6 h-6 bg-orange-400 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold rounded-full">2</span>
                                 <div>
                                     <p className="font-bold">クレジットカード</p>
-                                    <p className="text-sm text-gray-500">初期費用および月会費のお支払いに必要です。</p>
+                                    <p className="text-sm text-gray-500">会費のお支払いに使用します。</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start gap-4">
+                                <span className="w-6 h-6 bg-orange-400 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold rounded-full">3</span>
+                                <div>
+                                    <p className="font-bold">動きやすい服装</p>
+                                    <p className="text-sm text-gray-500">体験時はTシャツ・短パン等で構いません。</p>
                                 </div>
                             </li>
                         </ul>

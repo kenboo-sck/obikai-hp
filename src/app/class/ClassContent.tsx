@@ -5,95 +5,42 @@ import Link from 'next/link';
 
 const classCategories = [
     {
-        category: "GRAPPLING",
-        sub: "ブラジリアン柔術・グラップリング",
+        category: "KARATE LESSON",
+        sub: "空手クラス",
         classes: [
             {
-                title: "BJJ Basic",
-                en: "Fundamentals",
-                desc: "ブラジリアン柔術の土台となる基本動作や護身術を学ぶ、初心者・未経験者向けのクラスです。マット運動やエビ（基本動作）から始まり、安全な受け身、基本的な抑え込みや脱出方法を丁寧に指導します。運動経験がない方でも、自分のペースで着実にステップアップできるカリキュラムです。",
-                image: "/oh-04.jpg",
-                recommended: ["格闘技未経験の方", "運動不足を解消したい方", "護身術を身につけたい方"]
+                title: "全体稽古クラス",
+                en: "General Training",
+                desc: "子供から大人まで、初心者から上級者まで、全ての会員が参加できる合同クラスです。基本稽古から移動稽古、型、組手まで、空手の総合的な技術を磨きます。年齢やレベルを超えて共に汗を流すことで、道場としての一体感も育まれます。",
+                image: "/o-1003.jpg",
+                recommended: ["まずはこちらから", "親子で参加したい方", "基本から応用まで学びたい方"]
             },
             {
-                title: "BJJ Advanced",
-                en: "High Level Tech",
-                desc: "ベーシッククラスで習得した基礎を応用し、より実戦的で高度なテクニックを追求するクラスです。最新の競技シーンで使われるモダンなガードワークや、複雑なサブミッションの連動、スパーリングにおける戦略的なポジショニングを深く掘り下げます。青帯以上の方や、さらなる高みを目指す白帯の方に最適です。",
-                image: "/oh-1001.jpg",
-                recommended: ["試合出場を目指す方", "より深い技術を学びたい方", "スパーリングを楽しみたい方"]
+                title: "キッズクラス",
+                en: "Kids Class",
+                desc: "年中〜小学1年生を主な対象としたクラスです。礼儀作法の習得を第一に、大きな声での挨拶や返事、話を聞く姿勢などを身につけます。楽しみながら体を動かし、空手の基礎を少しずつ学んでいきます。",
+                image: "/o-001.jpg",
+                recommended: ["礼儀を身につけたい", "初めての習い事に", "体を動かすのが好きなお子様"]
             },
             {
-                title: "BJJ Kids",
-                en: "Next Generation",
-                desc: "遊びの要素を取り入れたトレーニングを通じて、運動能力の向上と格闘技の楽しさを伝えるキッズ専用クラスです。技術の習得はもちろん、道場での挨拶や礼儀作法、仲間を尊重する心を育みます。いじめに負けない強い心と体、そして困難に立ち向かう集中力を養うことを目的としています。",
-                image: "/rc-0005.png",
-                recommended: ["礼儀作法を身につけさせたい", "体力を向上させたい", "自信をつけさせたい"]
-            },
-            {
-                title: "No-Gi",
-                en: "Submission Wrestling",
-                desc: "道着を着用せず、ラッシュガードやショーツで行うグラップリング（組技）クラスです。道着のグリップがないため、よりスピード感のある展開や、レスリング技術を活かしたテイクダウン、タイトなコントロールが求められます。MMA（総合格闘技）への応用も高く、ダイナミックな動きを楽しみたい方におすすめです。",
-                image: "/mma-hero.png",
-                recommended: ["MMAに興味がある方", "スピード感のある動きを好む方", "レスリング技術を学びたい方"]
+                title: "基本稽古クラス",
+                en: "Basic Training",
+                desc: "小学2年生から一般部を対象とした、基礎重視のクラスです。立ち方、突き、蹴りなどの基本動作を徹底的に反復練習します。正しいフォームを身につけることで、怪我の防止や技術の向上につながります。初心者の方にも最適です。",
+                image: "/o-1004.jpg",
+                recommended: ["基礎を固めたい方", "初心者の方", "フォームを見直したい方"]
             }
         ]
     },
     {
-        category: "STRIKING & MMA",
-        sub: "打撃・総合格闘技",
+        category: "PRACTICAL KARATE",
+        sub: "実戦・応用クラス",
         classes: [
             {
-                title: "Kickboxing Basic",
-                en: "Striking Foundation",
-                desc: "パンチやキックの正しいフォーム、ミット打ちの楽しさを体験できる初心者向けクラスです。全身を連動させた動きで効率よくカロリーを消費し、ストレス解消やシェイプアップにも最適です。対人戦（スパーリング）は行わず、安全に楽しく汗を流すことを優先した内容になっています。",
-                image: "/kick-hero.png",
-                recommended: ["楽しくダイエットしたい方", "ストレス発散したい方", "キックの基本を学びたい方"]
-            },
-            {
-                title: "MMA Basic",
-                en: "Mixed Martial Arts",
-                desc: "打撃・投げ・寝技が融合した総合格闘技（MMA）の基礎を学ぶクラスです。ケージ（金網）際での攻防や、打撃からタックルへの繋ぎなど、MMA特有の技術を体系的に指導します。複雑に見えるMMAの動きを分解して解説するため、格闘技未経験からでも安心してスタートできます。",
-                image: "/mma-01.png",
-                recommended: ["総合的に強くなりたい方", "ケージでの攻防を学びたい方", "新しい刺激が欲しい方"]
-            }
-        ]
-    },
-    {
-        category: "OTHERS",
-        sub: "フリートレーニング",
-        classes: [
-            {
-                title: "Free Training",
-                en: "Open Mat",
-                desc: "指導員の見守りのもと、各自が自由に練習を行う時間です。クラスで習った技の復習や打ち込み、スパーリング、あるいは個別の体力トレーニングなど、自分の課題に合わせて活用いただけます。会員同士のコミュニケーションの場としても人気があり、自主性を重んじる時間です。",
-                image: "/oh-1001.jpg",
-                recommended: ["自分のペースで練習したい方", "技の復習をしたい方", "仲間と交流したい方"]
-            }
-        ]
-    },
-    {
-        category: "TRAINING",
-        sub: "トレーニングプラン",
-        classes: [
-            {
-                title: "Training Plan",
-                en: "Gym Only Membership",
-                desc: "月額6,600円でトレーニングエリアを自由にご利用いただけるプランです。ウェイトトレーニングやコンディショニングに集中したい方、クラスの時間に合わない方に最適です。シャワーもご利用いただけます。※本プランではクラスへの参加はできません。",
-                image: "/rc-0009.png",
-                recommended: ["筋力トレーニングを中心に行いたい方", "クラスの時間に合わない方", "リーズナブルに始めたい方"]
-            }
-        ]
-    },
-    {
-        category: "PRIVATE",
-        sub: "プライベートレッスン",
-        classes: [
-            {
-                title: "Private Lesson",
-                en: "One-on-One Coaching",
-                desc: "インストラクターと1対1で、個々のレベルや目標に合わせたオーダーメイドの指導を行います。技術の細部まで確認したい方、仕事が忙しくクラスの時間に間に合わない方、最速で上達したい方に最適です。ブラジリアン柔術、キックボクシング、MMAなど、ご希望の種目に応じて指導いたします。",
-                image: "/oh-1002.png",
-                recommended: ["最速で技術を習得したい方", "自分のペースでじっくり学びたい方", "特定の課題を解決したい方"]
+                title: "スパーリング＆グローブ空手",
+                en: "Sparring & Glove Karate",
+                desc: "実際に相手と戦う技術（組手）を学ぶクラスです。防具やグローブを着用し、安全に配慮しながら実戦感覚を養います。突きや蹴りの攻防、間合いの取り方、スタミナ配分などを実践形式で学びます。試合を目指す方や、護身術として身につけたい方におすすめです。",
+                image: "/o-1005.jpg",
+                recommended: ["強くなりたい方", "試合に出場したい方", "実戦技術を学びたい方"]
             }
         ]
     }
@@ -101,34 +48,31 @@ const classCategories = [
 
 export default function ClassContent() {
     return (
-        <div className="pt-32 pb-20 font-[family-name:var(--font-oswald)]">
+        <div className="pt-32 pb-20 font-sans text-gray-800">
             {/* ヒーローセクション */}
             <section className="relative max-w-7xl mx-auto px-6 mb-16 overflow-hidden">
-                {/* 背景タイポグラフィ */}
-                <div className="absolute top-1/2 -translate-y-1/2 -left-10 select-none pointer-events-none z-0 opacity-[0.03] whitespace-nowrap">
-                    <span className="text-[12rem] md:text-[22rem] font-black italic leading-none uppercase tracking-tighter">
-                        DISCIPLINE
-                    </span>
+                <div className="absolute top-1/2 -translate-y-1/2 -left-10 select-none pointer-events-none z-0 opacity-[0.05] whitespace-nowrap">
+                    <span className="text-[10rem] font-bold text-gray-900 uppercase">PROGRAMS</span>
                 </div>
 
                 <div className="relative z-10">
-                    <div className="border-l-8 border-orange-600 pl-6 mb-12">
-                        <h1 className="text-4xl md:text-6xl font-black italic tracking-tighter uppercase leading-none text-gray-900">
-                            OUR <span className="text-orange-600">CLASSES</span>
+                    <div className="border-l-8 border-orange-500 pl-6 mb-12">
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
+                            OUR <span className="text-orange-500">CLASSES</span>
                         </h1>
-                        <p className="text-gray-400 font-bold mt-2 tracking-[0.2em] uppercase">クラス紹介</p>
+                        <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">クラス紹介</p>
                     </div>
-                    <div className="w-full animate-in fade-in slide-in-from-left-4 duration-1000 relative">
-                        <p className="text-4xl md:text-6xl font-black italic leading-none text-gray-900 uppercase tracking-tighter mb-6">
-                            Unlock your potential.
+                    <div className="w-full relative">
+                        <p className="text-3xl md:text-5xl font-bold leading-none text-gray-900 mb-6">
+                            心技体を磨く、<br />充実のプログラム。
                         </p>
-                        <p className="text-gray-500 font-bold leading-relaxed text-base md:text-xl">
-                            未経験者からアスリートまで、すべてのレベルに対応した専門プログラム。強さを追求するだけでなく、健康維持やストレス解消など、あなたのライフスタイルに合わせた最適なプログラムを準備しております。
+                        <p className="text-gray-600 font-medium leading-relaxed text-base md:text-lg max-w-2xl">
+                            実戦空手道 帯会では、幼児から大人まで、目的やレベルに合わせた多彩なクラスをご用意しています。強さを求めるだけでなく、礼節を重んじ、健康で豊かな人生を送るためのサポートをいたします。
                         </p>
                         <div className="mt-8">
                             <Link
                                 href="/schedule"
-                                className="inline-block border-b-2 border-orange-600 pb-1 font-bold italic uppercase tracking-widest text-sm text-orange-600 hover:text-black hover:border-black transition-colors"
+                                className="inline-block border-b-2 border-orange-500 pb-1 font-bold text-orange-500 hover:text-orange-700 hover:border-orange-700 transition-colors"
                             >
                                 Check Schedule →
                             </Link>
@@ -139,55 +83,52 @@ export default function ClassContent() {
 
             {/* カテゴリー別クラス一覧 */}
             {classCategories.map((cat, idx) => (
-                <section key={idx} className={`py-24 ${idx % 2 === 1 ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
+                <section key={idx} className={`py-24 ${idx % 2 === 1 ? 'bg-orange-50' : 'bg-white'}`}>
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="mb-16">
-                            <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter leading-none">
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 uppercase tracking-tight leading-none">
                                 {cat.category}
                             </h2>
-                            <p className={`font-bold mt-2 tracking-widest uppercase text-sm ${idx % 2 === 1 ? 'text-orange-500' : 'text-orange-600'}`}>
+                            <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">
                                 {cat.sub}
                             </p>
                         </div>
 
-                        <div className="flex flex-col gap-24">
+                        <div className="flex flex-col gap-20">
                             {cat.classes.map((cls, cIdx) => (
                                 <div key={cIdx} className="group flex flex-col md:flex-row gap-12 items-start">
-                                    <div className="relative w-full md:w-5/12 aspect-[4/3] overflow-hidden shadow-2xl">
+                                    <div className="relative w-full md:w-5/12 aspect-[4/3] overflow-hidden shadow-lg rounded-xl bg-gray-200">
                                         <Image
                                             src={cls.image}
                                             alt={cls.title}
                                             fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                                            className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                            unoptimized={true}
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden"></div>
-                                        <div className="absolute bottom-4 left-6 md:hidden">
-                                            <h3 className="text-2xl font-black italic text-white uppercase">{cls.title}</h3>
-                                        </div>
                                     </div>
 
                                     <div className="w-full md:w-7/12">
-                                        <div className="hidden md:block mb-2">
-                                            <span className={`text-xs font-bold tracking-[0.3em] uppercase ${idx % 2 === 1 ? 'text-gray-500' : 'text-gray-400'}`}>
+                                        <div className="mb-4">
+                                            <span className="text-xs font-bold tracking-widest uppercase text-orange-400">
                                                 {cls.en}
                                             </span>
-                                            <h3 className="text-3xl font-black italic uppercase leading-none mt-1">
+                                            <h3 className="text-3xl font-bold text-gray-900 mt-1">
                                                 {cls.title}
                                             </h3>
                                         </div>
-                                        <p className={`font-sans leading-relaxed text-base md:text-lg mb-8 ${idx % 2 === 1 ? 'text-gray-400' : 'text-gray-600'}`}>
+                                        <p className="font-sans leading-relaxed text-gray-600 text-base md:text-lg mb-8">
                                             {cls.desc}
                                         </p>
 
                                         {/* こんな方にお勧めセクション */}
-                                        <div className={`p-6 ${idx % 2 === 1 ? 'bg-white/5' : 'bg-gray-50'}`}>
-                                            <h4 className={`text-sm font-black italic uppercase mb-4 tracking-widest ${idx % 2 === 1 ? 'text-orange-500' : 'text-orange-600'}`}>
+                                        <div className="p-6 bg-white border border-gray-100 rounded-lg shadow-sm">
+                                            <h4 className="text-sm font-bold uppercase mb-4 tracking-widest text-orange-500">
                                                 こんな方にお勧め
                                             </h4>
-                                            <ul className="grid grid-cols-1 gap-3">
+                                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                                 {cls.recommended?.map((item, rIdx) => (
-                                                    <li key={rIdx} className="flex items-center gap-3 text-sm font-bold italic">
-                                                        <span className={`flex-shrink-0 w-5 h-5 flex items-center justify-center text-[10px] ${idx % 2 === 1 ? 'bg-orange-500 text-black' : 'bg-orange-600 text-white'}`}>✓</span>
+                                                    <li key={rIdx} className="flex items-center gap-3 text-sm font-medium text-gray-700">
+                                                        <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-[10px] bg-orange-100 text-orange-500 rounded-full">✓</span>
                                                         {item}
                                                     </li>
                                                 ))}
@@ -203,21 +144,21 @@ export default function ClassContent() {
 
             {/* 下部CTA */}
             <section className="py-24 max-w-7xl mx-auto px-6">
-                <div className="bg-orange-600 p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-orange-200">
+                <div className="bg-orange-400 p-12 md:p-20 text-center text-white relative overflow-hidden shadow-xl rounded-2xl">
                     <div className="relative z-10">
-                        <h2 className="text-5xl md:text-7xl font-black italic uppercase mb-8 tracking-tighter">
-                            Ready to <span className="text-black">Train?</span>
+                        <h2 className="text-4xl md:text-6xl font-bold mb-8">
+                            Ready to <span className="text-orange-100">Train?</span>
                         </h2>
-                        <p className="font-sans max-w-xl mx-auto mb-12 text-lg opacity-90">
-                            すべてのクラスで初心者・未経験者の方を歓迎しています。<br />
-                            まずはスケジュールを確認して、気になるクラスの体験予約へお進みください。
+                        <p className="font-sans max-w-xl mx-auto mb-12 text-lg text-white/90">
+                            まずは体験・見学にお越しください。<br />
+                            道場の雰囲気や指導内容を肌で感じていただけます。
                         </p>
                         <div className="flex flex-col md:flex-row gap-6 justify-center">
-                            <Link href="/schedule" className="bg-black text-white px-10 py-4 font-bold text-lg hover:bg-white hover:text-black transition-all uppercase italic">
-                                スケジュールを見る
+                            <Link href="/schedule" className="bg-white text-orange-500 px-10 py-4 font-bold text-lg hover:bg-orange-50 transition-all rounded-full shadow-lg">
+                                スケジュールを確認
                             </Link>
-                            <a href="https://picro.jp/sports/almafight/trials/entry/3284" target="_blank" rel="noopener noreferrer" className="bg-white text-orange-600 px-10 py-4 font-bold text-lg hover:bg-black hover:text-white transition-all uppercase italic">
-                                まずは体験から
+                            <a href="#" className="bg-orange-600 text-white px-10 py-4 font-bold text-lg hover:bg-orange-700 transition-all rounded-full shadow-lg border border-orange-400">
+                                キャンペーンを利用して体験
                             </a>
                         </div>
                     </div>

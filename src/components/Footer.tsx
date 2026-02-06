@@ -10,6 +10,7 @@ const navItems = [
   { name: 'クラス紹介', en: 'CLASS', href: '/class' },
   { name: '入会案内', en: 'MEMBERSHIP', href: '/membership' },
   { name: 'お知らせ', en: 'NEWS', href: '/news' },
+  { name: '大会結果', en: 'RESULTS', href: '/results' },
   { name: 'スケジュール', en: 'SCHEDULE', href: '/schedule' },
   { name: 'インストラクター', en: 'INSTRUCTORS', href: '/instructors' },
   { name: 'アクセス', en: 'ACCESS', href: '/access' },
@@ -17,8 +18,8 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/afg_osaka_honmachi', color: 'hover:text-pink-500' },
-  { name: 'X', icon: FaXTwitter, href: 'https://x.com/afg_osaka', color: 'hover:text-white' },
+  { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/stepjump_tour/', color: 'hover:text-pink-500' }, // Updated from conversation history
+  { name: 'X', icon: FaXTwitter, href: 'https://x.com/afg_osaka', color: 'hover:text-white' }, // TODO: Confirm X link
 ];
 
 export default function Footer() {
@@ -38,113 +39,102 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white font-[family-name:var(--font-oswald)]">
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-12">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-stone-900 text-white font-sans">
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-12">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
 
           <div className="md:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              <Image
-                src="/logo_t.svg"
-                alt="ALMA FIGHT GYM"
-                width={160}
-                height={36}
-                className="object-contain brightness-0 invert"
-              />
+            <Link href="/" className="inline-block mb-4">
+              <div className="relative w-40 h-12">
+                <Image
+                  src="/logo-obikai.svg"
+                  alt="帯会ロゴ"
+                  fill
+                  className="object-contain brightness-0 invert"
+                />
+              </div>
             </Link>
-            <p className="text-gray-300 text-sm font-sans leading-relaxed mb-6">
-              理想の体と、新しい自分へ。<br />
-              初心者からプロ志望まで、本気で変わるなら今。<br />
-              まずは体験からスタート！
+            <p className="text-stone-300 text-sm leading-relaxed mb-6">
+              親子で始める、新しい武道の形。<br />
+              礼節を重んじ、強く優しい心を育む。<br />
+              見学・体験、随時受付中です。
             </p>
             <a
-              href="https://picro.jp/sports/almafight/trials/entry/3284"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-orange-600 text-white px-8 py-4 font-black italic text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all shadow-2xl shadow-orange-900/40"
+              href="#"
+              className="inline-block bg-white text-stone-900 px-8 py-3 font-bold text-sm rounded-full hover:bg-orange-50 hover:text-orange-600 transition-all shadow-md"
             >
               体験予約 →
             </a>
           </div>
 
-          {/* ナビゲーションリンク - オプション2：区切り線付き */}
           <div className="md:col-span-2">
-            <h3 className="text-base font-bold tracking-[0.3em] text-orange-600 uppercase mb-6 italic">
+            <h3 className="text-base font-bold tracking-widest text-orange-400 uppercase mb-6">
               Navigation
             </h3>
-            <div className="grid grid-cols-2 gap-x-12 gap-y-5">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group flex flex-col pb-3 border-b border-gray-700 hover:border-orange-600 transition-all"
+                  className="group flex flex-col pb-2 hover:translate-x-1 transition-transform"
                 >
-                  <span className="text-lg font-light italic tracking-wider text-white group-hover:text-orange-600 transition-colors uppercase">
-                    {item.en}
-                  </span>
-                  <span className="text-xs text-gray-400 group-hover:text-orange-400 transition-colors font-sans mt-1">
-                    {item.name}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-bold text-white group-hover:text-orange-300 transition-colors">
+                      {item.name}
+                    </span>
+                    <span className="text-[10px] text-stone-400 group-hover:text-orange-200 transition-colors uppercase">
+                      {item.en}
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>
           </div>
 
           <div className="md:col-span-1">
-            <h3 className="text-base font-bold tracking-[0.3em] text-orange-600 uppercase mb-6 italic">
+            <h3 className="text-base font-bold tracking-widest text-orange-400 uppercase mb-6">
               Contact
             </h3>
-            <div className="space-y-4 text-sm font-sans">
+            <div className="space-y-4 text-sm">
               <div>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-bold">Address</p>
-                <p className="text-gray-300 leading-relaxed">
-                  〒541-0051<br />
-                  大阪市中央区備後町3-1-6<br />
-                  船場アルファビル 2F
+                <p className="text-xs text-stone-400 uppercase tracking-wider mb-1 font-bold">Address</p>
+                <p className="text-white leading-relaxed">
+                  〒957-0053<br />
+                  新潟県新発田市東新町2-5-4-9
                 </p>
               </div>
               <div>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-bold">Phone</p>
-                <a href="tel:0642562912" className="text-orange-500 hover:text-orange-400 transition-colors font-bold text-lg">
-                  06-4256-2912
+                <p className="text-xs text-stone-400 uppercase tracking-wider mb-1 font-bold">Phone</p>
+                <a href="tel:0254429040" className="text-white hover:text-orange-300 transition-colors font-bold text-lg">
+                  0254-42-9040
                 </a>
               </div>
               <div>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-bold">Hours</p>
-                <p className="text-gray-300 leading-relaxed">
-                  平日 17:00 - 22:00<br />
-                  土曜 10:00 - 14:00<br />
-                  <span className="text-gray-500">定休日：日曜・祝日</span><br />
-                  <span className="text-[10px] text-gray-500 italic">（夏季、年末年始の長期休暇あり）</span>
+                <p className="text-xs text-stone-400 uppercase tracking-wider mb-1 font-bold">Hours</p>
+                <p className="text-white leading-relaxed">
+                  月・火・金 19:00 - 21:00
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mb-8"></div>
+        <div className="border-t border-stone-800 mb-8"></div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div>
-            <h3 className="text-base font-bold tracking-[0.3em] text-orange-600 uppercase mb-4 italic">
-              Company
+            <h3 className="text-sm font-bold tracking-widest text-orange-400 uppercase mb-4">
+              Representative
             </h3>
-            <div className="space-y-2 text-sm font-sans text-gray-300">
-              <p className="font-bold text-white">株式会社マーシャルワールドジャパン</p>
-              <p>〒541-0051<br />大阪市中央区備後町3-1-6<br />船場アルファビル2階</p>
-              <p>TEL : 06-4963-2224</p>
-              <Link
-                href="https://www.mwjapan.jp/"
-                target="_blank"
-                className="inline-block text-orange-500 hover:text-orange-400 transition-colors mt-2 font-bold"
-              >
-                運営会社サイトはこちら →
-              </Link>
+            <div className="space-y-2 text-xs text-stone-300">
+              <p className="font-bold text-white">代表：田坂 貴満</p>
+              <p>〒957-0053 新潟県新発田市東新町2-5-4-9</p>
+              <p>TEL : 0254-42-9040</p>
             </div>
           </div>
 
           <div>
-            <h3 className="text-base font-bold tracking-[0.3em] text-orange-600 uppercase mb-4 italic">
+            <h3 className="text-sm font-bold tracking-widest text-orange-400 uppercase mb-4">
               Follow Us
             </h3>
             <div className="flex gap-4">
@@ -156,7 +146,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-800 flex items-center justify-center text-2xl text-gray-400 transition-all hover:bg-orange-600 hover:text-white hover:scale-110"
+                    className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-lg text-white transition-all hover:bg-white hover:text-stone-900"
                     aria-label={social.name}
                   >
                     <IconComponent />
@@ -167,16 +157,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-stone-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-gray-500 font-sans">
-              © {new Date().getFullYear()} ALMA FIGHT GYM. All rights reserved.
+            <p className="text-xs text-stone-500">
+              © {new Date().getFullYear()} OBIKAI. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="/privacy" className="text-xs text-gray-500 hover:text-orange-500 transition-colors uppercase tracking-wider">
+              <Link href="/privacy" className="text-xs text-stone-500 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-xs text-gray-500 hover:text-orange-500 transition-colors uppercase tracking-wider">
+              <Link href="/terms" className="text-xs text-stone-500 hover:text-white transition-colors">
                 Terms of Service
               </Link>
             </div>
@@ -187,14 +177,14 @@ export default function Footer() {
       {showButton && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-orange-600/70 backdrop-blur-md border border-white/20 text-white w-10 h-10 md:w-14 md:h-14 flex items-center justify-center font-black hover:bg-black transition-all shadow-2xl shadow-orange-600/40 z-40 hover:scale-110 active:scale-95 group animate-fade-in"
+          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-orange-400 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all shadow-lg z-40 animate-fade-in"
           aria-label="トップへ戻る"
         >
           <svg
-            className="w-4 h-4 md:w-6 md:h-6 group-hover:-translate-y-1 transition-transform duration-300"
+            className="w-6 h-6"
             fill="none"
             stroke="currentColor"
-            strokeWidth="3"
+            strokeWidth="2"
             viewBox="0 0 24 24"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />

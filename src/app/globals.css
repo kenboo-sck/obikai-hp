@@ -1,24 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
 @import "tailwindcss";
+
 /* @plugin "@tailwindcss/typography"; */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffaf0;
+  /* Warm cream background */
+  --foreground: #4a4a4a;
+  /* Softer text color */
+  --primary-orange: #fb923c;
 }
 
-/* ダークモード設定（一旦シンプルにします） */
+/* Enforcing light mode/cream theme even in dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fffaf0;
+    --foreground: #4a4a4a;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Zen Maru Gothic', 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
+}
+
+.font-maru {
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+/* Custom rounded corners for more approachable look */
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+.rounded-2xl {
+  border-radius: 1.5rem;
+}
+
+.rounded-3xl {
+  border-radius: 2rem;
 }
 
 /* Quill Editor Styles */
@@ -30,16 +52,18 @@ body {
   top: 0;
   z-index: 10;
 }
+
 .ql-container.ql-snow {
   border: none !important;
   min-height: 350px;
   font-size: 16px;
 }
+
 .ql-editor {
   min-height: 350px;
 }
 
-/* Tiptap Editor スタイル */
+/* Tiptap Editor Styles */
 .ProseMirror {
   min-height: 400px;
   padding: 1rem;
@@ -62,16 +86,20 @@ body {
   margin: 0.75rem 0 0.5rem;
 }
 
-.ProseMirror ul, .ProseMirror ol {
+.ProseMirror ul,
+.ProseMirror ol {
   padding-left: 1.5rem;
   margin: 0.5rem 0;
 }
 
 .ProseMirror blockquote {
-  border-left: 3px solid #ea580c;
+  border-left: 3px solid #fb923c;
   padding-left: 1rem;
   margin: 1rem 0;
   font-style: italic;
+  color: #4b5563;
+  background-color: #fff7ed;
+  padding: 0.5rem 1rem;
 }
 
 .ProseMirror img {
@@ -81,12 +109,12 @@ body {
   margin: 1rem 0;
 }
 
-/* reCAPTCHAロゴと文字をセットで小さくし、位置を調整する */
-.grecaptcha-badge { 
-  transform: scale(0.65) !important; /* 少しサイズを戻して視認性を確保 */
-  transform-origin: bottom right !important; 
-  right: 5px !important; /* 右側に寄りすぎないよう調整 */
-  bottom: 5px !important; /* 下側に寄りすぎないよう調整 */
-  display: block !important; /* 強制的に表示させる */
-  overflow: visible !important; /* 中身が切れないようにする */
+/* reCAPTCHA style */
+.grecaptcha-badge {
+  transform: scale(0.65) !important;
+  transform-origin: bottom right !important;
+  right: 5px !important;
+  bottom: 5px !important;
+  display: block !important;
+  overflow: visible !important;
 }

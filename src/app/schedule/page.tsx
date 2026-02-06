@@ -3,7 +3,7 @@ import ScheduleContent from './ScheduleContent';
 
 export const metadata: Metadata = {
   title: 'スケジュール',
-  description: '大阪本町ALMA FIGHT GYMの週間スケジュール。平日夜・土曜日も開講、仕事帰りに通いやすい時間割。柔術・キック・MMA各クラスの開講時間はこちら。',
+  description: '実戦空手道 帯会の週間スケジュール。新発田市内の各教室（川東、七葉、五十公野）で曜日ごとに活動しています。',
 };
 
 export default function SchedulePage() {

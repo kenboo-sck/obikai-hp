@@ -63,38 +63,38 @@ export default function AdminNewsPage() {
     }
   };
 
-  if (authLoading) return <div className="pt-40 text-center font-black italic">読み込み中...</div>;
+  if (authLoading) return <div className="pt-40 text-center font-bold text-blue-600 animate-pulse">読み込み中...</div>;
 
   return (
-    <div className="pt-32 pb-20 px-4 max-w-2xl mx-auto font-[family-name:var(--font-oswald)]">
-      <div className="flex justify-between items-end mb-8 border-l-8 border-orange-600 pl-6">
+    <div className="pt-32 pb-20 px-4 max-w-2xl mx-auto font-sans text-gray-800">
+      <div className="flex justify-between items-end mb-8 border-b border-gray-100 pb-4">
         <div>
-          <h1 className="text-4xl font-black italic uppercase tracking-tighter">ニュース作成</h1>
+          <h1 className="text-3xl font-bold text-gray-900">ニュース作成</h1>
           <p className="text-sm text-gray-500 mt-2">新しいニュース記事を作成して公開します</p>
         </div>
-        <Link href="/admin/dashboard" className="text-gray-400 hover:text-black font-bold text-sm">← 戻る</Link>
+        <Link href="/admin/dashboard" className="text-gray-500 hover:text-gray-900 font-bold text-sm">←戻る</Link>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-3xl border border-gray-100 shadow-2xl">
+      <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
         <div>
-          <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">タイトル</label>
-          <input 
-            type="text" 
-            value={title} 
-            onChange={(e) => setTitle(e.target.value)} 
-            className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none font-sans" 
+          <label className="block text-xs font-bold text-gray-500 uppercase mb-2">タイトル</label>
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full p-4 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none font-sans transition-all"
             placeholder="記事のタイトルを入力"
             required
           />
         </div>
-        
+
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">カテゴリ</label>
-            <select 
-              value={category} 
-              onChange={(e) => setCategory(e.target.value)} 
-              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none font-sans"
+            <label className="block text-xs font-bold text-gray-500 uppercase mb-2">カテゴリ</label>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="w-full p-4 bg-gray-50 border border-gray-300 rounded-lg outline-none font-sans focus:ring-2 focus:ring-blue-500"
             >
               <option value="INFO">お知らせ</option>
               <option value="EVENT">イベント</option>
@@ -103,43 +103,43 @@ export default function AdminNewsPage() {
             </select>
           </div>
           <div>
-            <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">日付</label>
-            <input 
-              type="date" 
-              value={date} 
-              onChange={(e) => setDate(e.target.value)} 
-              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none font-sans" 
+            <label className="block text-xs font-bold text-gray-500 uppercase mb-2">日付</label>
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="w-full p-4 bg-gray-50 border border-gray-300 rounded-lg outline-none font-sans focus:ring-2 focus:ring-blue-500"
             />
           </div>
         </div>
-        
+
         <div>
-          <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">メイン画像（任意）</label>
-          <input 
-            type="file" 
-            accept="image/*" 
-            onChange={(e) => setImage(e.target.files?.[0] || null)} 
-            className="w-full text-sm text-gray-500 file:mr-4 file:py-3 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-black file:bg-black file:text-white hover:file:bg-orange-600 file:transition-all" 
+          <label className="block text-xs font-bold text-gray-500 uppercase mb-2">メイン画像（任意）</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => setImage(e.target.files?.[0] || null)}
+            className="w-full text-sm text-gray-500 file:mr-4 file:py-3 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 file:transition-all cursor-pointer"
           />
-          <p className="text-xs text-gray-400 mt-1">推奨サイズ: 1200x630px</p>
+          <p className="text-xs text-gray-400 mt-2">推奨サイズ: 1200x630px</p>
         </div>
-        
+
         <div>
-          <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">本文</label>
+          <label className="block text-xs font-bold text-gray-500 uppercase mb-2">本文</label>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            className="w-full min-h-[300px] p-4 bg-gray-50 border border-gray-100 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none font-sans resize-y"
+            className="w-full min-h-[300px] p-4 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none font-sans resize-y"
             placeholder="記事の内容を入力してください..."
             required
           />
-          <p className="text-xs text-gray-400 mt-1">改行は自動的に反映されます</p>
+          <p className="text-xs text-gray-400 mt-2">改行は自動的に反映されます</p>
         </div>
-        
-        <button 
-          type="submit" 
-          disabled={loading} 
-          className={`w-full py-5 rounded-xl font-black italic uppercase tracking-widest text-white transition-all ${loading ? "bg-gray-400" : "bg-orange-600 hover:bg-black shadow-xl shadow-orange-200"}`}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className={`w-full py-4 rounded-lg font-bold text-lg text-white transition-all shadow-md ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700 hover:shadow-lg transform active:scale-95"}`}
         >
           {loading ? "投稿中..." : "記事を公開する"}
         </button>

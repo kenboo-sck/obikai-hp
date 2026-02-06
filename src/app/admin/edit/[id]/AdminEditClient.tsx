@@ -147,35 +147,35 @@ export default function AdminEditClient() {
         }
     };
 
-    if (!isMounted || authLoading) return <div className="pt-40 text-center font-black italic">LOADING...</div>;
+    if (!isMounted || authLoading) return <div className="pt-40 text-center font-bold text-blue-600 animate-pulse">LOADING...</div>;
 
     return (
-        <div className="pt-32 pb-20 px-4 max-w-[1200px] mx-auto font-[family-name:var(--font-oswald)]">
-            <div className="flex justify-between items-end mb-8 border-l-8 border-orange-600 pl-6">
-                <h1 className="text-4xl font-black italic uppercase tracking-tighter">記事編集</h1>
-                <Link href="/admin/dashboard" className="text-gray-400 hover:text-black font-bold text-sm italic uppercase">← 戻る</Link>
+        <div className="pt-32 pb-20 px-4 max-w-[1200px] mx-auto font-sans text-gray-800">
+            <div className="flex justify-between items-end mb-8 border-b border-gray-100 pb-4">
+                <h1 className="text-3xl font-bold text-gray-900">記事編集</h1>
+                <Link href="/admin/dashboard" className="text-gray-500 hover:text-gray-900 font-bold text-sm">←戻る</Link>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-3xl border border-gray-100 shadow-2xl">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
                 <div>
-                    <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">タイトル</label>
+                    <label className="block text-xs font-bold text-gray-500 uppercase mb-2">タイトル</label>
                     <input
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none font-sans"
+                        className="w-full p-4 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none font-sans transition-all"
                         placeholder="記事のタイトルを入力"
                         required
                     />
                 </div>
 
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                        <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">カテゴリ</label>
+                        <label className="block text-xs font-bold text-gray-500 uppercase mb-2">カテゴリ</label>
                         <select
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
-                            className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none font-sans"
+                            className="w-full p-4 bg-gray-50 border border-gray-300 rounded-lg outline-none font-sans focus:ring-2 focus:ring-blue-500"
                         >
                             <option value="INFO">お知らせ</option>
                             <option value="EVENT">イベント</option>
@@ -184,32 +184,32 @@ export default function AdminEditClient() {
                         </select>
                     </div>
                     <div>
-                        <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">ステータス</label>
+                        <label className="block text-xs font-bold text-gray-500 uppercase mb-2">ステータス</label>
                         <select
                             value={status}
                             onChange={(e) => setStatus(e.target.value)}
-                            className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none font-sans"
+                            className="w-full p-4 bg-gray-50 border border-gray-300 rounded-lg outline-none font-sans focus:ring-2 focus:ring-blue-500"
                         >
                             <option value="published">公開</option>
                             <option value="draft">下書き</option>
                         </select>
                     </div>
                     <div>
-                        <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">日付</label>
+                        <label className="block text-xs font-bold text-gray-500 uppercase mb-2">日付</label>
                         <input
                             type="date"
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
-                            className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none font-sans"
+                            className="w-full p-4 bg-gray-50 border border-gray-300 rounded-lg outline-none font-sans focus:ring-2 focus:ring-blue-500"
                             required
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">メイン画像</label>
+                    <label className="block text-xs font-bold text-gray-500 uppercase mb-2">メイン画像</label>
                     {currentImage && (
-                        <div className="mb-4 relative w-40 h-24 rounded-xl overflow-hidden bg-gray-100">
+                        <div className="mb-4 relative w-40 h-24 rounded-lg overflow-hidden bg-gray-100 border border-gray-200">
                             <Image
                                 src={currentImage}
                                 alt="Current"
@@ -223,13 +223,13 @@ export default function AdminEditClient() {
                         type="file"
                         accept="image/*"
                         onChange={(e) => setNewImage(e.target.files?.[0] || null)}
-                        className="w-full text-sm text-gray-500 file:mr-4 file:py-3 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-black file:bg-black file:text-white hover:file:bg-orange-600 file:transition-all"
+                        className="w-full text-sm text-gray-500 file:mr-4 file:py-3 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 file:transition-all cursor-pointer"
                     />
-                    <p className="text-xs text-gray-400 mt-1">※新しい画像を選択すると上書きされます</p>
+                    <p className="text-xs text-gray-400 mt-2">※新しい画像を選択すると上書きされます</p>
                 </div>
 
                 <div>
-                    <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">本文</label>
+                    <label className="block text-xs font-bold text-gray-500 uppercase mb-2">本文</label>
                     {isMounted && (
                         <TiptapEditor
                             content={content}
@@ -239,11 +239,11 @@ export default function AdminEditClient() {
                     )}
                 </div>
 
-                <div className="pt-4">
+                <div className="pt-6">
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`w-full py-5 rounded-xl font-black italic uppercase tracking-widest text-white transition-all ${loading ? "bg-gray-400" : "bg-orange-600 hover:bg-black shadow-xl shadow-orange-200"}`}
+                        className={`w-full py-4 rounded-lg font-bold text-lg text-white transition-all shadow-md ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700 hover:shadow-lg transform active:scale-95"}`}
                     >
                         {loading ? "更新中..." : "記事を更新する"}
                     </button>

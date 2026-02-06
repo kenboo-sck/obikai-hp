@@ -3,7 +3,7 @@ import ClassContent from './ClassContent';
 
 export const metadata: Metadata = {
   title: 'クラス紹介',
-  description: '大阪本町でブラジリアン柔術・キックボクシング・MMA・キッズクラスを開講。初心者から競技者まで、レベル別クラスで確実に上達。まずは無料体験へ。',
+  description: '新潟県新発田市の空手道場「実戦空手道 帯会」のクラス紹介。キッズクラス、一般向けクラス、スパーリング重視の実践クラスなど、目的や年齢に合わせたクラスを用意しています。',
 };
 
 export default function ClassPage() {

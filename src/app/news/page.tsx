@@ -3,7 +3,7 @@ import NewsListContent from './NewsListContent';
 
 export const metadata: Metadata = {
   title: 'ニュース',
-  description: '大阪本町ALMA FIGHT GYMの最新ニュース。イベント情報・キャンペーン・試合結果・新クラス開講など、ジムの最新情報をお届けします。',
+  description: '実戦空手道 帯会の最新ニュース。大会結果、イベント情報、休館日のお知らせなどを発信しています。',
 };
 
 export default function NewsPage() {
