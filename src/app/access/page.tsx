@@ -80,12 +80,12 @@ export default function AccessPage() {
           </h2>
           <p className="text-gray-600 font-medium">見学・体験は随時受け付けております。お気軽にお越しください。</p>
         </div>
-        <a
-          href="#"
+        <Link
+          href="/contact"
           className="inline-block bg-orange-500 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-orange-600 transition-all hover:-translate-y-1"
         >
           体験・見学を予約する →
-        </a>
+        </Link>
       </section>
     </div>
   );

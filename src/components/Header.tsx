@@ -52,12 +52,12 @@ export default function Header() {
             </Link>
           ))}
 
-          <a
-            href="#"
+          <Link
+            href="/contact"
             className="ml-4 bg-orange-400 text-white px-6 py-3 text-sm font-bold rounded-full hover:bg-orange-500 transition-all duration-300 shadow-md"
           >
             体験予約
-          </a>
+          </Link>
         </nav>
 
         {/* ハンバーガーボタン (Mobile) */}
@@ -94,13 +94,13 @@ export default function Header() {
           </div>
 
           <div className={`mt-12 transition-all duration-500 delay-300 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <a
-              href="#"
+            <Link
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="block w-full bg-orange-400 text-white text-center py-4 rounded-full font-bold text-lg shadow-lg shadow-orange-900/20"
             >
               体験予約
-            </a>
+            </Link>
           </div>
         </div>
       </div>

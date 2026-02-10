@@ -18,7 +18,7 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/stepjump_tour/', color: 'hover:text-pink-500' }, // Updated from conversation history
+  { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/obikai2018/?hl=ja', color: 'hover:text-pink-500' },
   { name: 'X', icon: FaXTwitter, href: 'https://x.com/afg_osaka', color: 'hover:text-white' }, // TODO: Confirm X link
 ];
 
@@ -59,12 +59,12 @@ export default function Footer() {
               礼節を重んじ、強く優しい心を育む。<br />
               見学・体験、随時受付中です。
             </p>
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className="inline-block bg-white text-stone-900 px-8 py-3 font-bold text-sm rounded-full hover:bg-orange-50 hover:text-orange-600 transition-all shadow-md"
             >
               体験予約 →
-            </a>
+            </Link>
           </div>
 
           <div className="md:col-span-2">
@@ -174,23 +174,25 @@ export default function Footer() {
         </div>
       </div>
 
-      {showButton && (
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-orange-400 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all shadow-lg z-40 animate-fade-in"
-          aria-label="トップへ戻る"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
+      {
+        showButton && (
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-orange-400 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all shadow-lg z-40 animate-fade-in"
+            aria-label="トップへ戻る"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-          </svg>
-        </button>
-      )}
-    </footer>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+            </svg>
+          </button>
+        )
+      }
+    </footer >
   );
 }

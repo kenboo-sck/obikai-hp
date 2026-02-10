@@ -63,9 +63,9 @@ export default function HomeContent() {
                         礼節を学び、強く優しい心を育む「帯会」へようこそ。
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#" className="bg-orange-400 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-500 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-maru">
+                        <Link href="/contact" className="bg-orange-400 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-500 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-maru">
                             無料体験を予約する
-                        </a>
+                        </Link>
                         <Link href="/class" className="bg-white text-orange-500 border-2 border-orange-400 px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-50 transition-all font-maru">
                             クラス紹介を見る
                         </Link>
@@ -322,9 +322,9 @@ export default function HomeContent() {
                         空手やキックボクシングが初めての方でも安心してご参加いただけます。<br />
                         親子での体験も大歓迎です。お気軽にお申し込みください。
                     </p>
-                    <a href="#" className="inline-block bg-white text-orange-500 px-12 py-5 rounded-full font-bold text-lg shadow-xl hover:bg-orange-50 transition-all transform hover:-translate-y-1 font-maru">
+                    <Link href="/contact" className="inline-block bg-white text-orange-500 px-12 py-5 rounded-full font-bold text-lg shadow-xl hover:bg-orange-50 transition-all transform hover:-translate-y-1 font-maru">
                         体験予約はこちら
-                    </a>
+                    </Link>
                 </div>
             </section>
         </main>

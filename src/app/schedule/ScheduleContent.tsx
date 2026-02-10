@@ -358,12 +358,12 @@ export default function ScheduleContent() {
                             </div>
 
                             <div className="mt-8">
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/contact"
                                     className="block w-full bg-orange-500 text-white text-center py-4 font-bold rounded-xl hover:bg-orange-600 transition-colors shadow-lg shadow-orange-200"
                                 >
                                     無料体験を予約する
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

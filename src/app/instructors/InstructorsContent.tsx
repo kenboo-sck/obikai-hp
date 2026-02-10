@@ -81,12 +81,12 @@ export default function InstructorsContent() {
                         </div>
 
                         <div className="pt-6">
-                            <a
-                                href="#"
+                            <Link
+                                href="/contact"
                                 className="inline-block bg-orange-500 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-orange-600 transition-all hover:-translate-y-1"
                             >
                                 体験・見学を予約する →
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

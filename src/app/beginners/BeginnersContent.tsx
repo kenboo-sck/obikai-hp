@@ -231,12 +231,12 @@ export default function BeginnersContent() {
                             まずは一度、体験レッスンで道場の雰囲気を感じてみませんか？<br />
                             スタッフ一同、あなたのお越しを心よりお待ちしております。
                         </p>
-                        <a
-                            href="#"
+                        <Link
+                            href="/contact"
                             className="inline-block bg-white text-orange-500 px-12 py-5 font-bold text-xl hover:bg-orange-50 transition-all rounded-full shadow-lg"
                         >
                             体験レッスンを予約する
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

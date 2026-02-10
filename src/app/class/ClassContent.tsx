@@ -157,9 +157,9 @@ export default function ClassContent() {
                             <Link href="/schedule" className="bg-white text-orange-500 px-10 py-4 font-bold text-lg hover:bg-orange-50 transition-all rounded-full shadow-lg">
                                 スケジュールを確認
                             </Link>
-                            <a href="#" className="bg-orange-600 text-white px-10 py-4 font-bold text-lg hover:bg-orange-700 transition-all rounded-full shadow-lg border border-orange-400">
+                            <Link href="/contact" className="bg-orange-600 text-white px-10 py-4 font-bold text-lg hover:bg-orange-700 transition-all rounded-full shadow-lg border border-orange-400">
                                 キャンペーンを利用して体験
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

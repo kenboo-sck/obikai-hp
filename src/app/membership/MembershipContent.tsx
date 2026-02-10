@@ -57,9 +57,9 @@ export default function MembershipContent() {
                         </div>
 
                         <div className="text-left">
-                            <a href="#" className="inline-block bg-white text-orange-500 px-10 py-4 font-bold text-lg hover:bg-orange-50 transition-all rounded-full shadow-lg font-maru">
+                            <Link href="/contact" className="inline-block bg-white text-orange-500 px-10 py-4 font-bold text-lg hover:bg-orange-50 transition-all rounded-full shadow-lg font-maru">
                                 体験予約はこちら
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
