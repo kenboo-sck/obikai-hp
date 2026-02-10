@@ -176,7 +176,7 @@ export default function HomeContent() {
                                     <span className="text-gray-700 font-medium font-maru">道具レンタルあり（手ぶらでOK）</span>
                                 </li>
                             </ul>
-                            <Link href="/access" className="text-orange-500 font-bold hover:underline flex items-center gap-2 group font-maru">
+                            <Link href="/access" className="inline-flex items-center gap-2 bg-white border-2 border-orange-400 text-orange-500 px-8 py-3 rounded-full font-bold hover:bg-orange-50 transition-all shadow-md group font-maru">
                                 アクセス詳細を見る <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </Link>
                         </div>
@@ -192,7 +192,7 @@ export default function HomeContent() {
                             <h2 className="text-3xl font-bold text-gray-800 font-maru">お知らせ</h2>
                             <p className="text-orange-300 mt-2 text-xs font-bold tracking-widest uppercase">NEWS & TOPICS</p>
                         </div>
-                        <Link href="/news" className="text-orange-500 font-bold text-sm hover:underline hidden md:flex items-center gap-1 font-maru">
+                        <Link href="/news" className="hidden md:inline-flex items-center gap-1 bg-white border border-orange-400 text-orange-500 px-6 py-2 rounded-full font-bold text-sm hover:bg-orange-50 transition-all shadow-sm font-maru">
                             一覧を見る →
                         </Link>
                     </div>
@@ -256,52 +256,52 @@ export default function HomeContent() {
                         <p className="text-gray-600 mt-4 leading-relaxed mb-6 font-maru">
                             日々の稽古の成果を発揮し、多くの大会で入賞しています。
                         </p>
-                        <Link href="/results" className="inline-block text-orange-500 font-bold hover:underline group font-maru">
+                        <Link href="/results" className="inline-block bg-white border-2 border-orange-400 text-orange-500 px-8 py-3 rounded-full font-bold hover:bg-orange-50 transition-all shadow-md group font-maru">
                             大会結果一覧を見る <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
                         </Link>
                     </div>
 
-                    <div className="max-w-4xl mx-auto space-y-4">
+                    <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
                         {/* 結果リストアイテム (ダミーデータ) */}
-                        <div className="bg-white p-5 md:p-6 rounded-2xl border-l-8 border-orange-400 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 hover:shadow-md transition-shadow">
-                            <div>
-                                <div className="text-sm text-gray-400 font-bold mb-1">2025.11.23</div>
-                                <div className="text-lg font-bold text-gray-800 font-maru">第8回 リアルチャンピオンシップ決勝大会</div>
-                                <div className="text-gray-500 text-sm mt-1">小学4年生女子 30kg未満の部</div>
+                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
+                            <div className="mb-4">
+                                <span className="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">優勝</span>
                             </div>
-                            <div className="flex items-center gap-3 self-end md:self-center">
-                                <span className="bg-orange-100 text-orange-700 font-bold px-4 py-1 rounded-full text-sm border border-orange-200 shrink-0">
-                                    優勝
-                                </span>
-                                <span className="font-bold text-gray-800 whitespace-nowrap font-maru">山田 花子</span>
-                            </div>
-                        </div>
-
-                        <div className="bg-white p-5 md:p-6 rounded-2xl border-l-8 border-gray-300 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 hover:shadow-md transition-shadow">
-                            <div>
-                                <div className="text-sm text-gray-400 font-bold mb-1">2025.10.15</div>
-                                <div className="text-lg font-bold text-gray-800 font-maru">第10回 大阪府空手道選手権大会</div>
-                                <div className="text-gray-500 text-sm mt-1">小学6年生男子の部</div>
-                            </div>
-                            <div className="flex items-center gap-3 self-end md:self-center">
-                                <span className="bg-gray-100 text-gray-600 font-bold px-4 py-1 rounded-full text-sm border border-gray-200 shrink-0">
-                                    準優勝
-                                </span>
-                                <span className="font-bold text-gray-800 whitespace-nowrap font-maru">田中 太郎</span>
+                            <h3 className="text-xl font-bold text-gray-800 mb-2 font-maru leading-snug">
+                                第8回 リアルチャンピオンシップ決勝大会
+                            </h3>
+                            <p className="text-gray-500 text-sm mb-4">小学4年生女子 30kg未満の部</p>
+                            <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+                                <span className="text-sm font-bold text-gray-700 font-maru">山田 花子</span>
+                                <span className="text-xs text-gray-400 font-bold">2025.11.23</span>
                             </div>
                         </div>
 
-                        <div className="bg-white p-5 md:p-6 rounded-2xl border-l-8 border-orange-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 hover:shadow-md transition-shadow">
-                            <div>
-                                <div className="text-sm text-gray-400 font-bold mb-1">2025.09.20</div>
-                                <div className="text-lg font-bold text-gray-800 font-maru">関西ジュニア空手道選手権</div>
-                                <div className="text-gray-500 text-sm mt-1">中学生男子 軽量級</div>
+                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
+                            <div className="mb-4">
+                                <span className="bg-gray-500 text-white text-xs font-bold px-3 py-1 rounded-full">準優勝</span>
                             </div>
-                            <div className="flex items-center gap-3 self-end md:self-center">
-                                <span className="bg-orange-50 text-orange-600 font-bold px-4 py-1 rounded-full text-sm border border-orange-100 shrink-0">
-                                    第3位
-                                </span>
-                                <span className="font-bold text-gray-800 whitespace-nowrap font-maru">佐藤 健太</span>
+                            <h3 className="text-xl font-bold text-gray-800 mb-2 font-maru leading-snug">
+                                第10回 大阪府空手道選手権大会
+                            </h3>
+                            <p className="text-gray-500 text-sm mb-4">小学6年生男子の部</p>
+                            <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+                                <span className="text-sm font-bold text-gray-700 font-maru">田中 太郎</span>
+                                <span className="text-xs text-gray-400 font-bold">2025.10.15</span>
+                            </div>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
+                            <div className="mb-4">
+                                <span className="bg-orange-400 text-white text-xs font-bold px-3 py-1 rounded-full">第3位</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-2 font-maru leading-snug">
+                                関西ジュニア空手道選手権
+                            </h3>
+                            <p className="text-gray-500 text-sm mb-4">中学生男子 軽量級</p>
+                            <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+                                <span className="text-sm font-bold text-gray-700 font-maru">佐藤 健太</span>
+                                <span className="text-xs text-gray-400 font-bold">2025.09.20</span>
                             </div>
                         </div>
                     </div>
