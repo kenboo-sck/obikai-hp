@@ -121,18 +121,50 @@ export default function HomeContent() {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        {features.map((f, i) => (
-                            <div key={i} className="bg-white p-8 rounded-3xl shadow-lg border border-orange-100 hover:shadow-xl transition-shadow text-center group">
-                                <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-500 text-2xl font-bold group-hover:scale-110 transition-transform">
-                                    0{i + 1}
+                        {/* Card 1: Parent & Child */}
+                        <div className="relative bg-gradient-to-br from-orange-50 to-pink-50 p-10 rounded-3xl shadow-xl border-2 border-orange-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center group overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-200/20 rounded-full -mr-16 -mt-16"></div>
+                            <div className="relative z-10">
+                                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-lg group-hover:scale-110 transition-transform">
+                                    01
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-800 mb-2 font-maru">{f.title}</h3>
-                                <p className="text-orange-400 font-bold text-sm mb-4">{f.subtitle}</p>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-2 font-maru">Parent & Child</h3>
+                                <p className="text-orange-500 font-bold text-sm mb-4">親子で一緒に</p>
                                 <p className="text-gray-600 leading-relaxed text-sm font-maru">
-                                    {f.desc}
+                                    親子で一緒に汗を流し、共通の話題で絆を深めることができます。
                                 </p>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Card 2: Kid's Growth */}
+                        <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 p-10 rounded-3xl shadow-xl border-2 border-blue-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center group overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200/20 rounded-full -mr-16 -mt-16"></div>
+                            <div className="relative z-10">
+                                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-lg group-hover:scale-110 transition-transform">
+                                    02
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-2 font-maru">Kid's Growth</h3>
+                                <p className="text-blue-500 font-bold text-sm mb-4">子供の成長</p>
+                                <p className="text-gray-600 leading-relaxed text-sm font-maru">
+                                    礼儀作法から始まり、強い体と心の強さを育みます。
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Card 3: Beginner Friendly */}
+                        <div className="relative bg-gradient-to-br from-green-50 to-emerald-50 p-10 rounded-3xl shadow-xl border-2 border-green-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center group overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-green-200/20 rounded-full -mr-16 -mt-16"></div>
+                            <div className="relative z-10">
+                                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-lg group-hover:scale-110 transition-transform">
+                                    03
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-2 font-maru">Beginner Friendly</h3>
+                                <p className="text-green-500 font-bold text-sm mb-4">初心者歓迎</p>
+                                <p className="text-gray-600 leading-relaxed text-sm font-maru">
+                                    運動経験がなくても大丈夫。基本から丁寧に指導します。
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -143,7 +175,7 @@ export default function HomeContent() {
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="md:w-1/2 w-full">
                             {/* 画像プレースホルダー */}
-                            <div className="bg-white rounded-3xl w-full aspect-video flex items-center justify-center overflow-hidden shadow-xl border-4 border-white relative">
+                            <div className="bg-white rounded-3xl w-full aspect-video flex items-center justify-center overflow-hidden shadow-xl relative">
                                 <Image
                                     src="/o-1006.jpg"
                                     alt="Activities"

@@ -91,8 +91,9 @@ export default function MembershipContent() {
                                 <p className="text-gray-400 text-xs mt-1">年中〜年長</p>
                             </div>
                             <div className="flex items-baseline gap-1 mb-4">
-                                <span className="text-3xl font-bold text-gray-900">¥2,500</span>
-                                <span className="text-gray-400 text-[10px] font-bold">/ month</span>
+                                <span className="text-3xl font-bold text-gray-900">2,500</span>
+                                <span className="text-lg font-bold text-gray-900">円</span>
+                                <span className="text-gray-400 text-sm font-bold">/ 月</span>
                             </div>
                             <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
                                 <li className="flex items-center gap-2"><span className="text-yellow-500">✓</span> 礼儀作法の習得</li>
@@ -109,8 +110,9 @@ export default function MembershipContent() {
                                 <p className="text-gray-400 text-xs mt-1">1年生〜6年生</p>
                             </div>
                             <div className="flex items-baseline gap-1 mb-4">
-                                <span className="text-3xl font-bold text-gray-900">¥3,000</span>
-                                <span className="text-gray-400 text-[10px] font-bold">/ month</span>
+                                <span className="text-3xl font-bold text-gray-900">3,000</span>
+                                <span className="text-lg font-bold text-gray-900">円</span>
+                                <span className="text-gray-400 text-sm font-bold">/ 月</span>
                             </div>
                             <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
                                 <li className="flex items-center gap-2"><span className="text-green-500">✓</span> 基礎体力の向上</li>
@@ -127,8 +129,9 @@ export default function MembershipContent() {
                                 <p className="text-gray-400 text-xs mt-1">中学1年〜高校3年</p>
                             </div>
                             <div className="flex items-baseline gap-1 mb-4">
-                                <span className="text-3xl font-bold text-gray-900">¥3,500</span>
-                                <span className="text-gray-400 text-[10px] font-bold">/ month</span>
+                                <span className="text-3xl font-bold text-gray-900">3,500</span>
+                                <span className="text-lg font-bold text-gray-900">円</span>
+                                <span className="text-gray-400 text-sm font-bold">/ 月</span>
                             </div>
                             <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
                                 <li className="flex items-center gap-2"><span className="text-orange-500">✓</span> 実戦技術の習得</li>
@@ -145,8 +148,9 @@ export default function MembershipContent() {
                                 <p className="text-gray-400 text-xs mt-1">一般・シニア</p>
                             </div>
                             <div className="flex items-baseline gap-1 mb-4">
-                                <span className="text-3xl font-bold text-gray-900">¥5,000</span>
-                                <span className="text-gray-400 text-[10px] font-bold">/ month</span>
+                                <span className="text-3xl font-bold text-gray-900">5,000</span>
+                                <span className="text-lg font-bold text-gray-900">円</span>
+                                <span className="text-gray-400 text-sm font-bold">/ 月</span>
                             </div>
                             <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
                                 <li className="flex items-center gap-2"><span className="text-orange-500">✓</span> 健康維持・ストレス発散</li>
@@ -170,6 +174,12 @@ export default function MembershipContent() {
                         </div>
                     </div>
 
+                    <div className="text-center mb-16">
+                        <Link href="/schedule" className="inline-block bg-orange-500 text-white px-12 py-4 font-bold text-lg hover:bg-orange-600 transition-all rounded-full shadow-md hover:shadow-lg hover:-translate-y-1">
+                            スケジュールを見る
+                        </Link>
+                    </div>
+
                 </div>
             </section>
 
@@ -180,26 +190,26 @@ export default function MembershipContent() {
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">HOW TO JOIN</h2>
                         <p className="text-orange-500 font-bold mb-6 tracking-widest">ご入会について</p>
                         <p className="text-gray-600 leading-relaxed mb-8">
-                            ご入会はオンラインシステム上で完結いたします。
-                            スマートフォンやPCから簡単にお手続きいただけます。
-                            見学・無料体験も随時受け付けておりますので、まずはお気軽にお越しください。
+                            ご入会の手続きは体験レッスン時または稽古時に承っております。
+                            月謝のお支払いは現金または銀行振込となります。
+                            見学・無料体験も随時受け付けておりますので、まずはお気軽にお問い合わせください。
                         </p>
                     </div>
                     <div className="bg-white p-10 shadow-lg border border-gray-100 rounded-xl">
-                        <h3 className="text-xl font-bold text-gray-900 mb-8 border-b-2 border-orange-500 pb-2 inline-block">推奨する持ち物・手続き</h3>
+                        <h3 className="text-xl font-bold text-gray-900 mb-8 border-b-2 border-orange-500 pb-2 inline-block">ご入会時に必要なもの</h3>
                         <ul className="space-y-6 text-gray-700">
                             <li className="flex items-start gap-4">
                                 <span className="w-6 h-6 bg-orange-400 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold rounded-full">1</span>
                                 <div>
-                                    <p className="font-bold">スマートフォン</p>
-                                    <p className="text-sm text-gray-500">入会等の手続きはWEB上で行います。</p>
+                                    <p className="font-bold">初回月謝</p>
+                                    <p className="text-sm text-gray-500">現金でのお支払いとなります。</p>
                                 </div>
                             </li>
                             <li className="flex items-start gap-4">
                                 <span className="w-6 h-6 bg-orange-400 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold rounded-full">2</span>
                                 <div>
-                                    <p className="font-bold">クレジットカード</p>
-                                    <p className="text-sm text-gray-500">会費のお支払いに使用します。</p>
+                                    <p className="font-bold">印鑑</p>
+                                    <p className="text-sm text-gray-500">入会申込書への押印に使用します。</p>
                                 </div>
                             </li>
                             <li className="flex items-start gap-4">
