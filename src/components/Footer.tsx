@@ -99,14 +99,14 @@ export default function Footer() {
               <div>
                 <p className="text-xs text-stone-400 uppercase tracking-wider mb-1 font-bold">Address</p>
                 <p className="text-white leading-relaxed">
-                  〒957-0053<br />
-                  新潟県新発田市東新町2-5-4-9
+                  〒957-0015<br />
+                  新潟県新発田市東新町5-4-9
                 </p>
               </div>
               <div>
                 <p className="text-xs text-stone-400 uppercase tracking-wider mb-1 font-bold">Phone</p>
-                <a href="tel:0254429040" className="text-white hover:text-orange-300 transition-colors font-bold text-lg">
-                  0254-42-9040
+                <a href="tel:09010393392" className="text-white hover:text-orange-300 transition-colors font-bold text-lg">
+                  090-1039-3392
                 </a>
               </div>
               <div>
@@ -128,8 +128,8 @@ export default function Footer() {
             </h3>
             <div className="space-y-2 text-xs text-stone-300">
               <p className="font-bold text-white">代表：田坂 貴満</p>
-              <p>〒957-0053 新潟県新発田市東新町2-5-4-9</p>
-              <p>TEL : 0254-42-9040</p>
+              <p>〒957-0015 新潟県新発田市東新町5-4-9</p>
+              <p>TEL : 090-1039-3392</p>
             </div>
           </div>
 

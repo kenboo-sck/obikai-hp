@@ -17,7 +17,7 @@ export default function BeginnersContent() {
 
                 <div className="relative aspect-[4/5] md:aspect-[21/9] w-full overflow-hidden shadow-lg rounded-xl mb-12 bg-gray-100">
                     <Image
-                        src="/o-1007.jpg"
+                        src="/IMG_0566.png"
                         alt="Beginners Welcome"
                         fill
                         className="object-cover"

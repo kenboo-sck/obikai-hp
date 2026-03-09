@@ -21,17 +21,13 @@ export default function InstructorsContent() {
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                     {/* 画像エリア */}
                     <div className="w-full md:w-1/2 relative aspect-[3/4] overflow-hidden shadow-xl bg-gray-100 rounded-lg">
-                        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-400 font-bold">
-                            INSTRUCTOR IMAGE
-                        </div>
-                        {/* 
                         <Image
-                            src="/instructor_placeholder.jpg"
-                            alt="Instructor"
+                            src="/is-01.png"
+                            alt="代表師範 田坂 貴満"
                             fill
                             className="object-cover"
+                            priority
                         />
-                        */}
                     </div>
 
                     {/* プロフィールエリア */}
@@ -92,6 +88,37 @@ export default function InstructorsContent() {
                 </div>
             </section>
 
+            {/* 追加インストラクターセクション */}
+            <section className="max-w-7xl mx-auto px-6 mt-20">
+                <div className="border-l-8 border-orange-500 pl-6 mb-12">
+                    <h2 className="text-3xl font-bold text-gray-900 leading-none uppercase">
+                        OTHER INSTRUCTORS
+                    </h2>
+                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">指導員紹介</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    {[
+                        { name: '狩野 修至', title: '帯会 師範代', img: '/is-02.png' },
+                        { name: '小林 誠', title: '新潟県県議 帯会顧問', img: '/is-04.png' },
+                        { name: '石井 鋼栄', title: '帯会 本部長', img: '/is-03.png' }
+                    ].map((instructor, index) => (
+                        <div key={index} className="group cursor-pointer">
+                            <div className="relative aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden shadow-md mb-6 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2">
+                                <Image
+                                    src={instructor.img}
+                                    alt={instructor.name}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-1">{instructor.name}</h3>
+                            <p className="text-orange-500 text-sm font-bold">{instructor.title}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
             {/* ギャラリー */}
             <section className="max-w-7xl mx-auto px-6 mt-24">
                 <div className="border-l-8 border-orange-500 pl-6 mb-12">
@@ -102,14 +129,29 @@ export default function InstructorsContent() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden shadow-md flex items-center justify-center text-gray-400 font-bold">
-                        IMAGE 01
+                    <div className="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden shadow-md">
+                        <Image
+                            src="/IMG_1425.png"
+                            alt="活動風景 01"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
                     </div>
-                    <div className="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden shadow-md flex items-center justify-center text-gray-400 font-bold">
-                        IMAGE 02
+                    <div className="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden shadow-md">
+                        <Image
+                            src="/IMG_0677.png"
+                            alt="活動風景 02"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
                     </div>
-                    <div className="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden shadow-md flex items-center justify-center text-gray-400 font-bold">
-                        IMAGE 03
+                    <div className="relative aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden shadow-md">
+                        <Image
+                            src="/IMG_1431.png"
+                            alt="活動風景 03"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
                     </div>
                 </div>
             </section>

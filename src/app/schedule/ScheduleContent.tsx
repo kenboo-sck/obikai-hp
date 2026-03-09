@@ -36,6 +36,17 @@ export default function ScheduleContent() {
     useEffect(() => {
         const fetchSchedules = async () => {
             try {
+                // 初期表示用・兼バックアップ用データ（画像に合わせた内容）
+                const defaultSchedules: ScheduleItem[] = [
+                    { id: 'm1', dayOfWeek: 0, startTime: '19:00', endTime: '20:30', title: '空手クラス', location: '川東教室 体育館', target: '小学生から一般', color: '#3b82f6' },
+                    { id: 't1', dayOfWeek: 1, startTime: '19:00', endTime: '20:30', title: 'キックボクシングクラス', location: '東豊防災センター', target: '小学生から一般', color: '#eab308' },
+                    { id: 'th1', dayOfWeek: 3, startTime: '18:30', endTime: '19:30', title: '空手クラス', location: '七葉教室 七葉コミュニティセンター 多目的ホール', target: '初心者', color: '#ef4444' },
+                    { id: 'th2', dayOfWeek: 3, startTime: '19:00', endTime: '20:00', title: '空手クラス', location: '七葉教室（七葉コミュニティセンター 多目的ホール）', target: '小学生から一般', color: '#3b82f6' },
+                    { id: 'f1', dayOfWeek: 4, startTime: '19:00', endTime: '20:00', title: '空手クラス', location: '五十公野コミュニティセンター 多目的ホール', target: '小学生から一般', color: '#3b82f6' },
+                    { id: 'f2', dayOfWeek: 4, startTime: '20:00', endTime: '21:00', title: 'キックボクシングクラス', location: '五十公野コミュニティセンター 多目的ホール', target: '小学生から一般', color: '#eab308' },
+                    { id: 's1', dayOfWeek: 5, startTime: '09:00', endTime: '12:00', title: 'キックボクシングクラス', location: '川東中学校', target: '小学生から一般', color: '#eab308' }
+                ];
+
                 const q = query(collection(db, "schedules"), orderBy("startTime", "asc"));
                 const querySnapshot = await getDocs(q);
                 const data = querySnapshot.docs.map(doc => ({
@@ -43,25 +54,28 @@ export default function ScheduleContent() {
                     ...doc.data()
                 })) as any[];
 
-                // Map to ScheduleItem type
-                const formattedData: ScheduleItem[] = data.map(item => ({
-                    id: item.id,
-                    dayOfWeek: Number(item.dayOfWeek),
-                    startTime: item.startTime,
-                    endTime: item.endTime,
-                    title: item.title,
-                    location: item.location || "",
-                    target: item.target,
-                    color: item.color || "#fb923c",
-                    coach: item.coach
-                }));
-
-                // Sort by day of week just in case
-                formattedData.sort((a, b) => a.dayOfWeek - b.dayOfWeek);
-
-                setSchedules(formattedData);
+                if (data.length > 0) {
+                    // Firestoreにデータがある場合はそれを使用
+                    const formattedData: ScheduleItem[] = data.map(item => ({
+                        id: item.id,
+                        dayOfWeek: Number(item.dayOfWeek),
+                        startTime: item.startTime,
+                        endTime: item.endTime,
+                        title: item.title,
+                        location: item.location || "",
+                        target: item.target,
+                        color: item.color || (item.title.includes('キック') ? '#eab308' : '#3b82f6'),
+                        coach: item.coach
+                    }));
+                    formattedData.sort((a, b) => a.dayOfWeek - b.dayOfWeek);
+                    setSchedules(formattedData);
+                } else {
+                    // データがない場合は初期データを使用
+                    setSchedules(defaultSchedules);
+                }
             } catch (error) {
                 console.error("Error fetching schedules:", error);
+                // エラー時もとりあえず初期表示は行う
             }
         };
 
@@ -71,36 +85,28 @@ export default function ScheduleContent() {
     // クラス情報（詳細ポップアップ用）
     const classInfo: ClassInfoItem[] = [
         {
-            id: 'class-general',
-            title: '全体稽古クラス',
-            description: '基本的な動作から応用まで、幅広い年齢層で一緒に汗を流すクラスです。',
-            recommended: ['運動不足を解消したい', '親子で参加したい', '基本から学びたい'],
+            id: 'class-karate',
+            title: '空手クラス',
+            description: '基本的な動作から応用まで、幅広い年齢層で一緒に汗を流すクラスです。初心者から経験者まで、レベルに合わせた指導を行います。',
+            recommended: ['武道を一から学びたい', '親子で参加したい', '礼儀作法を身につけたい'],
             color: '#fb923c',
-            image: '/o-1003.jpg'
+            image: '/IMG_0663.png'
         },
         {
-            id: 'class-kids',
-            title: 'キッズクラス',
-            description: '年中〜小学1年生を対象とした、楽しみながら礼儀と基本を学ぶクラスです。あそび要素も取り入れながら、空手を好きになってもらうことを第一に考えています。',
-            recommended: ['初めての習い事として', '礼儀作法を身につけたい', '楽しく体を動かしたい'],
-            color: '#ef4444',
-            image: '/o-001.jpg'
-        },
-        {
-            id: 'class-basic',
-            title: '基本稽古クラス',
-            description: '小学2年生から一般の方を対象としたクラスです。基本技の習得を中心に、体力作りや精神修養を行います。',
-            recommended: ['基礎をしっかり固めたい', '強くなりたい', '集中力を高めたい'],
-            color: '#f97316',
-            image: '/o-1004.jpg'
-        },
-        {
-            id: 'class-sparring',
-            title: 'スパーリング＆グローブ空手クラス',
-            description: '実戦形式の練習を中心に行うクラスです。グローブ空手（キックボクシング要素）も取り入れ、より実戦的な技術を磨きます。',
-            recommended: ['試合に出たい', 'もっと強くなりたい', '実戦技術を学びたい'],
+            id: 'class-kickboxing',
+            title: 'キックボクシングクラス',
+            description: 'グローブを着用し、実戦的な技術を学ぶクラスです。ダイエットや体力作りから、本格的な技術習得まで幅広く対応しています。',
+            recommended: ['楽しく体を動かしたい', 'ストレス発散したい', '実戦技術を学びたい'],
             color: '#c2410c',
             image: '/o-1005.jpg'
+        },
+        {
+            id: 'class-kids-basic',
+            title: 'キッズ・初心者クラス',
+            description: '年中〜小学生や、初心者の方を対象としたクラスです。楽しみながら基本を学び、体を動かす楽しさを知ってもらうことを目標にしています。',
+            recommended: ['初めての習い事として', '運動能力を向上させたい', '集中力を養いたい'],
+            color: '#ef4444',
+            image: '/IMG_1423.png'
         }
     ];
 
@@ -234,7 +240,7 @@ export default function ScheduleContent() {
                     <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">クラス詳細</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {classInfo.map((cls) => (
                         <div
                             key={cls.id}
@@ -414,6 +420,41 @@ export default function ScheduleContent() {
                         </div>
                     </div>
 
+                    {/* 東豊防災センター */}
+                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
+                        <div className="relative h-48 w-full bg-gray-200">
+                            <iframe
+                                title="Map: 東豊防災センター"
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                scrolling="no"
+                                marginHeight={0}
+                                marginWidth={0}
+                                src="https://maps.google.com/maps?q=新潟県新発田市豊町4丁目8-4&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                className="absolute inset-0"
+                            ></iframe>
+                        </div>
+                        <div className="p-6 flex-1 flex flex-col">
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">東豊防災センター</h3>
+                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 東豊防災センター
+                            </p>
+                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
+                                〒957-0016<br />
+                                新潟県新発田市豊町4丁目8-4
+                            </p>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市豊町4丁目8-4"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                            >
+                                Google Mapで開く
+                            </a>
+                        </div>
+                    </div>
+
                     {/* 七葉教室 */}
                     <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
                         <div className="relative h-48 w-full bg-gray-200">
@@ -475,6 +516,41 @@ export default function ScheduleContent() {
                             </p>
                             <a
                                 href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市五十公野4930番地1"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                            >
+                                Google Mapで開く
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* 川東中学校 */}
+                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
+                        <div className="relative h-48 w-full bg-gray-200">
+                            <iframe
+                                title="Map: 川東中学校"
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                scrolling="no"
+                                marginHeight={0}
+                                marginWidth={0}
+                                src="https://maps.google.com/maps?q=新潟県新発田市下羽津1566-1&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                className="absolute inset-0"
+                            ></iframe>
+                        </div>
+                        <div className="p-6 flex-1 flex flex-col">
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">川東中学校</h3>
+                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 川東中学校 体育館
+                            </p>
+                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
+                                〒957-0341<br />
+                                新潟県新発田市下羽津1566-1
+                            </p>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市下羽津1566-1"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
