@@ -19,7 +19,6 @@ const navItems = [
 
 const socialLinks = [
   { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/obikai2018/?hl=ja', color: 'hover:text-pink-500' },
-  { name: 'X', icon: FaXTwitter, href: 'https://x.com/afg_osaka', color: 'hover:text-white' }, // TODO: Confirm X link
 ];
 
 export default function Footer() {

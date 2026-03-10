@@ -1,0 +1,21 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+	modified:   src/app/HomeContent.tsx
+	modified:   src/app/access/page.tsx
+	modified:   src/app/results/ResultsContent.tsx
+	modified:   src/components/Footer.tsx
+	modified:   temp_restore/gym-site (untracked content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	log_output.txt
+	public/tk-2025.png
+	src/app/results/[id]/
+	status_output.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")

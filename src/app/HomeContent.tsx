@@ -294,47 +294,65 @@ export default function HomeContent() {
                     </div>
 
                     <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-                        {/* 結果リストアイテム (ダミーデータ) */}
-                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
+                        {/* 結果リストアイテム */}
+                        <div className="bg-white p-8 rounded-3xl shadow-lg border border-orange-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
                             <div className="mb-4">
-                                <span className="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">優勝</span>
+                                <span className="text-xs text-gray-400 font-bold flex items-center gap-1">
+                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    2025.10.15
+                                </span>
                             </div>
-                            <h3 className="text-xl font-bold text-gray-800 mb-2 font-maru leading-snug">
-                                第8回 リアルチャンピオンシップ決勝大会
+                            <h3 className="text-xl font-bold text-gray-800 mb-8 font-maru leading-snug flex-1">
+                                第9回帯会スパーリング大会
                             </h3>
-                            <p className="text-gray-500 text-sm mb-4">小学4年生女子 30kg未満の部</p>
-                            <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
-                                <span className="text-sm font-bold text-gray-700 font-maru">山田 花子</span>
-                                <span className="text-xs text-gray-400 font-bold">2025.11.23</span>
-                            </div>
+                            <Link
+                                href="/results/tourney-009"
+                                className="block w-full text-center bg-gray-50 hover:bg-orange-500 hover:text-white text-orange-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
+                            >
+                                詳細を見る
+                            </Link>
                         </div>
 
-                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
+                        <div className="bg-white p-8 rounded-3xl shadow-lg border border-orange-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
                             <div className="mb-4">
-                                <span className="bg-gray-500 text-white text-xs font-bold px-3 py-1 rounded-full">準優勝</span>
+                                <span className="text-xs text-gray-400 font-bold flex items-center gap-1">
+                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    2025.09.20
+                                </span>
                             </div>
-                            <h3 className="text-xl font-bold text-gray-800 mb-2 font-maru leading-snug">
-                                第10回 大阪府空手道選手権大会
+                            <h3 className="text-xl font-bold text-gray-800 mb-8 font-maru leading-snug flex-1">
+                                第8回帯会スパーリング大会
                             </h3>
-                            <p className="text-gray-500 text-sm mb-4">小学6年生男子の部</p>
-                            <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
-                                <span className="text-sm font-bold text-gray-700 font-maru">田中 太郎</span>
-                                <span className="text-xs text-gray-400 font-bold">2025.10.15</span>
-                            </div>
+                            <Link
+                                href="/results/tourney-008"
+                                className="block w-full text-center bg-gray-50 hover:bg-orange-500 hover:text-white text-orange-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
+                            >
+                                詳細を見る
+                            </Link>
                         </div>
 
-                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
+                        <div className="bg-white p-8 rounded-3xl shadow-lg border border-orange-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
                             <div className="mb-4">
-                                <span className="bg-orange-400 text-white text-xs font-bold px-3 py-1 rounded-full">第3位</span>
+                                <span className="text-xs text-gray-400 font-bold flex items-center gap-1">
+                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    2025.08.05
+                                </span>
                             </div>
-                            <h3 className="text-xl font-bold text-gray-800 mb-2 font-maru leading-snug">
-                                関西ジュニア空手道選手権
+                            <h3 className="text-xl font-bold text-gray-800 mb-8 font-maru leading-snug flex-1">
+                                第7回帯会スパーリング大会
                             </h3>
-                            <p className="text-gray-500 text-sm mb-4">中学生男子 軽量級</p>
-                            <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
-                                <span className="text-sm font-bold text-gray-700 font-maru">佐藤 健太</span>
-                                <span className="text-xs text-gray-400 font-bold">2025.09.20</span>
-                            </div>
+                            <Link
+                                href="/results/tourney-007"
+                                className="block w-full text-center bg-gray-50 hover:bg-orange-500 hover:text-white text-orange-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
+                            >
+                                詳細を見る
+                            </Link>
                         </div>
                     </div>
 

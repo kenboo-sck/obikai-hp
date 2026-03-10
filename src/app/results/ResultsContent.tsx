@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 // データ型定義
 type ResultItem = {
+    id: string;
     date: string;
     title: string;
-    location?: string; // 開催場所
     class?: string;    // 出場クラス・部門
     rank: string;
     rankColor: 'gold' | 'silver' | 'bronze' | 'default';
@@ -18,65 +18,52 @@ type ResultItem = {
 // ダミーデータ
 const resultsData: ResultItem[] = [
     {
+        id: "tourney-009",
         date: "2025.10.15",
-        title: "第10回 大阪府空手道選手権大会",
-        location: "大阪府立体育会館",
+        title: "第9回帯会スパーリング大会",
         class: "小学6年生男子の部",
         rank: "準優勝",
         rankColor: "silver",
         name: "田中 太郎",
+        image: "/tk-2025.png",
     },
     {
+        id: "tourney-008",
         date: "2025.09.20",
-        title: "関西ジュニア空手道選手権",
-        location: "兵庫県立武道館",
+        title: "第8回帯会スパーリング大会",
         class: "中学生男子 軽量級",
         rank: "第3位",
         rankColor: "bronze",
         name: "佐藤 健太"
     },
     {
+        id: "tourney-007",
         date: "2025.08.05",
-        title: "全国空手道選手権大会 予選",
-        location: "東京武道館",
+        title: "第7回帯会スパーリング大会",
         class: "小学3年生男女混合",
         rank: "ベスト8",
         rankColor: "default",
         name: "鈴木 一郎"
     },
     {
+        id: "tourney-006",
         date: "2025.07.12",
-        title: "夏期交流試合",
-        location: "市民体育館",
+        title: "第6回帯会スパーリング大会",
         class: "幼年の部",
         rank: "優勝",
         rankColor: "gold",
         name: "高橋 次郎"
     },
     {
+        id: "tourney-005",
         date: "2024.4.28",
-        title: "第4回スパーリング大会",
-        location: "新発田カルチャーセンター",
+        title: "第5回帯会スパーリング大会",
         class: "ー",
         rank: "優勝",
         rankColor: "gold",
         name: "山田 花子",
-        image: "/o-1001.jpg"
     }
 ];
-
-const getRankBadgeStyle = (color: string) => {
-    switch (color) {
-        case 'gold':
-            return "bg-gradient-to-r from-yellow-100 to-yellow-200 text-yellow-800 border-yellow-300";
-        case 'silver':
-            return "bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 border-gray-300";
-        case 'bronze':
-            return "bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 border-orange-300";
-        default:
-            return "bg-orange-50 text-orange-600 border-orange-100";
-    }
-};
 
 export default function ResultsContent() {
     return (
@@ -87,7 +74,7 @@ export default function ResultsContent() {
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
                         RESULTS
                     </h1>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">大会結果</p>
+                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">大会結果一覧</p>
                 </div>
             </section>
 
@@ -99,13 +86,10 @@ export default function ResultsContent() {
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {resultsData.map((item, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group"
-                        >
-                            {/* 画像エリア - 画像がない場合はプレースホルダーを表示 */}
-                            <div className="relative aspect-video w-full bg-gray-100 overflow-hidden">
+                    {resultsData.map((item, idx) => (
+                        <div key={idx} className="bg-white rounded-3xl shadow-lg border border-orange-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                            {/* 画像エリア */}
+                            <div className="relative aspect-video w-full overflow-hidden">
                                 {item.image ? (
                                     <Image
                                         src={item.image}
@@ -119,12 +103,6 @@ export default function ResultsContent() {
                                         <span className="text-orange-200 font-bold text-lg tracking-widest">OBIKAI RESULTS</span>
                                     </div>
                                 )}
-                                {/* 結果バッジを画像上に配置 */}
-                                <div className="absolute top-3 right-3 shadow-lg">
-                                    <span className={`px-4 py-1 text-sm font-bold rounded-full border ${getRankBadgeStyle(item.rankColor)}`}>
-                                        {item.rank}
-                                    </span>
-                                </div>
                             </div>
 
                             {/* コンテンツエリア */}
@@ -136,35 +114,21 @@ export default function ResultsContent() {
                                     {item.date}
                                 </div>
 
-                                <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3 line-clamp-2">
+                                <h3 className="text-lg font-bold text-gray-900 leading-tight mb-6 line-clamp-2 font-maru">
                                     {item.title}
                                 </h3>
 
-                                <div className="space-y-2 mb-6 flex-1">
-                                    {item.location && (
-                                        <div className="flex items-start gap-2 text-sm text-gray-600">
-                                            <svg className="w-4 h-4 mt-0.5 shrink-0 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            </svg>
-                                            <span>{item.location}</span>
-                                        </div>
-                                    )}
-                                    {item.class && item.class !== "ー" && (
-                                        <div className="flex items-start gap-2 text-sm text-gray-500">
-                                            <span className="shrink-0 w-4 text-center text-orange-400 font-bold">・</span>
-                                            <span>{item.class}</span>
-                                        </div>
-                                    )}
+                                <div className="flex-1">
+                                    {/* 階級・部門・順位バッジは非表示 */}
                                 </div>
 
-                                <div className="pt-4 border-t border-gray-100">
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">WINNER</span>
-                                        <span className="font-bold text-gray-900 text-lg">
-                                            {item.name}
-                                        </span>
-                                    </div>
+                                <div className="pt-6 border-t border-gray-100">
+                                    <Link
+                                        href={`/results/${item.id}`}
+                                        className="block w-full text-center bg-gray-50 hover:bg-orange-500 hover:text-white text-orange-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
+                                    >
+                                        詳細を見る
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +139,7 @@ export default function ResultsContent() {
             {/* CTA */}
             <section className="max-w-7xl mx-auto px-6 text-center">
                 <div className="bg-white p-12 rounded-3xl shadow-lg border border-gray-100">
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-maru">
                         目指せ、表彰台！
                     </h2>
                     <p className="text-gray-600 mb-8 max-w-xl mx-auto leading-relaxed">
