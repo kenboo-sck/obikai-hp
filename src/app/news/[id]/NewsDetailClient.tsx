@@ -44,7 +44,7 @@ export default function NewsDetailClient() {
         fetchNews();
     }, [params?.id]);
 
-    if (loading) return <div className="pt-40 text-center text-orange-500 font-bold animate-pulse">読み込み中...</div>;
+    if (loading) return <div className="pt-40 text-center text-emerald-500 font-bold animate-pulse">読み込み中...</div>;
     if (!news) return <div className="pt-40 text-center text-gray-500">記事が見つかりません。</div>;
 
     const imageUrl = news.image || news.imageUrl || news.thumbnail;
@@ -58,7 +58,7 @@ export default function NewsDetailClient() {
         <div className="pt-40 pb-20 px-4 max-w-[1000px] mx-auto font-sans text-gray-800">
             <div className="mb-6 flex items-center gap-3">
                 {dateStr && <span className="text-gray-500 text-sm font-bold tracking-widest">{dateStr}</span>}
-                <span className="bg-orange-500 text-white text-xs px-3 py-1 font-bold rounded-full">
+                <span className="bg-emerald-500 text-white text-xs px-3 py-1 font-bold rounded-full">
                     {news.category || "INFO"}
                 </span>
             </div>
@@ -78,7 +78,7 @@ export default function NewsDetailClient() {
             )}
 
             <div
-                className="prose max-w-none prose-lg text-gray-700 prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-orange-500 prose-strong:text-orange-900 prose-img:rounded-lg"
+                className="prose max-w-none prose-lg text-gray-700 prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-emerald-500 prose-strong:text-emerald-900 prose-img:rounded-lg"
                 dangerouslySetInnerHTML={{ __html: news.content }}
             />
         </div>

@@ -70,11 +70,10 @@ export default function ResultsContent() {
         <div className="pt-32 pb-20 font-sans text-gray-800 min-h-screen">
             {/* ヒーローセクション */}
             <section className="max-w-7xl mx-auto px-6 mb-12">
-                <div className="border-l-8 border-orange-500 pl-6">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
-                        RESULTS
+                <div className="border-l-8 border-emerald-500 pl-6">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        大会<span className="text-emerald-500">結果</span>
                     </h1>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">大会結果一覧</p>
                 </div>
             </section>
 
@@ -87,7 +86,7 @@ export default function ResultsContent() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {resultsData.map((item, idx) => (
-                        <div key={idx} className="bg-white rounded-3xl shadow-lg border border-orange-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                        <div key={idx} className="bg-white rounded-3xl shadow-lg border border-emerald-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
                             {/* 画像エリア */}
                             <div className="relative aspect-video w-full overflow-hidden">
                                 {item.image ? (
@@ -99,8 +98,8 @@ export default function ResultsContent() {
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
                                 ) : (
-                                    <div className="absolute inset-0 flex items-center justify-center bg-orange-50/50">
-                                        <span className="text-orange-200 font-bold text-lg tracking-widest">OBIKAI RESULTS</span>
+                                    <div className="absolute inset-0 flex items-center justify-center bg-emerald-50/50">
+                                        <span className="text-emerald-200 font-bold text-lg tracking-widest">大会結果</span>
                                     </div>
                                 )}
                             </div>
@@ -125,7 +124,7 @@ export default function ResultsContent() {
                                 <div className="pt-6 border-t border-gray-100">
                                     <Link
                                         href={`/results/${item.id}`}
-                                        className="block w-full text-center bg-gray-50 hover:bg-orange-500 hover:text-white text-orange-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
+                                        className="block w-full text-center bg-gray-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
                                     >
                                         詳細を見る
                                     </Link>
@@ -147,10 +146,10 @@ export default function ResultsContent() {
                         強くなりたい、試合で勝ちたいという目標を持つ仲間を待っています。
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Link href="/class" className="bg-white text-orange-500 border-2 border-orange-500 px-8 py-3 rounded-full font-bold hover:bg-orange-50 transition-colors">
+                        <Link href="/class" className="bg-white text-emerald-500 border-2 border-emerald-500 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 transition-colors">
                             選手クラスを見る
                         </Link>
-                        <Link href="/contact" className="bg-orange-500 text-white border-2 border-orange-500 px-8 py-3 rounded-full font-bold hover:bg-orange-600 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform">
+                        <Link href="/contact" className="bg-emerald-500 text-white border-2 border-emerald-500 px-8 py-3 rounded-full font-bold hover:bg-emerald-600 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform">
                             お問い合わせ
                         </Link>
                     </div>

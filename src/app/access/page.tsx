@@ -50,11 +50,11 @@ export default function AccessPage() {
     <div className="pt-32 pb-20 font-sans text-gray-800">
       {/* ヒーローセクション */}
       <section className="max-w-7xl mx-auto px-6 mb-16">
-        <div className="border-l-8 border-orange-500 pl-6 mb-12">
+        <div className="border-l-8 border-emerald-500 pl-6 mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
-            LOCATIONS <span className="text-orange-500">/ ACCESS</span>
+            LOCATIONS <span className="text-emerald-500">/ ACCESS</span>
           </h1>
-          <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">稽古場所へのアクセス</p>
+          <p className="text-emerald-500 font-bold mt-2 tracking-widest uppercase text-sm">稽古場所へのアクセス</p>
         </div>
         <p className="max-w-none text-gray-600 leading-relaxed">
           実戦空手道 帯会では、新発田市内の複数の施設を利用して稽古を行っています。
@@ -82,7 +82,7 @@ export default function AccessPage() {
               <div className="p-8 flex-1 flex flex-col">
                 <div className="mb-4">
                   <h3 className="text-2xl font-extrabold text-gray-900 mb-1">{loc.name}</h3>
-                  <p className="text-orange-600 font-bold text-sm flex items-center gap-1.5">
+                  <p className="text-emerald-600 font-bold text-sm flex items-center gap-1.5">
                     <FaLocationDot /> {loc.subName}
                   </p>
                 </div>
@@ -97,7 +97,7 @@ export default function AccessPage() {
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center bg-orange-50 hover:bg-orange-500 hover:text-white text-orange-600 font-bold py-4 rounded-xl transition-all duration-300 border border-orange-100"
+                  className="block w-full text-center bg-emerald-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-4 rounded-xl transition-all duration-300 border border-emerald-100"
                 >
                   Google Mapで開く
                 </a>
@@ -120,7 +120,7 @@ export default function AccessPage() {
               <div className="flex flex-col md:flex-row gap-4 items-center">
                 <div className="bg-white px-6 py-4 rounded-2xl shadow-sm border border-stone-100 flex items-center gap-4">
                   <span className="text-stone-400 font-bold text-xs uppercase tracking-widest">Phone</span>
-                  <a href="tel:09010393392" className="text-2xl font-black text-orange-600 hover:text-orange-800 transition-colors">
+                  <a href="tel:09010393392" className="text-2xl font-black text-emerald-600 hover:text-emerald-800 transition-colors">
                     090-1039-3392
                   </a>
                 </div>
@@ -140,7 +140,7 @@ export default function AccessPage() {
       <section className="max-w-7xl mx-auto px-6 text-center py-10">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-            Ready to <span className="text-orange-600">Start?</span>
+            Ready to <span className="text-emerald-600">Start?</span>
           </h2>
           <p className="text-gray-600 font-medium mb-10 text-lg">
             見学・体験は随時受け付けております。<br />
@@ -148,7 +148,7 @@ export default function AccessPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-orange-500 text-white px-12 py-5 rounded-full font-black shadow-xl shadow-orange-200 hover:bg-orange-600 transition-all hover:-translate-y-1 hover:scale-105"
+            className="inline-block bg-emerald-500 text-white px-12 py-5 rounded-full font-black shadow-xl shadow-emerald-200 hover:bg-emerald-600 transition-all hover:-translate-y-1 hover:scale-105"
           >
             体験・見学を予約する
           </Link>

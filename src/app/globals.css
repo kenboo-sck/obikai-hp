@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap');
 @import "tailwindcss";
 
 /* @plugin "@tailwindcss/typography"; */
 
 :root {
-  --background: #fffaf0;
+  --background: #ffffff;
   /* Warm cream background */
-  --foreground: #4a4a4a;
+  --foreground: #111111;
   /* Softer text color */
-  --primary-orange: #fb923c;
+  --primary-emerald: #10b981;
 }
 
 /* Enforcing light mode/cream theme even in dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #fffaf0;
-    --foreground: #4a4a4a;
+    --background: #ffffff;
+    --foreground: #111111;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Zen Maru Gothic', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Zen Kaku Gothic New', 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
 }
 
 .font-maru {
-  font-family: 'Zen Maru Gothic', sans-serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
 /* Custom rounded corners for more approachable look */
@@ -93,12 +93,12 @@ body {
 }
 
 .ProseMirror blockquote {
-  border-left: 3px solid #fb923c;
+  border-left: 3px solid #10b981;
   padding-left: 1rem;
   margin: 1rem 0;
   font-style: italic;
   color: #4b5563;
-  background-color: #fff7ed;
+  background-color: #f0fdf4;
   padding: 0.5rem 1rem;
 }
 

@@ -37,15 +37,14 @@ export default function NewsContent() {
         fetchNews();
     }, []);
 
-    if (loading) return <div className="pt-40 text-center text-orange-500 font-bold">LOADING NEWS...</div>;
+    if (loading) return <div className="pt-40 text-center text-emerald-500 font-bold font-maru">読み込み中...</div>;
 
     return (
         <div className="pt-32 pb-20 px-4 max-w-[1260px] mx-auto font-sans">
-            <div className="mb-12 border-l-8 border-orange-500 pl-6">
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
-                    News & Topics
+            <div className="mb-12 border-l-8 border-emerald-500 pl-6">
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                    お知らせ
                 </h1>
-                <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">お知らせ</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
@@ -73,14 +72,14 @@ export default function NewsContent() {
                                         unoptimized={true}
                                     />
                                 ) : (
-                                    <div className="flex items-center justify-center h-full text-gray-400 font-bold text-sm">NO IMAGE</div>
+                                    <div className="flex items-center justify-center h-full text-gray-300 font-bold text-sm bg-gray-50">画像なし</div>
                                 )}
                             </div>
 
                             <div className="p-4 flex flex-col h-full">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <span className="bg-orange-100 text-orange-800 text-[10px] px-2 py-0.5 rounded font-bold">
-                                        {item.category || "INFO"}
+                                    <span className="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded font-bold">
+                                        {item.category || "お知らせ"}
                                     </span>
                                     <span className="text-gray-400 text-xs">
                                         {item.date?.seconds
@@ -91,7 +90,7 @@ export default function NewsContent() {
                                     </span>
                                 </div>
 
-                                <h2 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-orange-500 transition-colors mb-2 line-clamp-2">
+                                <h2 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-emerald-500 transition-colors mb-2 line-clamp-2">
                                     {item.title}
                                 </h2>
                                 <div className="text-gray-500 text-xs line-clamp-2 mt-auto">

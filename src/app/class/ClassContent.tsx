@@ -39,15 +39,14 @@ export default function ClassContent() {
             {/* ヒーローセクション */}
             <section className="relative max-w-7xl mx-auto px-6 mb-16 overflow-hidden">
                 <div className="absolute top-1/2 -translate-y-1/2 -left-10 select-none pointer-events-none z-0 opacity-[0.05] whitespace-nowrap">
-                    <span className="text-[10rem] font-bold text-gray-900 uppercase">PROGRAMS</span>
+                    <span className="text-[10rem] font-bold text-gray-900">プログラム</span>
                 </div>
 
                 <div className="relative z-10">
-                    <div className="border-l-8 border-orange-500 pl-6 mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
-                            OUR <span className="text-orange-500">CLASSES</span>
+                    <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                            クラス<span className="text-emerald-500">紹介</span>
                         </h1>
-                        <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">クラス紹介</p>
                     </div>
                     <div className="w-full relative">
                         <p className="text-3xl md:text-5xl font-bold leading-none text-gray-900 mb-6">
@@ -59,9 +58,9 @@ export default function ClassContent() {
                         <div className="mt-8">
                             <Link
                                 href="/schedule"
-                                className="inline-block border-b-2 border-orange-500 pb-1 font-bold text-orange-500 hover:text-orange-700 hover:border-orange-700 transition-colors"
+                                className="inline-block border-b-2 border-emerald-500 pb-1 font-bold text-emerald-500 hover:text-emerald-700 hover:border-emerald-700 transition-colors"
                             >
-                                Check Schedule →
+                                スケジュールを確認 →
                             </Link>
                         </div>
                     </div>
@@ -70,15 +69,12 @@ export default function ClassContent() {
 
             {/* カテゴリー別クラス一覧 */}
             {classCategories.map((cat, idx) => (
-                <section key={idx} className={`py-24 ${idx % 2 === 1 ? 'bg-orange-50' : 'bg-white'}`}>
+                <section key={idx} className={`py-24 ${idx % 2 === 1 ? 'bg-emerald-50' : 'bg-white'}`}>
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 uppercase tracking-tight leading-none">
-                                {cat.category}
-                            </h2>
-                            <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight leading-none font-maru">
                                 {cat.sub}
-                            </p>
+                            </h2>
                         </div>
 
                         <div className="flex flex-col gap-20">
@@ -96,9 +92,7 @@ export default function ClassContent() {
 
                                     <div className="w-full md:w-7/12">
                                         <div className="mb-4">
-                                            <span className="text-xs font-bold tracking-widest uppercase text-orange-400">
-                                                {cls.en}
-                                            </span>
+                                            {/* Removed duplicated en text */}
                                             <h3 className="text-3xl font-bold text-gray-900 mt-1">
                                                 {cls.title}
                                             </h3>
@@ -109,13 +103,13 @@ export default function ClassContent() {
 
                                         {/* こんな方にお勧めセクション */}
                                         <div className="p-6 bg-white border border-gray-100 rounded-lg shadow-sm">
-                                            <h4 className="text-sm font-bold uppercase mb-4 tracking-widest text-orange-500">
+                                            <h4 className="text-sm font-bold uppercase mb-4 tracking-widest text-emerald-500">
                                                 こんな方にお勧め
                                             </h4>
                                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                                 {cls.recommended?.map((item, rIdx) => (
                                                     <li key={rIdx} className="flex items-center gap-3 text-sm font-medium text-gray-700">
-                                                        <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-[10px] bg-orange-100 text-orange-500 rounded-full">✓</span>
+                                                        <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-[10px] bg-emerald-100 text-emerald-500 rounded-full">✓</span>
                                                         {item}
                                                     </li>
                                                 ))}
@@ -131,20 +125,20 @@ export default function ClassContent() {
 
             {/* 下部CTA */}
             <section className="py-24 max-w-7xl mx-auto px-6">
-                <div className="bg-orange-400 p-12 md:p-20 text-center text-white relative overflow-hidden shadow-xl rounded-2xl">
+                <div className="bg-emerald-400 p-12 md:p-20 text-center text-white relative overflow-hidden shadow-xl rounded-2xl">
                     <div className="relative z-10">
-                        <h2 className="text-4xl md:text-6xl font-bold mb-8">
-                            Ready to <span className="text-orange-100">Train?</span>
+                        <h2 className="text-4xl md:text-6xl font-bold mb-8 font-maru tracking-widest">
+                            さあ、<span className="text-emerald-100">始めよう！</span>
                         </h2>
                         <p className="font-sans max-w-xl mx-auto mb-12 text-lg text-white/90">
                             まずは体験・見学にお越しください。<br />
                             道場の雰囲気や指導内容を肌で感じていただけます。
                         </p>
                         <div className="flex flex-col md:flex-row gap-6 justify-center">
-                            <Link href="/schedule" className="bg-white text-orange-500 px-10 py-4 font-bold text-lg hover:bg-orange-50 transition-all rounded-full shadow-lg">
+                            <Link href="/schedule" className="bg-white text-emerald-500 px-10 py-4 font-bold text-lg hover:bg-emerald-50 transition-all rounded-full shadow-lg">
                                 スケジュールを確認
                             </Link>
-                            <Link href="/contact" className="bg-orange-600 text-white px-10 py-4 font-bold text-lg hover:bg-orange-700 transition-all rounded-full shadow-lg border border-orange-400">
+                            <Link href="/contact" className="bg-emerald-600 text-white px-10 py-4 font-bold text-lg hover:bg-emerald-700 transition-all rounded-full shadow-lg border border-emerald-400">
                                 キャンペーンを利用して体験
                             </Link>
                         </div>

@@ -85,9 +85,9 @@ export default function TournamentDetailContent({ id }: { id: string }) {
         <div className="pt-32 pb-20 font-sans text-gray-800 bg-stone-50 min-h-screen">
             {/* パンくずリスト */}
             <div className="max-w-[1024px] mx-auto px-6 mb-8 text-xs font-bold text-gray-400 flex gap-2">
-                <Link href="/" className="hover:text-orange-500 transition-colors font-maru">HOME</Link>
+                <Link href="/" className="hover:text-emerald-500 transition-colors font-maru">ホーム</Link>
                 <span>/</span>
-                <Link href="/results" className="hover:text-orange-500 transition-colors font-maru">RESULTS</Link>
+                <Link href="/results" className="hover:text-emerald-500 transition-colors font-maru">大会結果</Link>
                 <span>/</span>
                 <span className="text-gray-600 uppercase font-maru">{data.title}</span>
             </div>
@@ -96,7 +96,7 @@ export default function TournamentDetailContent({ id }: { id: string }) {
                 {/* ヘッダー */}
                 <header className="mb-12">
                     <div className="flex items-center gap-4 mb-4">
-                        <span className="bg-orange-500 text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-widest uppercase">Tournament Report</span>
+                        <span className="bg-emerald-500 text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-widest uppercase">大会レポート</span>
                         <span className="text-gray-400 text-sm font-mono font-bold">{data.date}</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-black text-gray-900 leading-tight mb-8 font-maru">
@@ -123,7 +123,7 @@ export default function TournamentDetailContent({ id }: { id: string }) {
 
                 {/* 結果セクション */}
                 <section className="mb-20">
-                    <div className="flex items-center gap-4 mb-10 pb-4 border-b-2 border-orange-500">
+                    <div className="flex items-center gap-4 mb-10 pb-4 border-b-2 border-emerald-500">
                         <h2 className="text-2xl font-black text-gray-900 font-maru">入賞結果一覧</h2>
                     </div>
 
@@ -133,7 +133,7 @@ export default function TournamentDetailContent({ id }: { id: string }) {
                                 <div key={idx} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col md:flex-row items-start md:items-center gap-6 group hover:shadow-md transition-all duration-300">
                                     <div className="flex-1">
                                         <h3 className="text-xl font-black text-gray-900 mb-2 font-maru">
-                                            <span className="text-orange-500 mr-2 text-sm">●</span>
+                                            <span className="text-emerald-500 mr-2 text-sm">●</span>
                                             {res.name} <span className="text-stone-300 font-normal ml-1">選手</span>
                                         </h3>
                                         {res.note && <p className="text-sm text-stone-500 leading-relaxed pl-6">{res.note}</p>}

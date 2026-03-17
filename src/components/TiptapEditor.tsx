@@ -50,21 +50,21 @@ export default function TiptapEditor({ content, onChange, onImageUpload }: Tipta
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
-          className={`px-3 py-1 rounded text-sm font-bold ${editor.isActive('bold') ? 'bg-orange-600 text-white' : 'bg-white hover:bg-gray-100'}`}
+          className={`px-3 py-1 rounded text-sm font-bold ${editor.isActive('bold') ? 'bg-emerald-600 text-white' : 'bg-white hover:bg-gray-100'}`}
         >
           B
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
-          className={`px-3 py-1 rounded text-sm italic ${editor.isActive('italic') ? 'bg-orange-600 text-white' : 'bg-white hover:bg-gray-100'}`}
+          className={`px-3 py-1 rounded text-sm italic ${editor.isActive('italic') ? 'bg-emerald-600 text-white' : 'bg-white hover:bg-gray-100'}`}
         >
           I
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleStrike().run()}
-          className={`px-3 py-1 rounded text-sm line-through ${editor.isActive('strike') ? 'bg-orange-600 text-white' : 'bg-white hover:bg-gray-100'}`}
+          className={`px-3 py-1 rounded text-sm line-through ${editor.isActive('strike') ? 'bg-emerald-600 text-white' : 'bg-white hover:bg-gray-100'}`}
         >
           S
         </button>
@@ -72,14 +72,14 @@ export default function TiptapEditor({ content, onChange, onImageUpload }: Tipta
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-          className={`px-3 py-1 rounded text-sm font-bold ${editor.isActive('heading', { level: 2 }) ? 'bg-orange-600 text-white' : 'bg-white hover:bg-gray-100'}`}
+          className={`px-3 py-1 rounded text-sm font-bold ${editor.isActive('heading', { level: 2 }) ? 'bg-emerald-600 text-white' : 'bg-white hover:bg-gray-100'}`}
         >
           H2
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-          className={`px-3 py-1 rounded text-sm font-bold ${editor.isActive('heading', { level: 3 }) ? 'bg-orange-600 text-white' : 'bg-white hover:bg-gray-100'}`}
+          className={`px-3 py-1 rounded text-sm font-bold ${editor.isActive('heading', { level: 3 }) ? 'bg-emerald-600 text-white' : 'bg-white hover:bg-gray-100'}`}
         >
           H3
         </button>
@@ -87,21 +87,21 @@ export default function TiptapEditor({ content, onChange, onImageUpload }: Tipta
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
-          className={`px-3 py-1 rounded text-sm ${editor.isActive('bulletList') ? 'bg-orange-600 text-white' : 'bg-white hover:bg-gray-100'}`}
+          className={`px-3 py-1 rounded text-sm ${editor.isActive('bulletList') ? 'bg-emerald-600 text-white' : 'bg-white hover:bg-gray-100'}`}
         >
           • List
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
-          className={`px-3 py-1 rounded text-sm ${editor.isActive('orderedList') ? 'bg-orange-600 text-white' : 'bg-white hover:bg-gray-100'}`}
+          className={`px-3 py-1 rounded text-sm ${editor.isActive('orderedList') ? 'bg-emerald-600 text-white' : 'bg-white hover:bg-gray-100'}`}
         >
           1. List
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
-          className={`px-3 py-1 rounded text-sm ${editor.isActive('blockquote') ? 'bg-orange-600 text-white' : 'bg-white hover:bg-gray-100'}`}
+          className={`px-3 py-1 rounded text-sm ${editor.isActive('blockquote') ? 'bg-emerald-600 text-white' : 'bg-white hover:bg-gray-100'}`}
         >
           " Quote
         </button>
