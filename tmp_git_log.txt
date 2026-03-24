@@ -1,0 +1,10 @@
+791c54c Merge remote-tracking branch 'origin/main' and resolve conflicts while preserving campaign updates
+8238d56 Update site
+737706a 大会概要ページ更新
+bea37e6 update: 大会結果の更新と詳細ページの追加
+356a176 画像入れ替え
+2f7b0a0 Update site
+fa73928 ver.0210-1
+e4e965e Update sns
+5a2f748 v1.0.1
+95b09b8 Final: Enable reCAPTCHA spam protection

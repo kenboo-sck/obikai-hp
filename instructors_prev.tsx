@@ -51,6 +51,7 @@ export default function InstructorsContent() {
                                 初心者から経験者まで、一人ひとりに合わせた丁寧な指導を心がけています。
                             </p>
 
+
                         </div>
 
                         <div className="pt-6">

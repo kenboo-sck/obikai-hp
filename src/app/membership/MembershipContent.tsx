@@ -7,64 +7,69 @@ export default function MembershipContent() {
     return (
         <div className="pt-32 pb-20 font-sans text-gray-800">
             {/* ヒーローセクション */}
-            <section className="relative max-w-7xl mx-auto px-6 mb-16 overflow-hidden">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-10 select-none pointer-events-none z-0 opacity-[0.05] whitespace-nowrap">
-                    <span className="text-[15rem] font-bold text-gray-900 tracking-widest font-maru">入会案内</span>
-                </div>
-
-                <div className="relative z-10">
-                    <div className="border-l-8 border-emerald-500 pl-6 mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none tracking-widest font-maru">
-                            入会案内<span className="text-emerald-500"> / 料金プラン</span>
-                        </h1>
-                    </div>
+            <section className="relative h-[40vh] md:h-[60vh] flex items-center justify-center bg-stone-900 overflow-hidden mb-16">
+                <Image
+                    src="/o-001.jpg"
+                    alt="Membership Hero"
+                    fill
+                    className="object-cover opacity-60"
+                    priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/40 to-teal-600/40 mix-blend-multiply z-10"></div>
+                <div className="relative z-20 container mx-auto px-6 text-center">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white tracking-widest leading-none font-maru">
+                        MEMBERSHIP <span className="text-emerald-400">/ 入会案内</span>
+                    </h1>
                 </div>
             </section>
 
             {/* キャンペーンセクション */}
-            <section className="relative w-full mb-24 overflow-hidden">
-                <div className="bg-gradient-to-r from-emerald-400 to-teal-500 py-16 md:py-20 text-white relative flex items-center min-h-[400px]">
-                    <div className="absolute inset-0 bg-black/5 z-0"></div>
+            <section className="relative w-full mb-24 overflow-hidden px-6">
+                <div className="max-w-7xl mx-auto relative rounded-[2rem] overflow-hidden shadow-2xl min-h-[500px] flex items-center">
+                    {/* 背景画像とオーバーレイ */}
+                    <div className="absolute inset-0 z-0">
+                        <Image 
+                            src="/activity-6.jpg" 
+                            alt="活動風景" 
+                            fill 
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-transparent"></div>
+                    </div>
 
-                    <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center md:text-left">
-                        <div className="inline-block bg-white/20 px-4 py-1 text-xs font-bold uppercase tracking-widest mb-6 rounded-full backdrop-blur-md border border-white/30">
-                            新規入会キャンペーン
+                    <div className="relative z-10 p-8 md:p-20 w-full md:w-2/3">
+                        <div className="inline-block bg-emerald-500 text-white px-4 py-1 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 rounded-sm shadow-lg">
+                            Special Membership Offer
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight font-maru">
-                            <span className="text-white">道場生活を始めよう</span><br />
-                            入会キャンペーン実施中
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight font-maru">
+                            道場生活を始めよう。<br />
+                            <span className="text-emerald-400">入会キャンペーン実施中</span>
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-left max-w-5xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-left">
                             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
-                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2">特典 01</p>
-                                <p className="text-xl font-bold font-maru">空手着プレゼント</p>
-                                <p className="text-sm font-bold bg-emerald-500 inline-block px-3 py-1 rounded-full mt-2">12,000円相当</p>
+                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2 font-sans">特典 01</p>
+                                <p className="text-xl font-bold font-maru text-white">空手着プレゼント</p>
+                                <p className="text-xs font-bold bg-emerald-500 inline-block px-3 py-1 rounded-full mt-2 text-white font-sans">12,000円相当</p>
                             </div>
                             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
-                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2">特典 02</p>
-                                <p className="text-xl font-bold font-maru">親子割り引き</p>
-                                <p className="text-sm font-bold bg-emerald-500 inline-block px-3 py-1 rounded-full mt-2">毎月の月謝 -1,000円</p>
+                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2 font-sans">特典 02</p>
+                                <p className="text-xl font-bold font-maru text-white">親子・家族割引</p>
+                                <p className="text-xs font-bold bg-emerald-500 inline-block px-3 py-1 rounded-full mt-2 text-white font-sans">毎月の月謝 -1,000円</p>
                             </div>
                             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
-                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2">特典 03</p>
-                                <p className="text-xl font-bold font-maru">入会金無料</p>
-                                <p className="text-sm font-bold bg-emerald-500 inline-block px-3 py-1 rounded-full mt-2">親子で入会の場合</p>
+                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2 font-sans">特典 03</p>
+                                <p className="text-xl font-bold font-maru text-white">入会金無料</p>
+                                <p className="text-xs font-bold bg-emerald-500 inline-block px-3 py-1 rounded-full mt-2 text-white font-sans">親子で入会の場合</p>
                             </div>
                         </div>
 
-                        <div className="mb-10 text-left">
-                            <p className="text-sm font-medium text-white/90 max-w-xl leading-relaxed">
-                                ※キャンペーンの適用には一定期間の継続利用が条件となります。<br />
-                                ※定員に達し次第終了となりますのでお早めにお申し込みください。
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row items-center gap-8 justify-center md:justify-start">
-                            <Link href="/contact" className="w-full sm:w-auto bg-white text-emerald-500 px-10 py-4 font-bold text-lg hover:bg-emerald-50 transition-all rounded-full shadow-lg font-maru text-center">
-                                体験予約はこちら
+                        <div className="flex flex-col sm:flex-row items-center gap-8 md:justify-start">
+                            <Link href="/contact" className="w-full sm:w-auto bg-emerald-500 text-white px-10 py-4 font-bold text-lg hover:bg-emerald-400 transition-all rounded-full shadow-lg font-maru text-center">
+                                無料体験を予約する
                             </Link>
-                            <p className="text-white/70 text-[10px] sm:max-w-xs leading-relaxed text-left">
+                            <p className="text-white/50 text-[10px] sm:max-w-xs leading-relaxed text-left font-sans">
                                 ※キャンペーンの適用には一定期間の継続利用が条件となります。定員に達し次第終了となりますのでお早めにお申し込みください。
                             </p>
                         </div>

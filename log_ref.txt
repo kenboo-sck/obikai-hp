@@ -1,0 +1,20 @@
+791c54c HEAD@{0}: commit (merge): Merge remote-tracking branch 'origin/main' and resolve conflicts while preserving campaign updates
+8238d56 HEAD@{1}: commit: Update site
+bea37e6 HEAD@{2}: commit: update: 大会結果の更新と詳細ページの追加
+356a176 HEAD@{3}: commit: 画像入れ替え
+2f7b0a0 HEAD@{4}: commit: Update site
+fa73928 HEAD@{5}: commit: ver.0210-1
+e4e965e HEAD@{6}: commit: Update sns
+5a2f748 HEAD@{7}: commit: v1.0.1
+95b09b8 HEAD@{8}: commit: Final: Enable reCAPTCHA spam protection
+8fbc26c HEAD@{9}: commit: Update: Change email subject and sender to Obi-kai
+7eeda98 HEAD@{10}: commit: Final Fix: Enable email sending
+5ba7587 HEAD@{11}: commit: Fix: Remove unused client-side verification
+d40d6b8 HEAD@{12}: commit: Debug: Skip email sending
+409bb6a HEAD@{13}: commit: Fix: Add dummy verify-recaptcha
+834ff99 HEAD@{14}: commit: Fix: Add missing verify-recaptcha
+b695b1c HEAD@{15}: commit: Debug: Show detailed error
+4a54c99 HEAD@{16}: commit: Fix: Robust email sending
+4736a4c HEAD@{17}: pull --rebase (finish): returning to refs/heads/main
+4736a4c HEAD@{18}: pull --rebase (pick): Migrate to Vercel: Switch to dynamic rendering and serverless API for email
+3864f2c HEAD@{19}: pull --rebase (start): checkout 3864f2cb34366651088a8c72becf227ebf564266
