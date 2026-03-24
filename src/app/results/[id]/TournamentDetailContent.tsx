@@ -96,7 +96,7 @@ export default function TournamentDetailContent({ id }: { id: string }) {
                 {/* ヘッダー */}
                 <header className="mb-12">
                     <div className="flex items-center gap-4 mb-4">
-                        <span className="bg-emerald-500 text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-widest uppercase">大会レポート</span>
+                        <span className="bg-emerald-500 text-white text-[10px] px-3 py-1 font-bold tracking-widest uppercase">大会レポート</span>
                         <span className="text-gray-400 text-sm font-mono font-bold">{data.date}</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-black text-gray-900 leading-tight mb-8 font-maru">
@@ -104,7 +104,7 @@ export default function TournamentDetailContent({ id }: { id: string }) {
                     </h1>
 
                     {data.mainImage && (
-                        <div className="relative aspect-[16/10] w-full rounded-3xl overflow-hidden shadow-2xl mb-12 group">
+                        <div className="relative aspect-[16/10] w-full overflow-hidden shadow-2xl mb-12 group">
                             <Image
                                 src={data.mainImage}
                                 alt={data.title}
@@ -114,7 +114,7 @@ export default function TournamentDetailContent({ id }: { id: string }) {
                         </div>
                     )}
 
-                    <div className="bg-white p-8 md:p-10 rounded-3xl border border-stone-100 shadow-sm mb-16">
+                    <div className="bg-white p-8 md:p-10 border border-stone-100 shadow-sm mb-16">
                         <p className="text-gray-600 leading-loose text-lg font-medium">
                             {data.description}
                         </p>
@@ -130,7 +130,7 @@ export default function TournamentDetailContent({ id }: { id: string }) {
                     <div className="grid grid-cols-1 gap-6">
                         {data.results.length > 0 ? (
                             data.results.map((res, idx) => (
-                                <div key={idx} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col md:flex-row items-start md:items-center gap-6 group hover:shadow-md transition-all duration-300">
+                                <div key={idx} className="bg-white p-6 md:p-8 shadow-sm border border-stone-100 flex flex-col md:flex-row items-start md:items-center gap-6 group hover:shadow-md transition-all duration-300">
                                     <div className="flex-1">
                                         <h3 className="text-xl font-black text-gray-900 mb-2 font-maru">
                                             <span className="text-emerald-500 mr-2 text-sm">●</span>
@@ -141,7 +141,7 @@ export default function TournamentDetailContent({ id }: { id: string }) {
                                 </div>
                             ))
                         ) : (
-                            <div className="py-20 text-center bg-white rounded-3xl border-2 border-dashed border-stone-200">
+                            <div className="py-20 text-center bg-white border-2 border-dashed border-stone-200">
                                 <p className="text-stone-300 font-bold font-maru">入賞データは現在準備中です。</p>
                             </div>
                         )}
@@ -152,7 +152,7 @@ export default function TournamentDetailContent({ id }: { id: string }) {
                 <footer className="text-center pt-10 border-t border-stone-200">
                     <Link
                         href="/results"
-                        className="inline-flex items-center gap-2 bg-stone-900 text-white px-10 py-4 rounded-full font-bold hover:bg-stone-800 transition-all hover:-translate-x-1 font-maru"
+                        className="inline-flex items-center gap-2 bg-stone-900 text-white px-10 py-4 font-bold hover:bg-stone-800 transition-all hover:-translate-x-1 font-maru"
                     >
                         ← 大会結果一覧に戻る
                     </Link>

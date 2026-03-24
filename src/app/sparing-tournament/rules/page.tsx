@@ -17,7 +17,7 @@ export default function RulesPage() {
             </Link>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+        <div className="bg-white shadow-xl overflow-hidden border border-gray-100">
             <div className="p-8 md:p-12 border-b border-gray-100 flex flex-col md:flex-row justify-between items-baseline gap-4">
                 <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight font-maru tracking-widest">
                     帯会スパーリング大会 <br className="md:hidden" />競技ルール
@@ -28,10 +28,10 @@ export default function RulesPage() {
             <div className="p-8 md:p-12 space-y-16 mt-4">
                 {/* 1. フルコンタクト空手 */}
                 <section>
-                    <h2 className="text-2xl md:text-3xl font-bold bg-gray-300 text-gray-800 px-6 py-4 rounded-t-xl tracking-widest font-maru">
+                    <h2 className="text-2xl md:text-3xl font-bold bg-gray-300 text-gray-800 px-6 py-4 tracking-widest font-maru">
                         フルコンタクト空手
                     </h2>
-                    <div className="border-x border-b border-gray-200 rounded-b-xl p-6 md:p-8 space-y-10 bg-white">
+                    <div className="border-x border-b border-gray-200 p-6 md:p-8 space-y-10 bg-white">
                         
                         {/* ルール */}
                         <div>
@@ -54,35 +54,35 @@ export default function RulesPage() {
                                     <div className="leading-relaxed w-full">
                                         審判5人中、3人が認めたら、注意1、注意2で減点1、注意4（減点2）で失格<br/>
                                         <span className="text-gray-500 text-sm">※3審制の場合は3人中、2人が認めた場合</span>
-                                        <div className="mt-6 p-6 md:p-8 bg-white border border-gray-200 rounded-xl max-w-2xl shadow-sm">
+                                        <div className="mt-6 p-6 md:p-8 bg-white border border-gray-200 max-w-2xl shadow-sm">
                                             <p className="font-bold mb-8 text-gray-700">反則による失格の早見表</p>
                                             <div className="flex items-start justify-between text-xs md:text-sm font-bold text-gray-600 relative">
                                                 {/* Timeline style */}
                                                 <div className="absolute top-2 left-6 right-6 h-0.5 bg-gray-400 hidden sm:block"></div>
                                                 <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                    <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                    <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                     <div className="flex flex-col">
                                                         <span>口頭注意</span>
                                                         <span className="text-xs font-normal text-gray-500 whitespace-nowrap">(判定に影響しない)</span>
                                                     </div>
                                                 </div>
                                                 <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                    <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                    <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                     <span>注意1</span>
                                                 </div>
                                                 <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                    <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                    <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                     <div className="flex flex-col">
                                                         <span>減点1</span>
                                                         <span className="text-xs font-normal text-gray-500">(注意2)</span>
                                                     </div>
                                                 </div>
                                                 <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                    <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                    <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                     <span>注意3</span>
                                                 </div>
                                                 <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                    <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                    <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                     <span>失格</span>
                                                 </div>
                                             </div>
@@ -110,10 +110,10 @@ export default function RulesPage() {
 
                 {/* 2. グローブ空手 */}
                 <section>
-                    <h2 className="text-2xl md:text-3xl font-bold bg-gray-300 text-gray-800 px-6 py-4 rounded-t-xl tracking-widest font-maru">
+                    <h2 className="text-2xl md:text-3xl font-bold bg-gray-300 text-gray-800 px-6 py-4 tracking-widest font-maru">
                         グローブ空手
                     </h2>
-                    <div className="border-x border-b border-gray-200 rounded-b-xl p-6 md:p-8 space-y-10 bg-white">
+                    <div className="border-x border-b border-gray-200 p-6 md:p-8 space-y-10 bg-white">
                         
                         {/* クラス別詳細 */}
                         <div>
@@ -192,7 +192,7 @@ export default function RulesPage() {
                                 <li className="flex items-start gap-3"><span className="text-gray-400 mt-0.5">◇</span><span className="leading-relaxed">相手の攻撃によるダウン、又はレフリーの判断によるダウンにより、10カウント以内で続行できなければK.Oとする</span></li>
                                 <li className="flex items-start gap-3"><span className="text-gray-400 mt-0.5">◇</span><span className="leading-relaxed">又、戦意喪失など続行不可能とレフリーが判断した場合はT.K.Oとする</span></li>
                                 <li className="flex items-start gap-3"><span className="text-gray-400 mt-0.5">◇</span><span className="leading-relaxed">2ダウンK.O制とする</span></li>
-                                <li className="flex items-start gap-3 bg-gray-200 p-5 rounded-xl my-4"><span className="text-gray-600 mt-0.5 font-black text-xl leading-none">◆</span><span className="leading-relaxed font-bold">当日は計量を行う。計量で申告体重を1kg以上オーバーした選手は減点1となるが、計量後、規定時間内に範囲内に落とした場合は双方の合意のもと、罰則は無しとする。<br/>再計量はフルコンの試合が終わり次第に行う。</span></li>
+                                <li className="flex items-start gap-3 bg-gray-200 p-5 my-4"><span className="text-gray-600 mt-0.5 font-black text-xl leading-none">◆</span><span className="leading-relaxed font-bold">当日は計量を行う。計量で申告体重を1kg以上オーバーした選手は減点1となるが、計量後、規定時間内に範囲内に落とした場合は双方の合意のもと、罰則は無しとする。<br/>再計量はフルコンの試合が終わり次第に行う。</span></li>
                                 <li className="flex items-start gap-3"><span className="text-gray-400 mt-0.5">◇</span><span className="leading-relaxed">プッシングはOKとする</span></li>
                                 <li className="flex items-start gap-3"><span className="text-gray-400 mt-0.5">◇</span><span className="leading-relaxed">テンカオ（組まずにボディへの膝蹴り）はOKとする</span></li>
                                 <li className="flex items-start gap-3"><span className="text-gray-400 mt-0.5">◇</span><span className="leading-relaxed">Aクラス以上は首相撲（膝蹴りは3秒まで）あり、ワンキャッチ・ワンアタックも有効とする</span></li>
@@ -233,7 +233,7 @@ export default function RulesPage() {
                                                     <div>f 手数、気迫</div>
                                                 </div>
                                             </div>
-                                            <div className="flex-1 max-w-lg mt-2 lg:mt-0 p-6 bg-white border border-gray-200 rounded-xl relative shadow-sm">
+                                            <div className="flex-1 max-w-lg mt-2 lg:mt-0 p-6 bg-white border border-gray-200 relative shadow-sm">
                                                 <p className="font-bold border-b border-gray-200 pb-3 mb-6 flex items-center gap-4 text-lg">
                                                     a <span className="text-xs text-gray-400">&gt;</span> b <span className="text-xs text-gray-400">&gt;</span> c <span className="text-xs text-gray-400">&gt;</span> d <span className="text-xs text-gray-400">&gt;</span> e <span className="text-xs text-gray-400">&gt;</span> f  
                                                 </p>
@@ -243,29 +243,29 @@ export default function RulesPage() {
                                                     {/* Timeline style */}
                                                     <div className="absolute top-2 left-6 right-6 h-0.5 bg-gray-400 hidden sm:block"></div>
                                                     <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                        <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                        <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                         <div className="flex flex-col">
                                                             <span>口頭注意</span>
                                                             <span className="text-xs font-normal text-gray-500 whitespace-nowrap">(判定に影響しない)</span>
                                                         </div>
                                                     </div>
                                                     <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                        <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                        <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                         <span>注意1</span>
                                                     </div>
                                                     <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                        <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                        <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                         <div className="flex flex-col">
                                                             <span>減点1</span>
                                                             <span className="text-xs font-normal text-gray-500">(注意2)</span>
                                                         </div>
                                                     </div>
                                                     <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                        <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                        <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                         <span>注意3</span>
                                                     </div>
                                                     <div className="flex flex-col items-center relative z-10 w-full sm:w-auto text-center gap-2">
-                                                        <span className="w-4 h-4 bg-gray-400 rounded-full hidden sm:block"></span>
+                                                        <span className="w-4 h-4 bg-gray-400 hidden sm:block"></span>
                                                         <span>失格</span>
                                                     </div>
                                                 </div>

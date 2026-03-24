@@ -40,7 +40,7 @@ export default function ResultsContent() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {resultsData.length > 0 ? (
                         resultsData.map((item, idx) => (
-                            <div key={idx} className="bg-white rounded-3xl shadow-lg border border-emerald-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                            <div key={idx} className="bg-white shadow-lg border border-emerald-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
                                 {/* 画像エリア */}
                                 <div className="relative aspect-video w-full overflow-hidden">
                                     {item.image ? (
@@ -78,7 +78,7 @@ export default function ResultsContent() {
                                     <div className="pt-6 border-t border-gray-100">
                                         <Link
                                             href={`/results/${item.id}`}
-                                            className="block w-full text-center bg-gray-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
+                                            className="block w-full text-center bg-gray-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-3 transition-all duration-300 border border-gray-100 font-maru"
                                         >
                                             詳細を見る
                                         </Link>
@@ -96,7 +96,7 @@ export default function ResultsContent() {
 
             {/* CTA */}
             <section className="max-w-7xl mx-auto px-6 text-center">
-                <div className="bg-white p-12 rounded-3xl shadow-lg border border-gray-100">
+                <div className="bg-white p-12 shadow-lg border border-gray-100">
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-maru">
                         目指せ、表彰台！
                     </h2>
@@ -105,10 +105,10 @@ export default function ResultsContent() {
                         強くなりたい、試合で勝ちたいという目標を持つ仲間を待っています。
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Link href="/class" className="bg-white text-emerald-500 border-2 border-emerald-500 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 transition-colors">
+                        <Link href="/class" className="bg-white text-emerald-500 border-2 border-emerald-500 px-8 py-3 font-bold hover:bg-emerald-50 transition-colors">
                             選手クラスを見る
                         </Link>
-                        <Link href="/contact" className="bg-emerald-500 text-white border-2 border-emerald-500 px-8 py-3 rounded-full font-bold hover:bg-emerald-600 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform">
+                        <Link href="/contact" className="bg-emerald-500 text-white border-2 border-emerald-500 px-8 py-3 font-bold hover:bg-emerald-600 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform">
                             お問い合わせ
                         </Link>
                     </div>

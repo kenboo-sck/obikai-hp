@@ -6,76 +6,8 @@ import Link from 'next/link';
 export default function MembershipContent() {
     return (
         <div className="pt-32 pb-20 font-sans text-gray-800">
-            {/* ヒーローセクション */}
-            <section className="relative h-[40vh] md:h-[60vh] flex items-center justify-center bg-stone-900 overflow-hidden mb-16">
-                <Image
-                    src="/o-001.jpg"
-                    alt="Membership Hero"
-                    fill
-                    className="object-cover opacity-60"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/40 to-teal-600/40 mix-blend-multiply z-10"></div>
-                <div className="relative z-20 container mx-auto px-6 text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold text-white tracking-widest leading-none font-maru">
-                        MEMBERSHIP <span className="text-emerald-400">/ 入会案内</span>
-                    </h1>
-                </div>
-            </section>
 
-            {/* キャンペーンセクション */}
-            <section className="relative w-full mb-24 overflow-hidden px-6">
-                <div className="max-w-7xl mx-auto relative rounded-[2rem] overflow-hidden shadow-2xl min-h-[500px] flex items-center">
-                    {/* 背景画像とオーバーレイ */}
-                    <div className="absolute inset-0 z-0">
-                        <Image 
-                            src="/activity-6.jpg" 
-                            alt="活動風景" 
-                            fill 
-                            className="object-cover"
-                            priority
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-transparent"></div>
-                    </div>
-
-                    <div className="relative z-10 p-8 md:p-20 w-full md:w-2/3">
-                        <div className="inline-block bg-emerald-500 text-white px-4 py-1 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 rounded-sm shadow-lg">
-                            Special Membership Offer
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight font-maru">
-                            道場生活を始めよう。<br />
-                            <span className="text-emerald-400">入会キャンペーン実施中</span>
-                        </h2>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-left">
-                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
-                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2 font-sans">特典 01</p>
-                                <p className="text-xl font-bold font-maru text-white">空手着プレゼント</p>
-                                <p className="text-xs font-bold bg-emerald-500 inline-block px-3 py-1 rounded-full mt-2 text-white font-sans">12,000円相当</p>
-                            </div>
-                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
-                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2 font-sans">特典 02</p>
-                                <p className="text-xl font-bold font-maru text-white">親子・家族割引</p>
-                                <p className="text-xs font-bold bg-emerald-500 inline-block px-3 py-1 rounded-full mt-2 text-white font-sans">毎月の月謝 -1,000円</p>
-                            </div>
-                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
-                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2 font-sans">特典 03</p>
-                                <p className="text-xl font-bold font-maru text-white">入会金無料</p>
-                                <p className="text-xs font-bold bg-emerald-500 inline-block px-3 py-1 rounded-full mt-2 text-white font-sans">親子で入会の場合</p>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row items-center gap-8 md:justify-start">
-                            <Link href="/contact" className="w-full sm:w-auto bg-emerald-500 text-white px-10 py-4 font-bold text-lg hover:bg-emerald-400 transition-all rounded-full shadow-lg font-maru text-center">
-                                無料体験を予約する
-                            </Link>
-                            <p className="text-white/50 text-[10px] sm:max-w-xs leading-relaxed text-left font-sans">
-                                ※キャンペーンの適用には一定期間の継続利用が条件となります。定員に達し次第終了となりますのでお早めにお申し込みください。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* 料金セクション */}
 
             {/* 料金セクション */}
             <section className="bg-emerald-50/50 py-32 mb-24 relative overflow-hidden">
@@ -86,14 +18,14 @@ export default function MembershipContent() {
 
                     {/* 入会金 */}
                     <div className="mb-16">
-                        <div className="bg-white p-10 border border-emerald-100 shadow-xl shadow-emerald-900/5 rounded-3xl">
+                        <div className="bg-white p-10 border border-emerald-100 shadow-xl shadow-emerald-900/5">
                             <h3 className="text-xl font-bold text-gray-900 mb-6 border-l-4 border-emerald-500 pl-4 font-maru">入会金</h3>
                             <div className="flex flex-col md:flex-row md:items-center gap-6">
                                 <div className="flex items-baseline gap-1">
                                     <span className="text-5xl font-bold text-gray-900">3,000</span>
                                     <span className="text-xl font-bold text-gray-900">円</span>
                                 </div>
-                                <div className="bg-emerald-500 text-white font-bold px-6 py-2 rounded-full text-sm shadow-md">
+                                <div className="bg-emerald-500 text-white font-bold px-6 py-2 text-sm shadow-md">
                                     ★親子で入会の場合、入会金無料
                                 </div>
                             </div>
@@ -107,7 +39,7 @@ export default function MembershipContent() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                         {/* 幼児 */}
-                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg overflow-hidden hover:-translate-y-1 transition-all duration-300">
                             <div className="absolute top-0 left-0 w-full h-1 bg-yellow-400"></div>
                             <div className="mb-4">
                                 <span className="text-xs text-yellow-500 font-bold tracking-widest uppercase">年中〜年長</span>
@@ -126,7 +58,7 @@ export default function MembershipContent() {
                         </div>
 
                         {/* 小学生 */}
-                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg overflow-hidden hover:-translate-y-1 transition-all duration-300">
                             <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500"></div>
                             <div className="mb-4">
                                 <span className="text-xs text-emerald-600 font-bold tracking-widest uppercase">1年生〜6年生</span>
@@ -145,7 +77,7 @@ export default function MembershipContent() {
                         </div>
 
                         {/* 中学生〜高校生 */}
-                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg overflow-hidden hover:-translate-y-1 transition-all duration-300">
                             <div className="absolute top-0 left-0 w-full h-1 bg-emerald-300"></div>
                             <div className="mb-4">
                                 <span className="text-xs text-emerald-500 font-bold tracking-widest uppercase">中学1年〜高校3年</span>
@@ -164,7 +96,7 @@ export default function MembershipContent() {
                         </div>
 
                         {/* 社会人 */}
-                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                        <div className="group relative bg-white p-6 border border-gray-100 shadow-lg overflow-hidden hover:-translate-y-1 transition-all duration-300">
                             <div className="absolute top-0 left-0 w-full h-1 bg-emerald-400"></div>
                             <div className="mb-4">
                                 <span className="text-xs text-emerald-500 font-bold tracking-widest uppercase">一般・シニア</span>
@@ -184,13 +116,13 @@ export default function MembershipContent() {
                     </div>
 
                     {/* 親子割引バナー */}
-                    <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-8 rounded-xl shadow-lg relative overflow-hidden mb-16 text-white text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-xl transition-shadow">
+                    <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-8 shadow-lg relative overflow-hidden mb-16 text-white text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-xl transition-shadow">
                         <div>
-                            <span className="bg-white text-teal-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">特別割引</span>
+                            <span className="bg-white text-teal-600 text-[10px] font-bold px-3 py-1 uppercase tracking-widest mb-2 inline-block">特別割引</span>
                             <h3 className="text-2xl md:text-3xl font-bold mb-2">親子・家族割引</h3>
                             <p className="text-teal-100 text-sm font-medium">ご家族で入会されると、毎月の会費がずっと割引になります。</p>
                         </div>
-                        <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div className="flex items-center gap-4 bg-white/10 p-4 backdrop-blur-sm border border-white/20">
                             <div className="text-right">
                                 <p className="text-xs text-teal-100">毎月の会費から</p>
                                 <p className="text-3xl font-bold leading-none">-1,000<span className="text-sm">円</span></p>
@@ -202,7 +134,7 @@ export default function MembershipContent() {
                     </div>
 
                     <div className="text-center mb-16">
-                        <Link href="/schedule" className="inline-block bg-emerald-500 text-white px-12 py-4 font-bold text-lg hover:bg-emerald-600 transition-all rounded-full shadow-md hover:shadow-lg hover:-translate-y-1">
+                        <Link href="/schedule" className="inline-block bg-emerald-500 text-white px-12 py-4 font-bold text-lg hover:bg-emerald-600 transition-all shadow-md hover:shadow-lg hover:-translate-y-1">
                             スケジュールを見る
                         </Link>
                     </div>
@@ -213,7 +145,7 @@ export default function MembershipContent() {
             <section className="max-w-7xl mx-auto px-6 mb-32">
                 <div className="grid md:grid-cols-2 gap-20">
                     <div>
-                        <div className="inline-block bg-emerald-100 text-emerald-600 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-4 rounded-sm">Information</div>
+                        <div className="inline-block bg-emerald-100 text-emerald-600 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-4">Information</div>
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-widest font-maru">ご入会<span className="text-emerald-500">について</span></h2>
                         <p className="text-gray-600 leading-relaxed mb-8">
                             ご入会の手続きは体験レッスン時または稽古時に承っております。
@@ -224,25 +156,25 @@ export default function MembershipContent() {
                             お問い合わせフォームはこちら
                         </Link>
                     </div>
-                    <div className="bg-white p-10 shadow-lg border border-gray-100 rounded-xl">
+                    <div className="bg-white p-10 shadow-lg border border-gray-100">
                         <h3 className="text-xl font-bold text-gray-900 mb-8 border-b-2 border-emerald-500 pb-2 inline-block font-maru">ご入会時に必要なもの</h3>
                         <ul className="space-y-6 text-gray-700">
                             <li className="flex items-start gap-4">
-                                <span className="w-8 h-8 bg-emerald-500 text-white flex items-center justify-center flex-shrink-0 text-sm font-bold rounded-full shadow-lg shadow-emerald-500/20">1</span>
+                                <span className="w-8 h-8 bg-emerald-500 text-white flex items-center justify-center flex-shrink-0 text-sm font-bold shadow-lg shadow-emerald-500/20">1</span>
                                 <div>
                                     <p className="font-bold text-lg font-maru">入会金 ＋ 初回月謝</p>
                                     <p className="text-sm text-gray-500">初回のみ現金でのお支払いとなります。</p>
                                 </div>
                             </li>
                             <li className="flex items-start gap-4">
-                                <span className="w-8 h-8 bg-emerald-500 text-white flex items-center justify-center flex-shrink-0 text-sm font-bold rounded-full shadow-lg shadow-emerald-500/20">2</span>
+                                <span className="w-8 h-8 bg-emerald-500 text-white flex items-center justify-center flex-shrink-0 text-sm font-bold shadow-lg shadow-emerald-500/20">2</span>
                                 <div>
                                     <p className="font-bold text-lg font-maru">印鑑</p>
                                     <p className="text-sm text-gray-500">入会申込書への押印に使用します。</p>
                                 </div>
                             </li>
                             <li className="flex items-start gap-4">
-                                <span className="w-8 h-8 bg-emerald-500 text-white flex items-center justify-center flex-shrink-0 text-sm font-bold rounded-full shadow-lg shadow-emerald-500/20">3</span>
+                                <span className="w-8 h-8 bg-emerald-500 text-white flex items-center justify-center flex-shrink-0 text-sm font-bold shadow-lg shadow-emerald-500/20">3</span>
                                 <div>
                                     <p className="font-bold text-lg font-maru">動きやすい服装</p>
                                     <p className="text-sm text-gray-500">体験時はTシャツ・短パン等で構いません。</p>

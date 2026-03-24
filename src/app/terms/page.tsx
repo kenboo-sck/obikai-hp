@@ -12,12 +12,11 @@ export default function TermsPage() {
             <section className="max-w-4xl mx-auto px-6 mb-16">
                 <div className="border-l-8 border-emerald-500 pl-6 mb-12">
                     <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
-                        TERMS OF SERVICE
+                        利用規約
                     </h1>
-                    <p className="text-emerald-500 font-bold mt-2 tracking-widest uppercase text-sm">利用規約</p>
                 </div>
 
-                <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 space-y-10 leading-relaxed">
+                <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100 space-y-10 leading-relaxed">
                     <div>
                         <p className="mb-6">
                             この利用規約（以下、「本規約」といいます。）は、実戦空手道 帯会（以下、「当会」といいます。）が提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。ご利用者の皆様（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。
@@ -26,7 +25,7 @@ export default function TermsPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold">1</span>
                             適用
                         </h2>
                         <ol className="list-decimal list-outside pl-5 text-gray-600 space-y-2 text-sm md:text-base marker:text-emerald-400 marker:font-bold">
@@ -37,7 +36,7 @@ export default function TermsPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold">2</span>
                             禁止事項
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base mb-2">
@@ -58,7 +57,7 @@ export default function TermsPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold">3</span>
                             本サービスの提供の停止等
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base mb-2">
@@ -74,7 +73,7 @@ export default function TermsPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold">4</span>
                             免責事項
                         </h2>
                         <ol className="list-decimal list-outside pl-5 text-gray-600 space-y-2 text-sm md:text-base marker:text-emerald-400 marker:font-bold">
@@ -86,7 +85,7 @@ export default function TermsPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold">5</span>
                             利用規約の変更
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -96,7 +95,7 @@ export default function TermsPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+                            <span className="w-6 h-6 bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold">6</span>
                             準拠法・裁判管轄
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">

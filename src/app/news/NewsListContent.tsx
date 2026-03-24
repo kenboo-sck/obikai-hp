@@ -60,7 +60,7 @@ export default function NewsContent() {
                         <Link
                             key={item.id}
                             href={`/news/${item.id}`}
-                            className="group flex flex-col bg-white border border-gray-100 rounded-lg overflow-hidden hover:shadow-lg transition-all"
+                            className="group flex flex-col bg-white border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
                         >
                             <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
                                 {(item.image || item.imageUrl || item.thumbnail) ? (
@@ -78,7 +78,7 @@ export default function NewsContent() {
 
                             <div className="p-4 flex flex-col h-full">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <span className="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded font-bold">
+                                    <span className="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 font-bold">
                                         {item.category || "お知らせ"}
                                     </span>
                                     <span className="text-gray-400 text-xs">

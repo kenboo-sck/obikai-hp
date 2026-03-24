@@ -14,7 +14,7 @@ export default function BeginnersContent() {
                     </h1>
                 </div>
 
-                <div className="relative aspect-[4/5] md:aspect-[21/9] w-full overflow-hidden shadow-lg rounded-xl mb-12 bg-gray-100">
+                <div className="relative aspect-[4/5] md:aspect-[21/9] w-full overflow-hidden shadow-lg mb-12 bg-gray-100">
                     <Image
                         src="/IMG_0566.png"
                         alt="Beginners Welcome"
@@ -53,7 +53,7 @@ export default function BeginnersContent() {
                             </p>
                         </div>
                     </div>
-                    <div className="relative aspect-video overflow-hidden shadow-lg rounded-lg bg-gray-200">
+                    <div className="relative aspect-video overflow-hidden shadow-lg bg-gray-200">
                         <Image
                             src="/o-1008.jpg"
                             alt="Dojo"
@@ -71,21 +71,21 @@ export default function BeginnersContent() {
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-widest font-maru">選ばれる理由</h2>
                     </div>
                     <div className="grid md:grid-cols-3 gap-12">
-                        <div className="text-center bg-[#fff5f5] p-8 rounded-xl shadow-md border border-emerald-100 hover:shadow-xl transition-shadow">
+                        <div className="text-center bg-[#fff5f5] p-8 shadow-md border border-emerald-100 hover:shadow-xl transition-shadow">
                             <div className="text-emerald-500 text-4xl font-bold mb-4">01</div>
                             <h3 className="text-xl font-bold mb-4 text-gray-900">初心者・子供に優しい指導</h3>
                             <p className="text-gray-600 text-sm leading-relaxed">
                                 厳しいだけが武道ではありません。褒めて伸ばす指導方針で、初めての方やお子様でも安心して続けられます。
                             </p>
                         </div>
-                        <div className="text-center bg-[#f0f9ff] p-8 rounded-xl shadow-md border border-blue-100 hover:shadow-xl transition-shadow">
+                        <div className="text-center bg-[#f0f9ff] p-8 shadow-md border border-blue-100 hover:shadow-xl transition-shadow">
                             <div className="text-blue-500 text-4xl font-bold mb-4">02</div>
                             <h3 className="text-xl font-bold mb-4 text-gray-900">地域に根ざした活動場所</h3>
                             <p className="text-gray-600 text-sm leading-relaxed">
                                 新発田市内の学校や公民館を利用して活動しています。お住まいの近くで無理なく通うことができます。
                             </p>
                         </div>
-                        <div className="text-center bg-[#f0fdf4] p-8 rounded-xl shadow-md border border-emerald-100 hover:shadow-xl transition-shadow">
+                        <div className="text-center bg-[#f0fdf4] p-8 shadow-md border border-emerald-100 hover:shadow-xl transition-shadow">
                             <div className="text-emerald-500 text-4xl font-bold mb-4">03</div>
                             <h3 className="text-xl font-bold mb-4 text-gray-900">親子で学べるファミリープラン</h3>
                             <p className="text-gray-600 text-sm leading-relaxed">
@@ -133,7 +133,7 @@ export default function BeginnersContent() {
                     ].map((item, i) => (
                         <div
                             key={i}
-                            className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all hover:border-emerald-200"
+                            className="bg-white p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all hover:border-emerald-200"
                         >
                             <h3 className="font-bold text-lg text-gray-900 mb-2 text-emerald-600">
                                 {item.title}
@@ -172,7 +172,7 @@ export default function BeginnersContent() {
                             }
                         ].map((item, idx) => (
                             <div key={idx} className="flex-1 flex flex-col md:flex-row items-center">
-                                <div className="bg-white p-8 shadow-lg rounded-xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 w-full h-full flex flex-col justify-between border-b-4 border-transparent hover:border-emerald-400">
+                                <div className="bg-white p-8 shadow-lg relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 w-full h-full flex flex-col justify-between border-b-4 border-transparent hover:border-emerald-400">
                                     <div className="text-6xl font-black text-gray-100 absolute top-2 right-4 group-hover:text-emerald-50 transition-colors pointer-events-none">{item.step}</div>
                                     <div className="relative z-10">
                                         <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 inline-block border-b-2 border-emerald-500">{item.title}</h3>
@@ -202,26 +202,26 @@ export default function BeginnersContent() {
             {/* 持ち物セクション */}
             {/* 持ち物セクション */}
             <section className="max-w-7xl mx-auto px-6 mb-24">
-                <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
+                <div className="bg-white p-8 md:p-12 shadow-xl border border-gray-100">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-widest font-maru">持ち物について</h2>
                             <ul className="space-y-4 text-gray-700">
                                 <li className="flex items-center gap-3">
-                                    <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                                    <span className="w-2 h-2 bg-emerald-500"></span>
                                     動きやすい服装（Tシャツ、ジャージなど）
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                                    <span className="w-2 h-2 bg-blue-600"></span>
                                     タオル
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                                    <span className="w-2 h-2 bg-emerald-500"></span>
                                     水分補給用の飲み物
                                 </li>
                             </ul>
                         </div>
-                        <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-100">
+                        <div className="relative aspect-video overflow-hidden bg-gray-100">
                             <Image
                                 src="/o-1009.jpg"
                                 alt="What to bring"
@@ -266,7 +266,7 @@ export default function BeginnersContent() {
                             a: "はい、各稽古場所（学校体育館・コミュニティセンター）に駐車場がございますので、お車でお越しいただけます。"
                         }
                     ].map((item, idx) => (
-                        <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <div key={idx} className="bg-white p-6 shadow-sm border border-gray-100">
                             <h3 className="flex items-start gap-4 font-bold text-lg text-gray-900 mb-3">
                                 <span className="text-emerald-500 font-black text-xl shrink-0">Q.</span>
                                 {item.q}
@@ -284,7 +284,7 @@ export default function BeginnersContent() {
 
             {/* CTA */}
             <section className="max-w-7xl mx-auto px-6">
-                <div className="bg-emerald-400 p-12 md:p-20 text-center text-white relative overflow-hidden rounded-2xl shadow-xl">
+                <div className="bg-emerald-400 p-12 md:p-20 text-center text-white relative overflow-hidden shadow-xl">
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-5xl font-bold mb-8">
                             新しい挑戦を<span className="text-emerald-100">始めよう</span>
@@ -295,7 +295,7 @@ export default function BeginnersContent() {
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-block bg-white text-emerald-500 px-12 py-5 font-bold text-xl hover:bg-emerald-50 transition-all rounded-full shadow-lg"
+                            className="inline-block bg-white text-emerald-500 px-12 py-5 font-bold text-xl hover:bg-emerald-50 transition-all shadow-lg"
                         >
                             体験レッスンを予約する
                         </Link>

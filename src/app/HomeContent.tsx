@@ -66,11 +66,11 @@ export default function HomeContent() {
                         {/* 大会告知バナー導線 */}
                         <Link 
                             href="/sparing-tournament"
-                            className="group relative flex items-center gap-4 bg-white/80 hover:bg-white backdrop-blur-sm px-6 py-3 rounded-2xl border-2 border-emerald-400 text-emerald-700 shadow-xl transition-all hover:-translate-y-1"
+                            className="group relative flex items-center gap-4 bg-white/80 hover:bg-white backdrop-blur-sm px-6 py-3 border-2 border-emerald-400 text-emerald-700 shadow-xl transition-all hover:-translate-y-1"
                         >
                             <span className="flex h-3 w-3 relative">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                <span className="relative inline-flex h-3 w-3 bg-emerald-500"></span>
                             </span>
                             <span className="font-bold font-maru">第10回 スパーリング大会 開催決定！概要はこちら</span>
                             <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
@@ -79,13 +79,13 @@ export default function HomeContent() {
                         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-lg">
                             <Link
                                 href="/contact"
-                                className="bg-emerald-500 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-emerald-600 transition-all shadow-xl shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:-translate-y-1 transform"
+                                className="bg-emerald-500 text-white px-10 py-5 font-bold text-lg hover:bg-emerald-600 transition-all shadow-xl shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:-translate-y-1 transform"
                             >
                                 無料体験に申し込む
                             </Link>
                             <Link
                                 href="/class"
-                                className="bg-white text-gray-700 border-2 border-gray-100 px-10 py-5 rounded-full font-bold text-lg hover:border-emerald-300 hover:text-emerald-500 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
+                                className="bg-white text-gray-700 border-2 border-gray-100 px-10 py-5 font-bold text-lg hover:border-emerald-300 hover:text-emerald-500 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
                             >
                                 クラス紹介を見る
                             </Link>
@@ -97,7 +97,7 @@ export default function HomeContent() {
             {/* キャンペーンセクション */}
             <section className="bg-gradient-to-r from-emerald-400 to-teal-400 py-12 text-white overflow-hidden relative">
                 <div className="container mx-auto px-6 relative z-10 text-center">
-                    <div className="inline-block bg-white/20 px-4 py-1 rounded-full text-sm font-bold tracking-widest backdrop-blur-sm border border-white/30 mb-4 font-maru">
+                    <div className="inline-block bg-white/20 px-4 py-1 text-sm font-bold tracking-widest backdrop-blur-sm border border-white/30 mb-4 font-maru">
                         特別キャンペーン
                     </div>
                     <h2 className="text-2xl md:text-3xl font-bold mb-8 leading-tight font-maru">
@@ -105,19 +105,27 @@ export default function HomeContent() {
                     </h2>
                     <div className="flex flex-col md:flex-row justify-center gap-6 max-w-4xl mx-auto">
                         {/* 特典1 */}
-                        <div className="bg-white text-gray-800 p-6 rounded-2xl flex-1 shadow-xl border-2 border-emerald-100">
+                        <div className="bg-white text-gray-800 p-6 flex-1 shadow-xl border-2 border-emerald-100">
                             <div className="text-emerald-500 font-bold text-sm mb-2 uppercase tracking-wide">特典 01</div>
                             <div className="text-xl md:text-2xl font-bold mb-2 font-maru">空手着プレゼント</div>
-                            <div className="text-white font-bold text-sm bg-emerald-400 inline-block px-3 py-1 rounded-full">
+                            <div className="text-white font-bold text-sm bg-emerald-400 inline-block px-3 py-1 text-xs font-sans">
                                 12,000円相当
                             </div>
                         </div>
                         {/* 特典2 */}
-                        <div className="bg-white text-gray-800 p-6 rounded-2xl flex-1 shadow-xl border-2 border-emerald-100">
+                        <div className="bg-white text-gray-800 p-6 flex-1 shadow-xl border-2 border-emerald-100">
                             <div className="text-emerald-500 font-bold text-sm mb-2 uppercase tracking-wide">特典 02</div>
                             <div className="text-xl md:text-2xl font-bold mb-2 font-maru">親子割り引き</div>
-                            <div className="text-white font-bold text-sm bg-emerald-400 inline-block px-3 py-1 rounded-full">
+                            <div className="text-white font-bold text-sm bg-emerald-400 inline-block px-3 py-1 text-xs font-sans">
                                 毎月の月謝 -1,000円
+                            </div>
+                        </div>
+                        {/* 特典3 */}
+                        <div className="bg-white text-gray-800 p-6 flex-1 shadow-xl border-2 border-emerald-100">
+                            <div className="text-emerald-500 font-bold text-sm mb-2 uppercase tracking-wide">特典 03</div>
+                            <div className="text-xl md:text-2xl font-bold mb-2 font-maru">入会金無料</div>
+                            <div className="text-white font-bold text-sm bg-emerald-400 inline-block px-3 py-1 text-xs font-sans">
+                                親子で入会の場合
                             </div>
                         </div>
                     </div>
@@ -143,10 +151,9 @@ export default function HomeContent() {
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {/* Card 1: Lightest Green */}
-                        <div className="relative bg-gradient-to-br from-emerald-50/40 to-white p-10 rounded-3xl shadow-xl border border-emerald-50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center group overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50/50 rounded-full -mr-16 -mt-16"></div>
+                        <div className="relative bg-gradient-to-br from-emerald-50/40 to-white p-10 shadow-xl border border-emerald-50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center group overflow-hidden">
                             <div className="relative z-10">
-                                <div className="w-16 h-16 bg-gradient-to-br from-emerald-200 to-emerald-300 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
+                                <div className="w-16 h-16 bg-gradient-to-br from-emerald-200 to-emerald-300 flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
                                     01
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-800 mb-2 font-maru">親子で一緒に</h3>
@@ -158,10 +165,9 @@ export default function HomeContent() {
                         </div>
 
                         {/* Card 2: Light Green */}
-                        <div className="relative bg-gradient-to-br from-emerald-50/80 to-emerald-50/40 p-10 rounded-3xl shadow-xl border border-emerald-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center group overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-100/40 rounded-full -mr-16 -mt-16"></div>
+                        <div className="relative bg-gradient-to-br from-emerald-50/80 to-emerald-50/40 p-10 shadow-xl border border-emerald-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center group overflow-hidden">
                             <div className="relative z-10">
-                                <div className="w-16 h-16 bg-gradient-to-br from-emerald-300 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
+                                <div className="w-16 h-16 bg-gradient-to-br from-emerald-300 to-emerald-400 flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
                                     02
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-800 mb-2 font-maru">子供の成長</h3>
@@ -173,10 +179,9 @@ export default function HomeContent() {
                         </div>
 
                         {/* Card 3: Medium-Light Green */}
-                        <div className="relative bg-gradient-to-br from-emerald-100/60 to-emerald-50 p-10 rounded-3xl shadow-xl border border-emerald-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center group overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-200/40 rounded-full -mr-16 -mt-16"></div>
+                        <div className="relative bg-gradient-to-br from-emerald-100/60 to-emerald-50 p-10 shadow-xl border border-emerald-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center group overflow-hidden">
                             <div className="relative z-10">
-                                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
+                                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-500 flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
                                     03
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-800 mb-2 font-maru">初心者歓迎</h3>
@@ -196,7 +201,7 @@ export default function HomeContent() {
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="md:w-1/2 w-full">
                             {/* 画像プレースホルダー */}
-                            <div className="bg-white rounded-3xl w-full aspect-video flex items-center justify-center overflow-hidden shadow-xl relative">
+                            <div className="bg-white w-full aspect-video flex items-center justify-center overflow-hidden shadow-xl relative">
                                 <Image
                                     src="/o-1006.jpg"
                                     alt="Activities"
@@ -217,19 +222,19 @@ export default function HomeContent() {
                             </p>
                             <ul className="space-y-4 mb-8">
                                 <li className="flex items-center gap-3">
-                                    <span className="w-3 h-3 bg-emerald-300 rounded-full flex-shrink-0"></span>
+                                    <span className="w-3 h-3 bg-emerald-300 flex-shrink-0"></span>
                                     <span className="text-gray-700 font-medium font-maru">初心者から上級者まで対応</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="w-3 h-3 bg-emerald-300 rounded-full flex-shrink-0"></span>
+                                    <span className="w-3 h-3 bg-emerald-300 flex-shrink-0"></span>
                                     <span className="text-gray-700 font-medium font-maru">広々とした体育館でのびのび稽古</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="w-3 h-3 bg-emerald-300 rounded-full flex-shrink-0"></span>
+                                    <span className="w-3 h-3 bg-emerald-300 flex-shrink-0"></span>
                                     <span className="text-gray-700 font-medium font-maru">道具レンタルあり（手ぶらでOK）</span>
                                 </li>
                             </ul>
-                            <Link href="/access" className="inline-flex items-center gap-2 bg-white border-2 border-emerald-400 text-emerald-500 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 transition-all shadow-md group font-maru">
+                            <Link href="/access" className="inline-flex items-center gap-2 bg-white border-2 border-emerald-400 text-emerald-500 px-8 py-3 font-bold hover:bg-emerald-50 transition-all shadow-md group font-maru">
                                 アクセス詳細を見る <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </Link>
                         </div>
@@ -245,7 +250,7 @@ export default function HomeContent() {
                             <h2 className="text-3xl font-bold text-gray-800 font-maru">お知らせ</h2>
                             <p className="text-emerald-300 mt-2 text-xs font-bold tracking-widest">新着情報</p>
                         </div>
-                        <Link href="/news" className="hidden md:inline-flex items-center gap-1 bg-white border border-emerald-400 text-emerald-500 px-6 py-2 rounded-full font-bold text-sm hover:bg-emerald-50 transition-all shadow-sm font-maru">
+                        <Link href="/news" className="hidden md:inline-flex items-center gap-1 bg-white border border-emerald-400 text-emerald-500 px-6 py-2 font-bold text-sm hover:bg-emerald-50 transition-all shadow-sm font-maru">
                             一覧を見る →
                         </Link>
                     </div>
@@ -255,7 +260,7 @@ export default function HomeContent() {
                             <Link
                                 key={item.id}
                                 href={`/news/${item.id}`}
-                                className="group bg-white rounded-2xl overflow-hidden border border-emerald-100 hover:shadow-xl transition-all hover:-translate-y-1 block h-full flex flex-col"
+                                className="group bg-white overflow-hidden border border-emerald-100 hover:shadow-xl transition-all hover:-translate-y-1 block h-full flex flex-col"
                             >
                                 <div className="aspect-video bg-gray-100 relative overflow-hidden">
                                     {(item.image || item.imageUrl || item.thumbnail) ? (
@@ -272,7 +277,7 @@ export default function HomeContent() {
                                 </div>
                                 <div className="p-6 flex-1 flex flex-col">
                                     <div className="flex items-center gap-3 mb-3">
-                                        <span className="bg-emerald-50 text-emerald-600 text-[10px] px-2 py-1 rounded-full font-bold">
+                                        <span className="bg-emerald-50 text-emerald-600 text-[10px] px-2 py-1 font-bold">
                                             {item.category || "お知らせ"}
                                         </span>
                                         <span className="text-gray-400 text-xs font-medium">
@@ -291,7 +296,7 @@ export default function HomeContent() {
                         ))}
                     </div>
                     <div className="mt-10 text-center md:hidden">
-                        <Link href="/news" className="inline-block border-2 border-emerald-400 text-emerald-500 px-8 py-3 rounded-full font-bold text-sm hover:bg-emerald-50 transition-all font-maru">
+                        <Link href="/news" className="inline-block border-2 border-emerald-400 text-emerald-500 px-8 py-3 font-bold text-sm hover:bg-emerald-50 transition-all font-maru">
                             お知らせ一覧
                         </Link>
                     </div>
@@ -306,27 +311,27 @@ export default function HomeContent() {
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-2 font-maru">
                             活動の<span className="text-emerald-500">様子</span>
                         </h2>
-                        <div className="w-20 h-1.5 bg-emerald-500 mx-auto mt-6 rounded-full"></div>
+                        <div className="w-20 h-1.5 bg-emerald-500 mx-auto mt-6"></div>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
-                        <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
                             <Image src="/activity-1.jpg" alt="稽古風景 1" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
                             <Image src="/activity-2.jpg" alt="稽古風景 2" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg group md:row-span-2 md:aspect-auto">
+                        <div className="relative aspect-square overflow-hidden shadow-lg group md:row-span-2 md:aspect-auto">
                             <Image src="/activity-3.jpg" alt="稽古風景 3" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
                             <Image src="/activity-4.jpg" alt="稽古風景 4" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
                             <Image src="/activity-5.jpg" alt="稽古風景 5" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
@@ -336,7 +341,7 @@ export default function HomeContent() {
                         <p className="text-gray-500 font-medium mb-8">
                             帯会では、幼児から大人まで幅広い年代が楽しく、真剣に稽古に励んでいます。
                         </p>
-                        <Link href="/instructors" className="inline-block border-2 border-emerald-500 text-emerald-600 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 transition-all font-maru">
+                        <Link href="/instructors" className="inline-block border-2 border-emerald-500 text-emerald-600 px-8 py-3 font-bold hover:bg-emerald-50 transition-all font-maru">
                             指導員・活動風景をもっと見る
                         </Link>
                     </div>
@@ -353,7 +358,7 @@ export default function HomeContent() {
                         空手やキックボクシングが初めての方でも安心してご参加いただけます。<br className="hidden md:block" />
                         親子での体験も大歓迎です。お気軽にお申し込みください。
                     </p>
-                    <Link href="/contact" className="inline-block bg-white text-emerald-500 px-12 py-5 rounded-full font-bold text-lg shadow-xl hover:bg-emerald-50 transition-all transform hover:-translate-y-1 font-maru">
+                    <Link href="/contact" className="inline-block bg-white text-emerald-500 px-12 py-5 font-bold text-lg shadow-xl hover:bg-emerald-50 transition-all transform hover:-translate-y-1 font-maru">
                         体験予約はこちら
                     </Link>
                 </div>

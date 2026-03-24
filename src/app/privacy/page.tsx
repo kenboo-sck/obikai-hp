@@ -12,12 +12,11 @@ export default function PrivacyPage() {
             <section className="max-w-4xl mx-auto px-6 mb-16">
                 <div className="border-l-8 border-emerald-500 pl-6 mb-12">
                     <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
-                        PRIVACY POLICY
+                        プライバシーポリシー
                     </h1>
-                    <p className="text-emerald-500 font-bold mt-2 tracking-widest uppercase text-sm">プライバシーポリシー</p>
                 </div>
 
-                <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 space-y-10 leading-relaxed">
+                <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100 space-y-10 leading-relaxed">
                     <div>
                         <p className="mb-6">
                             実戦空手道 帯会（以下、「当会」といいます。）は、お客様の個人情報の重要性を認識し、その保護を徹底するために、以下の通り個人情報保護方針を定めます。
@@ -26,7 +25,7 @@ export default function PrivacyPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                            <span className="w-2 h-2 bg-emerald-500"></span>
                             個人情報の収集について
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -36,7 +35,7 @@ export default function PrivacyPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                            <span className="w-2 h-2 bg-emerald-500"></span>
                             個人情報の利用目的
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base mb-2">
@@ -53,7 +52,7 @@ export default function PrivacyPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                            <span className="w-2 h-2 bg-emerald-500"></span>
                             個人情報の第三者への提供
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -63,7 +62,7 @@ export default function PrivacyPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                            <span className="w-2 h-2 bg-emerald-500"></span>
                             個人情報の管理
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -73,7 +72,7 @@ export default function PrivacyPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                            <span className="w-2 h-2 bg-emerald-500"></span>
                             ご本人の照会・修正・削除
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -83,13 +82,13 @@ export default function PrivacyPage() {
 
                     <div>
                         <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                            <span className="w-2 h-2 bg-emerald-500"></span>
                             お問い合せ
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
                             当会の個人情報の取り扱いに関するお問い合わせは、下記までご連絡ください。
                         </p>
-                        <div className="mt-4 bg-gray-50 p-6 rounded-lg">
+                        <div className="mt-4 bg-gray-50 p-6">
                             <p className="font-bold text-gray-900">実戦空手道 帯会</p>
                             <p className="text-gray-600 mt-2 text-sm">
                                 〒957-0053<br />

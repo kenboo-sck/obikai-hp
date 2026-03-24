@@ -51,7 +51,7 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className="ml-2 xl:ml-4 bg-emerald-50 text-emerald-600 border border-emerald-200 px-3 py-1 xl:px-4 xl:py-1.5 text-[10px] xl:text-xs font-bold rounded flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm shrink-0 font-maru"
+            className="ml-2 xl:ml-4 bg-emerald-50 text-emerald-600 border border-emerald-200 px-3 py-1 xl:px-4 xl:py-1.5 text-[10px] xl:text-xs font-bold flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm shrink-0 font-maru"
           >
             無料体験
           </Link>
@@ -91,7 +91,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full bg-emerald-500 text-white text-center py-4 rounded-full font-bold text-lg shadow-lg shadow-emerald-900/20 active:scale-95 transition-transform"
+              className="block w-full bg-emerald-500 text-white text-center py-4 font-bold text-lg shadow-lg shadow-emerald-900/20 active:scale-95 transition-transform"
             >
               無料体験に申し込む
             </Link>

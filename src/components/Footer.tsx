@@ -61,7 +61,7 @@ export default function Footer() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white text-stone-900 px-8 py-3 font-bold text-sm rounded-full hover:bg-emerald-50 hover:text-emerald-600 transition-all shadow-md"
+              className="inline-block bg-white text-stone-900 px-8 py-3 font-bold text-sm hover:bg-emerald-50 hover:text-emerald-600 transition-all shadow-md"
             >
               体験予約 →
             </Link>
@@ -92,22 +92,22 @@ export default function Footer() {
             <h3 className="text-base font-bold tracking-widest text-emerald-400 mb-6 border-b border-emerald-900/10 pb-2">
               お問い合わせ
             </h3>
-            <div className="space-y-6 text-sm">
+             <div className="space-y-6 text-sm">
               <div>
-                <p className="text-[10px] text-stone-400 tracking-wider mb-2 font-bold bg-white/5 inline-block px-2 py-0.5 rounded">所在地</p>
+                <p className="text-[10px] text-stone-400 tracking-wider mb-2 font-bold bg-white/5 inline-block px-2 py-0.5">所在地</p>
                 <p className="text-white leading-relaxed">
                   〒957-0015<br />
                   新潟県新発田市東新町2丁目5-4-9
                 </p>
               </div>
               <div>
-                <p className="text-[10px] text-stone-400 tracking-wider mb-2 font-bold bg-white/5 inline-block px-2 py-0.5 rounded">電話番号</p>
+                <p className="text-[10px] text-stone-400 tracking-wider mb-2 font-bold bg-white/5 inline-block px-2 py-0.5">電話番号</p>
                 <a href="tel:09010393392" className="text-white hover:text-emerald-300 transition-colors font-bold text-lg block">
                   090-1039-3392
                 </a>
               </div>
               <div>
-                <p className="text-[10px] text-stone-400 tracking-wider mb-2 font-bold bg-white/5 inline-block px-2 py-0.5 rounded">稽古時間</p>
+                <p className="text-[10px] text-stone-400 tracking-wider mb-2 font-bold bg-white/5 inline-block px-2 py-0.5">稽古時間</p>
                 <p className="text-white leading-relaxed">
                   月・火・木・金・土 19:00 - 21:00
                 </p>
@@ -175,7 +175,7 @@ export default function Footer() {
         showButton && (
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-24 right-4 lg:bottom-8 lg:right-8 bg-emerald-400 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-all shadow-lg z-40 animate-fade-in"
+            className="fixed bottom-24 right-4 lg:bottom-8 lg:right-8 bg-emerald-400 text-white w-12 h-12 flex items-center justify-center hover:bg-emerald-500 transition-all shadow-lg z-40 animate-fade-in"
             aria-label="トップへ戻る"
           >
             <svg

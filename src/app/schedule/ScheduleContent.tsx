@@ -121,13 +121,13 @@ export default function ScheduleContent() {
             {/* ヘッダー */}
             <section className="mb-16">
                 <div className="border-l-8 border-emerald-500 pl-6 mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none tracking-widest font-maru">
-                        週間<span className="text-emerald-500">スケジュール</span>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
+                        スケジュール
                     </h1>
                 </div>
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-xl text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl">
+                <div className="bg-emerald-50 border border-emerald-100 p-6 text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl">
                     <p className="font-bold text-emerald-800 mb-2 flex items-center gap-2">
-                        <span className="bg-emerald-500 text-white text-xs px-2 py-0.5 rounded">INFO</span>
+                        <span className="bg-emerald-500 text-white text-xs px-2 py-0.5">INFO</span>
                         稽古場所について
                     </p>
                     <p>
@@ -141,7 +141,7 @@ export default function ScheduleContent() {
 
             {/* PC版：週間グリッド (md以上) */}
             <div className="hidden md:block">
-                <div className="grid grid-cols-7 gap-px bg-gray-200 border border-gray-200 overflow-hidden shadow-lg rounded-lg">
+                <div className="grid grid-cols-7 gap-px bg-gray-200 border border-gray-200 overflow-hidden shadow-lg">
                     {weekLabels.map((day, idx) => (
                         <div key={day} className={`py-4 text-center font-bold text-sm tracking-widest text-white ${idx === 6 ? 'bg-teal-500' : idx === 5 ? 'bg-emerald-400' : 'bg-stone-800'}`}>
                             {day}
@@ -158,7 +158,7 @@ export default function ScheduleContent() {
                                             <div
                                                 key={item.id}
                                                 style={{ borderLeftColor: item.color }}
-                                                className="bg-white border-l-4 p-3 shadow-sm border border-gray-100 hover:shadow-md transition-shadow rounded-r"
+                                                className="bg-white border-l-4 p-3 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
                                             >
                                                 <div style={{ color: item.color }} className="font-bold text-lg leading-tight mb-1">
                                                     {item.startTime}
@@ -208,7 +208,7 @@ export default function ScheduleContent() {
                             </div>
                             <div className="space-y-4">
                                 {daySchedules.map(item => (
-                                    <div key={item.id} className="relative p-5 bg-white border border-gray-100 shadow-md rounded-lg overflow-hidden">
+                                    <div key={item.id} className="relative p-5 bg-white border border-gray-100 shadow-md overflow-hidden">
                                         <div style={{ backgroundColor: item.color }} className="absolute top-0 left-0 w-1.5 h-full"></div>
                                         <div className="pl-2">
                                             <div className="flex justify-between items-center mb-2">
@@ -218,11 +218,11 @@ export default function ScheduleContent() {
                                             </div>
                                             <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
                                             {item.target && (
-                                                <span className="inline-block bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded font-bold mb-3">
+                                                <span className="inline-block bg-red-100 text-red-600 text-xs px-2 py-0.5 font-bold mb-3">
                                                     {item.target}
                                                 </span>
                                             )}
-                                            <div className="flex items-start gap-2 text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mt-1">
+                                            <div className="flex items-start gap-2 text-sm text-gray-600 bg-gray-50 p-3 mt-1">
                                                 <FaLocationDot className="shrink-0 mt-1 text-emerald-500" />
                                                 <span className="font-bold text-xs leading-relaxed">{item.location}</span>
                                             </div>
@@ -248,7 +248,7 @@ export default function ScheduleContent() {
                         <div
                             key={cls.id}
                             onClick={() => setSelectedClass(cls)}
-                            className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden cursor-pointer rounded-xl h-full flex flex-col"
+                            className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden cursor-pointer h-full flex flex-col"
                         >
                             {cls.image && (
                                 <div className="relative h-48 w-full overflow-hidden bg-gray-100">
@@ -263,7 +263,7 @@ export default function ScheduleContent() {
                             <div className="p-6 flex flex-col flex-1">
                                 <div className="flex items-center gap-3 mb-4">
                                     <div
-                                        className="w-3 h-3 rounded-full shrink-0"
+                                        className="w-3 h-3 shrink-0"
                                         style={{ backgroundColor: cls.color }}
                                     />
                                     <h3 className="text-lg font-bold text-gray-900 leading-tight">{cls.title}</h3>
@@ -288,7 +288,7 @@ export default function ScheduleContent() {
                     />
 
                     {/* モーダル本体 */}
-                    <div className="relative bg-white w-full max-w-lg max-h-[90vh] shadow-2xl overflow-y-auto animate-in zoom-in-95 slide-in-from-bottom-4 duration-300 rounded-2xl">
+                    <div className="relative bg-white w-full max-w-lg max-h-[90vh] shadow-2xl overflow-y-auto animate-in zoom-in-95 slide-in-from-bottom-4 duration-300">
                         {/* ヘッダー */}
                         <div className="p-6 pb-4 border-b border-gray-100 flex justify-between items-start sticky top-0 bg-white z-10">
                             <div className="border-l-4 pl-4" style={{ borderLeftColor: selectedClass.color }}>
@@ -322,7 +322,7 @@ export default function ScheduleContent() {
                         <div className="p-6">
                             {selectedClass.notice && (
                                 <div className="mb-4">
-                                    <span className="inline-block bg-yellow-100 border border-yellow-200 text-yellow-800 font-bold px-4 py-2 rounded-full text-sm">
+                                    <span className="inline-block bg-yellow-100 border border-yellow-200 text-yellow-800 font-bold px-4 py-2 text-sm">
                                         {selectedClass.notice}
                                     </span>
                                 </div>
@@ -334,7 +334,7 @@ export default function ScheduleContent() {
                             </div>
 
                             {/* こんな方にお勧め */}
-                            <div className="mb-8 bg-emerald-50/50 p-4 rounded-lg border border-emerald-50">
+                            <div className="mb-8 bg-emerald-50/50 p-4 border border-emerald-50">
                                 <h4 className="text-[10px] font-bold uppercase mb-3 tracking-widest text-emerald-600">
                                     こんな方にお勧め
                                 </h4>
@@ -354,7 +354,7 @@ export default function ScheduleContent() {
                                 {schedules
                                     .filter(s => s.title === selectedClass.title)
                                     .map((session, idx) => (
-                                        <div key={idx} className="flex flex-col p-3 border border-gray-100 rounded-lg bg-gray-50">
+                                        <div key={idx} className="flex flex-col p-3 border border-gray-100 bg-gray-50">
                                             <div className="flex justify-between items-center mb-1">
                                                 <div className="flex items-center gap-2">
                                                     <span className="font-bold text-gray-900 text-lg">{weekLabels[session.dayOfWeek]}</span>
@@ -376,7 +376,7 @@ export default function ScheduleContent() {
                             <div className="mt-8">
                                 <Link
                                     href="/contact"
-                                    className="block w-full bg-emerald-500 text-white text-center py-4 font-bold rounded-xl hover:bg-emerald-600 transition-colors shadow-lg shadow-emerald-200"
+                                    className="block w-full bg-emerald-500 text-white text-center py-4 font-bold hover:bg-emerald-600 transition-colors shadow-lg shadow-emerald-200"
                                 >
                                     無料体験を予約する
                                 </Link>
@@ -388,8 +388,8 @@ export default function ScheduleContent() {
             {/* 稽古場所セクション */}
             <section className="mt-24 mb-12">
                 <div className="border-l-8 border-emerald-500 pl-6 mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none tracking-widest font-maru">
-                        稽古場所への<span className="text-emerald-500">アクセス</span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
+                        アクセス
                     </h2>
                 </div>
 
@@ -426,7 +426,7 @@ export default function ScheduleContent() {
                             mapUrl: "https://maps.google.com/maps?q=新潟県新発田市下羽津1566-1&t=&z=15&ie=UTF8&iwloc=&output=embed"
                         }
                     ].map((loc, index) => (
-                        <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div key={index} className="bg-white shadow-xl overflow-hidden border border-gray-100 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div className="relative h-64 w-full bg-gray-200">
                                 <iframe
                                     title={`Map: ${loc.name}`}
@@ -441,7 +441,7 @@ export default function ScheduleContent() {
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
                                 <div className="mb-4">
-                                    <h3 className="text-2xl font-extrabold text-gray-900 mb-1 font-maru">{loc.name}</h3>
+                                    <h3 className="text-2xl font-extrabold text-gray-900 mb-1">{loc.name}</h3>
                                 </div>
                                 <div className="mb-8 flex-1">
                                     <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-2 leading-none">Address</p>
@@ -454,7 +454,7 @@ export default function ScheduleContent() {
                                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block w-full text-center bg-emerald-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-4 rounded-xl transition-all duration-300 border border-emerald-100 font-maru"
+                                    className="block w-full text-center bg-emerald-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-4 transition-all duration-300 border border-emerald-100 font-maru"
                                 >
                                     Google Mapで開く
                                 </a>
@@ -467,8 +467,8 @@ export default function ScheduleContent() {
             {/* 稽古風景（活動の様子）ギャラリー */}
             <section className="mt-24 mb-12">
                 <div className="border-l-8 border-emerald-500 pl-6 mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none tracking-widest font-maru">
-                        稽古風景<span className="text-emerald-500">（活動の様子）</span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
+                        稽古風景
                     </h2>
                 </div>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">

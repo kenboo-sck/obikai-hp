@@ -197,7 +197,7 @@ function ContactFormContent() {
             </section>
 
             <div className="max-w-4xl mx-auto px-6">
-                <div className="bg-white border border-gray-100 shadow-xl rounded-xl overflow-hidden">
+                <div className="bg-white border border-gray-100 shadow-xl overflow-hidden">
                     <div className="bg-stone-900 text-white py-8 px-10 border-b border-emerald-500/30">
                         <h2 className="text-2xl font-bold tracking-wide">ご入力フォーム</h2>
                         <p className="text-xs mt-2 text-stone-400 font-medium">以下の項目をご記入の上、送信してください。</p>
@@ -251,22 +251,22 @@ function ContactFormContent() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold tracking-wider text-gray-500 block">お名前 <span className="text-emerald-500">＊</span></label>
-                                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="山田 太郎" className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" required />
+                                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="山田 太郎" className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" required />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold tracking-wider text-gray-500 block">電話番号</label>
-                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="09012345678" className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
+                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="09012345678" className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold tracking-wider text-gray-500 block">メールアドレス <span className="text-emerald-500">＊</span></label>
-                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="example@mail.com" className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" required />
+                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="example@mail.com" className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" required />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold tracking-wider text-gray-500 block">メールアドレス（確認用） <span className="text-emerald-500">＊</span></label>
-                                    <input type="email" name="emailConfirm" value={formData.emailConfirm} onChange={handleChange} placeholder="もう一度入力してください" className={`w-full border p-3 rounded outline-none transition-colors ${emailError ? 'border-red-500' : 'border-gray-300 focus:border-emerald-500'}`} required />
+                                    <input type="email" name="emailConfirm" value={formData.emailConfirm} onChange={handleChange} placeholder="もう一度入力してください" className={`w-full border p-3 outline-none transition-colors ${emailError ? 'border-red-500' : 'border-gray-300 focus:border-emerald-500'}`} required />
                                     {emailError && <p className="text-red-500 text-xs font-bold mt-1">{emailError}</p>}
                                 </div>
                             </div>
@@ -277,31 +277,31 @@ function ContactFormContent() {
                                         <label className="text-xs font-bold tracking-wider text-gray-500 block">郵便番号</label>
                                         <div className="flex items-center gap-2">
                                             <span className="font-bold text-gray-600">〒</span>
-                                            <input type="text" name="zip" value={formData.zip} onChange={handleZipChange} placeholder="1234567" maxLength={7} className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
+                                            <input type="text" name="zip" value={formData.zip} onChange={handleZipChange} placeholder="1234567" maxLength={7} className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" />
                                         </div>
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold tracking-wider text-gray-500 block">都道府県</label>
-                                        <input type="text" name="prefecture" value={formData.prefecture} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
+                                        <input type="text" name="prefecture" value={formData.prefecture} onChange={handleChange} className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold tracking-wider text-gray-500 block">市区町村</label>
-                                        <input type="text" name="city" value={formData.city} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
+                                        <input type="text" name="city" value={formData.city} onChange={handleChange} className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">番地・建物名</label>
-                                    <input type="text" name="address" value={formData.address} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">番地·建物名</label>
+                                    <input type="text" name="address" value={formData.address} onChange={handleChange} className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-xs font-bold tracking-wider text-gray-500 block">お問い合わせ内容</label>
-                                <textarea name="message" value={formData.message} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded h-48 focus:border-emerald-500 outline-none resize-none transition-colors"></textarea>
+                                <textarea name="message" value={formData.message} onChange={handleChange} className="w-full border border-gray-300 p-3 h-48 focus:border-emerald-500 outline-none resize-none transition-colors"></textarea>
                             </div>
 
                             <div className="text-center pt-6">
-                                <button type="submit" className="bg-emerald-500 text-white px-12 py-4 rounded-full hover:bg-emerald-600 transition-all font-bold text-lg shadow-lg">
+                                <button type="submit" className="bg-emerald-500 text-white px-12 py-4 hover:bg-emerald-600 transition-all font-bold text-lg shadow-lg">
                                     内容を確認して送信する →
                                 </button>
                             </div>
@@ -334,14 +334,14 @@ function ContactFormContent() {
                                 <button
                                     onClick={handleBack}
                                     disabled={isSubmitting}
-                                    className="bg-gray-100 text-gray-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition-all disabled:opacity-50"
+                                    className="bg-gray-100 text-gray-600 px-10 py-4 font-bold text-lg hover:bg-gray-200 transition-all disabled:opacity-50"
                                 >
                                     ← 修正する
                                 </button>
                                 <button
                                     onClick={handleFinalSubmit}
                                     disabled={isSubmitting}
-                                    className="bg-emerald-500 text-white px-12 py-4 rounded-full hover:bg-emerald-600 transition-all shadow-xl font-bold text-lg disabled:opacity-50"
+                                    className="bg-emerald-500 text-white px-12 py-4 hover:bg-emerald-600 transition-all shadow-xl font-bold text-lg disabled:opacity-50"
                                 >
                                     {isSubmitting ? '送信中...' : 'この内容で送信する →'}
                                 </button>

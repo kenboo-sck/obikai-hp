@@ -58,7 +58,7 @@ export default function NewsDetailClient() {
         <div className="pt-40 pb-20 px-4 max-w-[1000px] mx-auto font-sans text-gray-800">
             <div className="mb-6 flex items-center gap-3">
                 {dateStr && <span className="text-gray-500 text-sm font-bold tracking-widest">{dateStr}</span>}
-                <span className="bg-emerald-500 text-white text-xs px-3 py-1 font-bold rounded-full">
+                <span className="bg-emerald-500 text-white text-xs px-3 py-1 font-bold">
                     {news.category || "INFO"}
                 </span>
             </div>
@@ -66,7 +66,7 @@ export default function NewsDetailClient() {
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-10 leading-tight border-b border-gray-100 pb-8">{news.title}</h1>
 
             {imageUrl && (
-                <div className="relative w-full aspect-video mb-12 bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                <div className="relative w-full aspect-video mb-12 bg-gray-50 overflow-hidden shadow-md">
                     <Image
                         src={imageUrl}
                         alt={news.title}
@@ -78,7 +78,7 @@ export default function NewsDetailClient() {
             )}
 
             <div
-                className="prose max-w-none prose-lg text-gray-700 prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-emerald-500 prose-strong:text-emerald-900 prose-img:rounded-lg"
+                className="prose max-w-none prose-lg text-gray-700 prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-emerald-500 prose-strong:text-emerald-900"
                 dangerouslySetInnerHTML={{ __html: news.content }}
             />
         </div>

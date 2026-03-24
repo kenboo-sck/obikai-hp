@@ -82,7 +82,7 @@ export default function ClassContent() {
                         <div className="flex flex-col gap-20">
                             {cat.classes.map((cls, cIdx) => (
                                 <div key={cIdx} className="group flex flex-col md:flex-row gap-12 items-start">
-                                    <div className="relative w-full md:w-5/12 aspect-[4/3] overflow-hidden shadow-lg rounded-xl bg-gray-200">
+                                    <div className="relative w-full md:w-5/12 aspect-[4/3] overflow-hidden shadow-lg bg-gray-200">
                                         <Image
                                             src={cls.image}
                                             alt={cls.title}
@@ -102,7 +102,7 @@ export default function ClassContent() {
                                         {/* Notice: パパさん大歓迎の一文を目立つように表示 */}
                                         {('notice' in cls) && (
                                             <div className="mb-6">
-                                                <span className="inline-block bg-yellow-100 border border-yellow-200 text-yellow-800 font-bold px-4 py-2 rounded-full text-sm">
+                                                <span className="inline-block bg-yellow-100 border border-yellow-200 text-yellow-800 font-bold px-4 py-2 text-sm">
                                                     {(cls as any).notice}
                                                 </span>
                                             </div>
@@ -112,14 +112,14 @@ export default function ClassContent() {
                                         </p>
 
                                         {/* こんな方にお勧めセクション */}
-                                        <div className="p-6 bg-white border border-gray-100 rounded-lg shadow-sm">
+                                        <div className="p-6 bg-white border border-gray-100 shadow-sm">
                                             <h4 className="text-sm font-bold uppercase mb-4 tracking-widest text-emerald-500">
                                                 こんな方にお勧め
                                             </h4>
                                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                                 {cls.recommended?.map((item, rIdx) => (
                                                     <li key={rIdx} className="flex items-center gap-3 text-sm font-medium text-gray-700">
-                                                        <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-[10px] bg-emerald-100 text-emerald-500 rounded-full">✓</span>
+                                                        <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-[10px] bg-emerald-100 text-emerald-500">✓</span>
                                                         {item}
                                                     </li>
                                                 ))}
@@ -137,16 +137,16 @@ export default function ClassContent() {
             <section className="py-20 bg-gray-50 border-y border-gray-100">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+                        <div className="relative aspect-[3/4] overflow-hidden shadow-md">
                             <Image src="/activity-7.jpg" alt="稽古風景" fill className="object-cover" />
                         </div>
-                        <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md mt-8 md:mt-12">
+                        <div className="relative aspect-[3/4] overflow-hidden shadow-md mt-8 md:mt-12">
                             <Image src="/activity-8.jpg" alt="稽古風景" fill className="object-cover" />
                         </div>
-                        <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+                        <div className="relative aspect-[3/4] overflow-hidden shadow-md">
                             <Image src="/activity-9.jpg" alt="稽古風景" fill className="object-cover" />
                         </div>
-                        <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md mt-8 md:mt-12">
+                        <div className="relative aspect-[3/4] overflow-hidden shadow-md mt-8 md:mt-12">
                             <Image src="/o-1001.jpg" alt="稽古風景" fill className="object-cover" />
                         </div>
                     </div>
@@ -155,7 +155,7 @@ export default function ClassContent() {
 
             {/* 下部CTA */}
             <section className="py-24 max-w-7xl mx-auto px-6">
-                <div className="bg-emerald-400 p-12 md:p-20 text-center text-white relative overflow-hidden shadow-xl rounded-2xl">
+                <div className="bg-emerald-400 p-12 md:p-20 text-center text-white relative overflow-hidden shadow-xl">
                     <div className="relative z-10">
                         <h2 className="text-4xl md:text-6xl font-bold mb-8 font-maru tracking-widest">
                             さあ、<span className="text-emerald-100">始めよう！</span>
@@ -165,10 +165,10 @@ export default function ClassContent() {
                             道場の雰囲気や指導内容を肌で感じていただけます。
                         </p>
                         <div className="flex flex-col md:flex-row gap-6 justify-center">
-                            <Link href="/schedule" className="bg-white text-emerald-500 px-10 py-4 font-bold text-lg hover:bg-emerald-50 transition-all rounded-full shadow-lg">
+                            <Link href="/schedule" className="bg-white text-emerald-500 px-10 py-4 font-bold text-lg hover:bg-emerald-50 transition-all shadow-lg">
                                 スケジュールを確認
                             </Link>
-                            <Link href="/contact" className="bg-emerald-600 text-white px-10 py-4 font-bold text-lg hover:bg-emerald-700 transition-all rounded-full shadow-lg border border-emerald-400">
+                            <Link href="/contact" className="bg-emerald-600 text-white px-10 py-4 font-bold text-lg hover:bg-emerald-700 transition-all shadow-lg border border-emerald-400">
                                 キャンペーンを利用して体験
                             </Link>
                         </div>
