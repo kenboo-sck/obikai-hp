@@ -7,7 +7,55 @@ export default function MembershipContent() {
     return (
         <div className="pt-32 pb-20 font-sans text-gray-800">
 
-            {/* 料金セクション */}
+            {/* キャンペーンセクション (タイトルなし・背景あり) */}
+            <section className="relative w-full mb-24 overflow-hidden px-6">
+                <div className="max-w-7xl mx-auto relative overflow-hidden shadow-2xl min-h-[500px] flex items-center">
+                    {/* 背景画像とオーバーレイ */}
+                    <div className="absolute inset-0 z-0">
+                        <Image 
+                            src="/activity-6.jpg" 
+                            alt="活動風景" 
+                            fill 
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-transparent"></div>
+                    </div>
+
+                    <div className="relative z-10 p-8 md:p-20 w-full md:w-2/3">
+                        <div className="inline-block bg-emerald-500 text-white px-4 py-1 text-[10px] font-bold uppercase tracking-[0.2em] mb-8 shadow-lg">
+                            Special Membership Offer
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-left">
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6">
+                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2 font-sans">特典 01</p>
+                                <p className="text-xl font-bold font-maru text-white">空手着プレゼント</p>
+                                <p className="text-xs font-bold bg-emerald-500 inline-block px-3 py-1 mt-2 text-white font-sans">12,000円相当</p>
+                            </div>
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6">
+                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2 font-sans">特典 02</p>
+                                <p className="text-xl font-bold font-maru text-white">親子・家族割引</p>
+                                <p className="text-xs font-bold bg-emerald-500 inline-block px-3 py-1 mt-2 text-white font-sans">毎月の月謝 -1,000円</p>
+                            </div>
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6">
+                                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest mb-2 font-sans">特典 03</p>
+                                <p className="text-xl font-bold font-maru text-white">入会金無料</p>
+                                <p className="text-xs font-bold bg-emerald-500 inline-block px-3 py-1 mt-2 text-white font-sans">親子で入会の場合</p>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row items-center gap-8 md:justify-start">
+                            <Link href="/contact" className="w-full sm:w-auto bg-emerald-500 text-white px-10 py-4 font-bold text-lg hover:bg-emerald-400 transition-all shadow-lg font-maru text-center">
+                                無料体験を予約する
+                            </Link>
+                            <p className="text-white/50 text-[10px] sm:max-w-xs leading-relaxed text-left font-sans">
+                                ※キャンペーンの適用には一定期間の継続利用が条件となります。定員に達し次第終了となりますのでお早めにお申し込みください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* 料金セクション */}
             <section className="bg-emerald-50/50 py-32 mb-24 relative overflow-hidden">
