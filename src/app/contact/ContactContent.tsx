@@ -187,62 +187,61 @@ function ContactFormContent() {
         <div className="pt-40 pb-20 font-sans">
             <section className="relative max-w-7xl mx-auto px-6 mb-16 overflow-hidden">
                 <div className="absolute top-1/2 -translate-y-1/2 -left-10 select-none pointer-events-none z-0 opacity-[0.03] whitespace-nowrap">
-                    <span className="text-[10rem] font-bold text-gray-900 uppercase">CONTACT</span>
+                    <span className="text-[10rem] font-bold text-gray-900">お問い合わせ</span>
                 </div>
-                <div className="relative z-10 border-l-8 border-orange-500 pl-6 mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
-                        GET IN <span className="text-orange-500">TOUCH</span>
+                <div className="relative z-10 border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        お問い合わせ<span className="text-emerald-500">フォーム</span>
                     </h1>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">お問い合わせ</p>
                 </div>
             </section>
 
             <div className="max-w-4xl mx-auto px-6">
                 <div className="bg-white border border-gray-100 shadow-xl rounded-xl overflow-hidden">
-                    <div className="bg-stone-900 text-white py-8 px-10">
-                        <h2 className="text-2xl font-bold uppercase tracking-wide">Inquiry Form</h2>
-                        <p className="text-xs mt-2 text-stone-300 font-medium">必要事項をご記入の上、送信してください。</p>
+                    <div className="bg-stone-900 text-white py-8 px-10 border-b border-emerald-500/30">
+                        <h2 className="text-2xl font-bold tracking-wide">ご入力フォーム</h2>
+                        <p className="text-xs mt-2 text-stone-400 font-medium">以下の項目をご記入の上、送信してください。</p>
                     </div>
 
                     {!isConfirm ? (
                         <form onSubmit={handleConfirm} className="p-10 space-y-10">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                 <div className="space-y-4">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Subject / 項目 <span className="text-orange-500">＊</span></label>
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">お問い合わせ項目 <span className="text-emerald-500">＊</span></label>
                                     <div className="flex flex-wrap gap-4 text-sm font-medium">
                                         {["無料体験申込み", "入会希望", "その他"].map((item) => (
-                                            <label key={item} className="flex items-center gap-2 cursor-pointer hover:text-orange-600">
-                                                <input type="radio" name="subject" value={item} checked={formData.subject === item} onChange={handleChange} className="accent-orange-500" /> {item}
+                                            <label key={item} className="flex items-center gap-2 cursor-pointer hover:text-emerald-600">
+                                                <input type="radio" name="subject" value={item} checked={formData.subject === item} onChange={handleChange} className="accent-emerald-500" /> {item}
                                             </label>
                                         ))}
                                     </div>
                                 </div>
                                 <div className="space-y-4">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Contact Method / ご希望の連絡方法 <span className="text-orange-500">＊</span></label>
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">ご希望の連絡方法 <span className="text-emerald-500">＊</span></label>
                                     <div className="flex gap-6 text-sm font-medium">
                                         {["メール", "電話"].map((method) => (
-                                            <label key={method} className="flex items-center gap-2 cursor-pointer hover:text-orange-600">
-                                                <input type="radio" name="contactMethod" value={method} checked={formData.contactMethod === method} onChange={handleChange} className="accent-orange-500" /> {method}
+                                            <label key={method} className="flex items-center gap-2 cursor-pointer hover:text-emerald-600">
+                                                <input type="radio" name="contactMethod" value={method} checked={formData.contactMethod === method} onChange={handleChange} className="accent-emerald-500" /> {method}
                                             </label>
                                         ))}
                                     </div>
                                 </div>
                                 <div className="space-y-4">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Experience / 格闘技の経験</label>
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">格闘技の経験</label>
                                     <div className="flex gap-6 text-sm font-medium">
                                         {["有り", "無し"].map((exp) => (
-                                            <label key={exp} className="flex items-center gap-2 cursor-pointer hover:text-orange-600">
-                                                <input type="radio" name="experience" value={exp} checked={formData.experience === exp} onChange={handleChange} className="accent-orange-500" /> {exp}
+                                            <label key={exp} className="flex items-center gap-2 cursor-pointer hover:text-emerald-600">
+                                                <input type="radio" name="experience" value={exp} checked={formData.experience === exp} onChange={handleChange} className="accent-emerald-500" /> {exp}
                                             </label>
                                         ))}
                                     </div>
                                 </div>
                                 <div className="space-y-4">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Gender / 性別</label>
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">性別</label>
                                     <div className="flex gap-6 text-sm font-medium">
                                         {["男性", "女性", "回答しない"].map((gender) => (
-                                            <label key={gender} className="flex items-center gap-2 cursor-pointer hover:text-orange-600">
-                                                <input type="radio" name="gender" value={gender} checked={formData.gender === gender} onChange={handleChange} className="accent-orange-500" /> {gender}
+                                            <label key={gender} className="flex items-center gap-2 cursor-pointer hover:text-emerald-600">
+                                                <input type="radio" name="gender" value={gender} checked={formData.gender === gender} onChange={handleChange} className="accent-emerald-500" /> {gender}
                                             </label>
                                         ))}
                                     </div>
@@ -251,23 +250,23 @@ function ContactFormContent() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Name / お名前 <span className="text-orange-500">＊</span></label>
-                                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="山田 太郎" className="w-full border border-gray-300 p-3 rounded focus:border-orange-500 outline-none transition-colors" required />
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">お名前 <span className="text-emerald-500">＊</span></label>
+                                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="山田 太郎" className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Phone / 電話番号</label>
-                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="09012345678" className="w-full border border-gray-300 p-3 rounded focus:border-orange-500 outline-none transition-colors" />
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">電話番号</label>
+                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="09012345678" className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Email / メールアドレス <span className="text-orange-500">＊</span></label>
-                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="example@mail.com" className="w-full border border-gray-300 p-3 rounded focus:border-orange-500 outline-none transition-colors" required />
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">メールアドレス <span className="text-emerald-500">＊</span></label>
+                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="example@mail.com" className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Email Confirm / 確認用 <span className="text-orange-500">＊</span></label>
-                                    <input type="email" name="emailConfirm" value={formData.emailConfirm} onChange={handleChange} placeholder="もう一度入力してください" className={`w-full border p-3 rounded outline-none transition-colors ${emailError ? 'border-red-500' : 'border-gray-300 focus:border-orange-500'}`} required />
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">メールアドレス（確認用） <span className="text-emerald-500">＊</span></label>
+                                    <input type="email" name="emailConfirm" value={formData.emailConfirm} onChange={handleChange} placeholder="もう一度入力してください" className={`w-full border p-3 rounded outline-none transition-colors ${emailError ? 'border-red-500' : 'border-gray-300 focus:border-emerald-500'}`} required />
                                     {emailError && <p className="text-red-500 text-xs font-bold mt-1">{emailError}</p>}
                                 </div>
                             </div>
@@ -275,34 +274,34 @@ function ContactFormContent() {
                             <div className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Zip Code / 郵便番号</label>
+                                        <label className="text-xs font-bold tracking-wider text-gray-500 block">郵便番号</label>
                                         <div className="flex items-center gap-2">
                                             <span className="font-bold text-gray-600">〒</span>
-                                            <input type="text" name="zip" value={formData.zip} onChange={handleZipChange} placeholder="1234567" maxLength={7} className="w-full border border-gray-300 p-3 rounded focus:border-orange-500 outline-none transition-colors" />
+                                            <input type="text" name="zip" value={formData.zip} onChange={handleZipChange} placeholder="1234567" maxLength={7} className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
                                         </div>
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Prefecture / 都道府県</label>
-                                        <input type="text" name="prefecture" value={formData.prefecture} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded focus:border-orange-500 outline-none transition-colors" />
+                                        <label className="text-xs font-bold tracking-wider text-gray-500 block">都道府県</label>
+                                        <input type="text" name="prefecture" value={formData.prefecture} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">City / 市区町村</label>
-                                        <input type="text" name="city" value={formData.city} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded focus:border-orange-500 outline-none transition-colors" />
+                                        <label className="text-xs font-bold tracking-wider text-gray-500 block">市区町村</label>
+                                        <input type="text" name="city" value={formData.city} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Address / 番地・建物名</label>
-                                    <input type="text" name="address" value={formData.address} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded focus:border-orange-500 outline-none transition-colors" />
+                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">番地・建物名</label>
+                                    <input type="text" name="address" value={formData.address} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded focus:border-emerald-500 outline-none transition-colors" />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-wider text-gray-500 block">Message / お問い合わせ内容</label>
-                                <textarea name="message" value={formData.message} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded h-48 focus:border-orange-500 outline-none resize-none transition-colors"></textarea>
+                                <label className="text-xs font-bold tracking-wider text-gray-500 block">お問い合わせ内容</label>
+                                <textarea name="message" value={formData.message} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded h-48 focus:border-emerald-500 outline-none resize-none transition-colors"></textarea>
                             </div>
 
                             <div className="text-center pt-6">
-                                <button type="submit" className="bg-orange-500 text-white px-12 py-4 rounded-full hover:bg-orange-600 transition-all font-bold text-lg shadow-lg">
+                                <button type="submit" className="bg-emerald-500 text-white px-12 py-4 rounded-full hover:bg-emerald-600 transition-all font-bold text-lg shadow-lg">
                                     内容を確認して送信する →
                                 </button>
                             </div>
@@ -326,7 +325,7 @@ function ContactFormContent() {
                                     </div>
                                 ))}
                                 <div className="flex flex-col py-2">
-                                    <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Message / お問い合わせ内容</span>
+                                    <span className="text-xs font-bold text-gray-500 tracking-widest mb-2">お問い合わせ内容</span>
                                     <p className="font-medium text-gray-900 whitespace-pre-wrap leading-relaxed">{formData.message || "未入力"}</p>
                                 </div>
                             </div>
@@ -342,7 +341,7 @@ function ContactFormContent() {
                                 <button
                                     onClick={handleFinalSubmit}
                                     disabled={isSubmitting}
-                                    className="bg-orange-500 text-white px-12 py-4 rounded-full hover:bg-orange-600 transition-all shadow-xl font-bold text-lg disabled:opacity-50"
+                                    className="bg-emerald-500 text-white px-12 py-4 rounded-full hover:bg-emerald-600 transition-all shadow-xl font-bold text-lg disabled:opacity-50"
                                 >
                                     {isSubmitting ? '送信中...' : 'この内容で送信する →'}
                                 </button>

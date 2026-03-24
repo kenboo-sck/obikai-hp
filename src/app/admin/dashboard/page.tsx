@@ -571,7 +571,7 @@ export default function AdminDashboard() {
                         {item.location && <span className="ml-2">@ {item.location}</span>}
                         {item.target && <span className="ml-2 text-blue-600 font-bold">[{item.target}]</span>}
                         {item.coach && <span className="ml-2">| In: {item.coach}</span>}
-                        <span className={`ml-2 px-2 py-0.5 rounded text-[10px] text-white ${item.status === "OPEN" ? "bg-green-500" : item.status === "CLOSED" ? "bg-red-500" : "bg-yellow-500"}`}>
+                        <span className={`ml-2 px-2 py-0.5 rounded text-[10px] text-white ${item.status === "OPEN" ? "bg-emerald-500" : item.status === "CLOSED" ? "bg-red-500" : "bg-yellow-500"}`}>
                           {item.status === "OPEN" ? "受付中" : item.status === "CLOSED" ? "満員" : "特別"}
                         </span>
                       </div>

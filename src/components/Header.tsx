@@ -5,15 +5,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const navItems = [
-  { name: '初めての方へ', en: 'BEGINNERS', href: '/beginners' },
-  { name: 'クラス紹介', en: 'CLASS', href: '/class' },
-  { name: '入会案内', en: 'MEMBERSHIP', href: '/membership' },
-  { name: 'お知らせ', en: 'NEWS', href: '/news' },
-  { name: '大会結果', en: 'RESULTS', href: '/results' },
-  { name: 'スケジュール', en: 'SCHEDULE', href: '/schedule' },
-  { name: 'インストラクター', en: 'INSTRUCTORS', href: '/instructors' },
-  { name: 'アクセス', en: 'ACCESS', href: '/access' },
-  { name: '問合せ', en: 'CONTACT', href: '/contact' },
+  { name: '初めての方へ', href: '/beginners' },
+  { name: 'クラス紹介', href: '/class' },
+  { name: '入会案内', href: '/membership' },
+  { name: 'お知らせ', href: '/news' },
+  { name: '大会結果', href: '/results' },
+  { name: '大会案内', href: '/sparing-tournament' },
+  { name: 'スケジュール', href: '/schedule' },
+  { name: 'インストラクター', href: '/instructors' },
+  { name: 'アクセス', href: '/access' },
+  { name: '問合せ', href: '/contact' },
 ];
 
 export default function Header() {
@@ -24,39 +25,35 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-50 bg-white">
 
         {/* ロゴ部分(テキスト) */}
-        <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
+        <Link href="/" className="flex items-center gap-2 group shrink-0" onClick={() => setIsOpen(false)}>
           <Image
-            src="/logo-obikai.svg"
+            src="/logo-obikai2.svg"
             alt="実戦空手道 帯会"
             width={200}
             height={44}
-            className="w-auto h-8 md:h-10 object-contain"
+            className="w-auto h-8 md:h-10 object-contain brightness-0"
             priority
           />
         </Link>
 
-        {/* ナビゲーション */}
-        <nav className="hidden lg:flex gap-5 items-center">
+        <nav className="hidden lg:flex gap-2 xl:gap-4 items-center">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="group flex flex-col items-center leading-tight py-2"
+              className="group py-2 px-1"
             >
-              <span className="font-bold text-sm tracking-wide text-gray-700 group-hover:text-orange-500 transition-colors whitespace-nowrap">
+              <span className="font-bold text-[10px] xl:text-xs text-gray-700 group-hover:text-emerald-500 transition-colors whitespace-nowrap font-maru">
                 {item.name}
-              </span>
-              <span className="text-[9px] font-medium text-gray-400 group-hover:text-orange-400 transition-colors mt-0.5 uppercase tracking-wider">
-                {item.en}
               </span>
             </Link>
           ))}
 
           <Link
             href="/contact"
-            className="ml-4 bg-orange-400 text-white px-6 py-3 text-sm font-bold rounded-full hover:bg-orange-500 transition-all duration-300 shadow-md"
+            className="ml-2 xl:ml-4 bg-emerald-50 text-emerald-600 border border-emerald-200 px-3 py-1 xl:px-4 xl:py-1.5 text-[10px] xl:text-xs font-bold rounded flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm shrink-0 font-maru"
           >
-            体験予約
+            無料体験
           </Link>
         </nav>
 
@@ -81,13 +78,10 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`group flex flex-col transition-all duration-500 border-b border-gray-100 pb-2 ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}
+                className={`group flex flex-col transition-all duration-500 border-b border-gray-100 pb-3 ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}
               >
-                <span className="text-xl font-bold text-gray-800 group-hover:text-orange-500 transition-colors">
+                <span className="text-xl font-bold text-gray-800 group-hover:text-emerald-500 transition-colors">
                   {item.name}
-                </span>
-                <span className="text-xs font-medium text-gray-400 group-hover:text-orange-400 transition-colors uppercase">
-                  {item.en}
                 </span>
               </Link>
             ))}
@@ -97,9 +91,9 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full bg-orange-400 text-white text-center py-4 rounded-full font-bold text-lg shadow-lg shadow-orange-900/20"
+              className="block w-full bg-emerald-500 text-white text-center py-4 rounded-full font-bold text-lg shadow-lg shadow-emerald-900/20 active:scale-95 transition-transform"
             >
-              体験予約
+              無料体験に申し込む
             </Link>
           </div>
         </div>

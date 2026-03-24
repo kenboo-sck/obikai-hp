@@ -24,6 +24,7 @@ type ClassInfoItem = {
     id: string;
     title: string;
     description: string;
+    notice?: string;
     recommended: string[];
     color: string;
     image?: string;
@@ -87,14 +88,16 @@ export default function ScheduleContent() {
         {
             id: 'class-karate',
             title: '空手クラス',
+            notice: 'お子さんと一緒に参加されるパパさんも大歓迎です！',
             description: '基本的な動作から応用まで、幅広い年齢層で一緒に汗を流すクラスです。初心者から経験者まで、レベルに合わせた指導を行います。',
             recommended: ['武道を一から学びたい', '親子で参加したい', '礼儀作法を身につけたい'],
-            color: '#fb923c',
+            color: '#10b981',
             image: '/IMG_0663.png'
         },
         {
             id: 'class-kickboxing',
             title: 'キックボクシングクラス',
+            notice: 'お子さんと一緒に参加されるパパさんも大歓迎です！',
             description: 'グローブを着用し、実戦的な技術を学ぶクラスです。ダイエットや体力作りから、本格的な技術習得まで幅広く対応しています。',
             recommended: ['楽しく体を動かしたい', 'ストレス発散したい', '実戦技術を学びたい'],
             color: '#c2410c',
@@ -117,15 +120,14 @@ export default function ScheduleContent() {
         <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto font-sans text-gray-800">
             {/* ヘッダー */}
             <section className="mb-16">
-                <div className="border-l-8 border-orange-500 pl-6 mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
-                        WEEKLY <span className="text-orange-500">SCHEDULE</span>
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        週間<span className="text-emerald-500">スケジュール</span>
                     </h1>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">週間スケジュール・実施場所</p>
                 </div>
-                <div className="bg-orange-50 border border-orange-100 p-6 rounded-xl text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl">
-                    <p className="font-bold text-orange-800 mb-2 flex items-center gap-2">
-                        <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded">INFO</span>
+                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-xl text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl">
+                    <p className="font-bold text-emerald-800 mb-2 flex items-center gap-2">
+                        <span className="bg-emerald-500 text-white text-xs px-2 py-0.5 rounded">INFO</span>
                         稽古場所について
                     </p>
                     <p>
@@ -133,13 +135,15 @@ export default function ScheduleContent() {
                         見学・体験をご希望の方は、ご希望の曜日の開催場所へ直接お越しいただくか、フォームよりお問い合わせください。
                     </p>
                 </div>
+
+
             </section>
 
             {/* PC版：週間グリッド (md以上) */}
             <div className="hidden md:block">
                 <div className="grid grid-cols-7 gap-px bg-gray-200 border border-gray-200 overflow-hidden shadow-lg rounded-lg">
                     {weekLabels.map((day, idx) => (
-                        <div key={day} className={`py-4 text-center font-bold text-sm tracking-widest text-white ${idx === 6 ? 'bg-pink-500' : idx === 5 ? 'bg-orange-400' : 'bg-stone-800'}`}>
+                        <div key={day} className={`py-4 text-center font-bold text-sm tracking-widest text-white ${idx === 6 ? 'bg-teal-500' : idx === 5 ? 'bg-emerald-400' : 'bg-stone-800'}`}>
                             {day}
                         </div>
                     ))}
@@ -196,7 +200,7 @@ export default function ScheduleContent() {
                     return (
                         <div key={label} className="animate-in fade-in slide-in-from-bottom-4 duration-500">
                             <div className="flex items-center gap-4 mb-4">
-                                <span className={`text-4xl font-bold leading-none ${index === 6 ? 'text-pink-200' : index === 5 ? 'text-orange-200' : 'text-stone-300'}`}>
+                                <span className={`text-4xl font-bold leading-none ${index === 6 ? 'text-teal-200' : index === 5 ? 'text-emerald-200' : 'text-stone-300'}`}>
                                     {label}
                                 </span>
                                 <span className="font-bold text-gray-500 text-sm">{weekDaysJP[index]}</span>
@@ -219,7 +223,7 @@ export default function ScheduleContent() {
                                                 </span>
                                             )}
                                             <div className="flex items-start gap-2 text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mt-1">
-                                                <FaLocationDot className="shrink-0 mt-1 text-orange-500" />
+                                                <FaLocationDot className="shrink-0 mt-1 text-emerald-500" />
                                                 <span className="font-bold text-xs leading-relaxed">{item.location}</span>
                                             </div>
                                         </div>
@@ -233,11 +237,10 @@ export default function ScheduleContent() {
 
             {/* クラス説明セクション */}
             <section className="mt-24">
-                <div className="border-l-8 border-orange-500 pl-6 mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
-                        CLASS <span className="text-orange-500">INFO</span>
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        クラス<span className="text-emerald-500">詳細</span>
                     </h2>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">クラス詳細</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -268,7 +271,7 @@ export default function ScheduleContent() {
                                 <p className="text-gray-600 text-xs leading-relaxed line-clamp-3 mb-4 flex-1">
                                     {cls.description}
                                 </p>
-                                <span className="text-orange-500 text-xs font-bold self-end group-hover:underline">詳細を見る →</span>
+                                <span className="text-emerald-500 text-xs font-bold self-end group-hover:underline">詳細を見る →</span>
                             </div>
                         </div>
                     ))}
@@ -317,6 +320,13 @@ export default function ScheduleContent() {
 
                         {/* コンテンツ */}
                         <div className="p-6">
+                            {selectedClass.notice && (
+                                <div className="mb-4">
+                                    <span className="inline-block bg-yellow-100 border border-yellow-200 text-yellow-800 font-bold px-4 py-2 rounded-full text-sm">
+                                        {selectedClass.notice}
+                                    </span>
+                                </div>
+                            )}
                             <div className="mb-6">
                                 <p className="text-gray-700 leading-relaxed text-sm">
                                     {selectedClass.description}
@@ -324,14 +334,14 @@ export default function ScheduleContent() {
                             </div>
 
                             {/* こんな方にお勧め */}
-                            <div className="mb-8 bg-orange-50/50 p-4 rounded-lg border border-orange-50">
-                                <h4 className="text-[10px] font-bold uppercase mb-3 tracking-widest text-orange-600">
+                            <div className="mb-8 bg-emerald-50/50 p-4 rounded-lg border border-emerald-50">
+                                <h4 className="text-[10px] font-bold uppercase mb-3 tracking-widest text-emerald-600">
                                     こんな方にお勧め
                                 </h4>
                                 <ul className="space-y-2">
                                     {selectedClass.recommended.map((item, rIdx) => (
                                         <li key={rIdx} className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                                            <span className="text-orange-400 text-xs">●</span>
+                                            <span className="text-emerald-400 text-xs">●</span>
                                             {item}
                                         </li>
                                     ))}
@@ -350,7 +360,7 @@ export default function ScheduleContent() {
                                                     <span className="font-bold text-gray-900 text-lg">{weekLabels[session.dayOfWeek]}</span>
                                                     <span className="text-xs text-gray-500">({weekDaysJP[session.dayOfWeek]})</span>
                                                 </div>
-                                                <span className="font-mono font-bold text-orange-600 text-lg">
+                                                <span className="font-mono font-bold text-emerald-600 text-lg">
                                                     {session.startTime}-{session.endTime}
                                                 </span>
                                             </div>
@@ -366,7 +376,7 @@ export default function ScheduleContent() {
                             <div className="mt-8">
                                 <Link
                                     href="/contact"
-                                    className="block w-full bg-orange-500 text-white text-center py-4 font-bold rounded-xl hover:bg-orange-600 transition-colors shadow-lg shadow-orange-200"
+                                    className="block w-full bg-emerald-500 text-white text-center py-4 font-bold rounded-xl hover:bg-emerald-600 transition-colors shadow-lg shadow-emerald-200"
                                 >
                                     無料体験を予約する
                                 </Link>
@@ -377,11 +387,10 @@ export default function ScheduleContent() {
             )}
             {/* 稽古場所セクション */}
             <section className="mt-24 mb-12">
-                <div className="border-l-8 border-orange-500 pl-6 mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
-                        LOCATIONS <span className="text-orange-500">/ ACCESS</span>
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        稽古場所への<span className="text-emerald-500">アクセス</span>
                     </h2>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">稽古場所へのアクセス</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -401,10 +410,7 @@ export default function ScheduleContent() {
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">川東教室</h3>
-                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 川東小学校 体育館
-                            </p>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">川東小学校体育館</h3>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0341<br />
                                 新潟県新発田市下羽津1938番地
@@ -413,7 +419,7 @@ export default function ScheduleContent() {
                                 href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市下羽津1938番地"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
                             >
                                 Google Mapで開く
                             </a>
@@ -436,10 +442,7 @@ export default function ScheduleContent() {
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">東豊防災センター</h3>
-                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 東豊防災センター
-                            </p>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">東豊コミニティー防災センター</h3>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0016<br />
                                 新潟県新発田市豊町4丁目8-4
@@ -448,7 +451,7 @@ export default function ScheduleContent() {
                                 href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市豊町4丁目8-4"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
                             >
                                 Google Mapで開く
                             </a>
@@ -471,10 +474,7 @@ export default function ScheduleContent() {
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">七葉教室</h3>
-                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 七葉コミュニティセンター
-                            </p>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">七葉コミュニティセンター</h3>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0062<br />
                                 新潟県新発田市三日市862番地
@@ -483,7 +483,7 @@ export default function ScheduleContent() {
                                 href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市三日市862番地"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
                             >
                                 Google Mapで開く
                             </a>
@@ -506,10 +506,7 @@ export default function ScheduleContent() {
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">五十公野教室</h3>
-                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 五十公野コミュニティセンター
-                            </p>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">五十公野コミュニティセンター</h3>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0021<br />
                                 新潟県新発田市五十公野4930番地1
@@ -518,7 +515,7 @@ export default function ScheduleContent() {
                                 href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市五十公野4930番地1"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
                             >
                                 Google Mapで開く
                             </a>
@@ -541,10 +538,7 @@ export default function ScheduleContent() {
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">川東中学校</h3>
-                            <p className="text-orange-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 川東中学校 体育館
-                            </p>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">川東中学校体育館</h3>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0341<br />
                                 新潟県新発田市下羽津1566-1
@@ -553,11 +547,34 @@ export default function ScheduleContent() {
                                 href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市下羽津1566-1"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-orange-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
+                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
                             >
                                 Google Mapで開く
                             </a>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 稽古風景（活動の様子）ギャラリー */}
+            <section className="mt-24 mb-12">
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        稽古風景<span className="text-emerald-500">（活動の様子）</span>
+                    </h2>
+                </div>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/activity-10.jpg" alt="稽古風景 1" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/activity-12.jpg" alt="稽古風景 2" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/activity-13.jpg" alt="稽古風景 3" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/activity-11.jpg" alt="稽古風景 4" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                     </div>
                 </div>
             </section>

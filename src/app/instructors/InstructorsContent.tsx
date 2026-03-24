@@ -8,11 +8,10 @@ export default function InstructorsContent() {
         <div className="pt-32 pb-20 font-sans text-gray-800">
             {/* ヒーローセクション */}
             <section className="max-w-7xl mx-auto px-6 mb-16">
-                <div className="border-l-8 border-orange-500 pl-6 mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
-                        INSTRUCTORS
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        インストラクター<span className="text-emerald-500">紹介</span>
                     </h1>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">インストラクター紹介</p>
                 </div>
             </section>
 
@@ -33,7 +32,7 @@ export default function InstructorsContent() {
                     {/* プロフィールエリア */}
                     <div className="w-full md:w-1/2 space-y-10">
                         <div>
-                            <p className="text-orange-500 font-bold tracking-widest uppercase text-sm mb-2">Head Instructor</p>
+                            <p className="text-emerald-500 font-bold tracking-widest uppercase text-sm mb-2 font-maru">代表師範</p>
                             <h2 className="text-4xl font-bold text-gray-900 mb-4">代表師範 田坂 貴満</h2>
                             <div className="flex flex-wrap gap-3">
                                 <span className="bg-stone-900 text-white px-4 py-1 text-xs font-bold rounded-full">
@@ -52,34 +51,13 @@ export default function InstructorsContent() {
                                 初心者から経験者まで、一人ひとりに合わせた丁寧な指導を心がけています。
                             </p>
 
-                            {/* 実績（プレースホルダー） */}
-                            <div className="bg-gray-50 p-8 border border-gray-100 rounded-xl">
-                                <h3 className="text-lg font-bold text-gray-900 mb-4 border-b-2 border-orange-500 pb-2 inline-block">
-                                    経歴・実績
-                                </h3>
-                                <ul className="space-y-4 text-sm text-gray-700">
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-orange-500 font-bold mt-1">●</span>
-                                        <div>
-                                            <p className="font-bold">主な大会実績などをここに記載</p>
-                                            <p className="text-xs text-gray-500 mt-1">YYYY年 大会名 優勝</p>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-orange-500 font-bold mt-1">●</span>
-                                        <div>
-                                            <p className="font-bold">指導実績などをここに記載</p>
-                                            <p className="text-xs text-gray-500 mt-1">これまでの指導経験など</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+
                         </div>
 
                         <div className="pt-6">
                             <Link
                                 href="/contact"
-                                className="inline-block bg-orange-500 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-orange-600 transition-all hover:-translate-y-1"
+                                className="inline-block bg-emerald-500 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-emerald-600 transition-all hover:-translate-y-1"
                             >
                                 体験・見学を予約する →
                             </Link>
@@ -90,17 +68,16 @@ export default function InstructorsContent() {
 
             {/* 追加インストラクターセクション */}
             <section className="max-w-7xl mx-auto px-6 mt-20">
-                <div className="border-l-8 border-orange-500 pl-6 mb-12">
-                    <h2 className="text-3xl font-bold text-gray-900 leading-none uppercase">
-                        OTHER INSTRUCTORS
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h2 className="text-3xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        指導員<span className="text-emerald-500">紹介</span>
                     </h2>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">指導員紹介</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {[
                         { name: '狩野 修至', title: '帯会 師範代', img: '/is-02.png' },
-                        { name: '小林 誠', title: '新潟県県議 帯会顧問', img: '/is-04.png' },
+                        { name: '小林 誠', title: '新潟県議会議員', img: '/is-04.png' },
                         { name: '石井 鋼栄', title: '帯会 本部長', img: '/is-03.png' }
                     ].map((instructor, index) => (
                         <div key={index} className="group cursor-pointer">
@@ -113,7 +90,7 @@ export default function InstructorsContent() {
                                 />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-1">{instructor.name}</h3>
-                            <p className="text-orange-500 text-sm font-bold">{instructor.title}</p>
+                            <p className="text-emerald-500 text-sm font-bold">{instructor.title}</p>
                         </div>
                     ))}
                 </div>
@@ -121,11 +98,10 @@ export default function InstructorsContent() {
 
             {/* ギャラリー */}
             <section className="max-w-7xl mx-auto px-6 mt-24">
-                <div className="border-l-8 border-orange-500 pl-6 mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
-                        GALLERY
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        活動<span className="text-emerald-500">風景</span>
                     </h2>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">活動風景</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

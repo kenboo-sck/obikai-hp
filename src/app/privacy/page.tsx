@@ -10,11 +10,11 @@ export default function PrivacyPage() {
     return (
         <div className="pt-32 pb-20 font-sans text-gray-800">
             <section className="max-w-4xl mx-auto px-6 mb-16">
-                <div className="border-l-8 border-orange-500 pl-6 mb-12">
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
                     <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none">
                         PRIVACY POLICY
                     </h1>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">プライバシーポリシー</p>
+                    <p className="text-emerald-500 font-bold mt-2 tracking-widest uppercase text-sm">プライバシーポリシー</p>
                 </div>
 
                 <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 space-y-10 leading-relaxed">
@@ -25,8 +25,8 @@ export default function PrivacyPage() {
                     </div>
 
                     <div>
-                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-orange-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
+                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                             個人情報の収集について
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -35,8 +35,8 @@ export default function PrivacyPage() {
                     </div>
 
                     <div>
-                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-orange-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
+                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                             個人情報の利用目的
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base mb-2">
@@ -52,8 +52,8 @@ export default function PrivacyPage() {
                     </div>
 
                     <div>
-                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-orange-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
+                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                             個人情報の第三者への提供
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -62,8 +62,8 @@ export default function PrivacyPage() {
                     </div>
 
                     <div>
-                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-orange-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
+                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                             個人情報の管理
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -72,8 +72,8 @@ export default function PrivacyPage() {
                     </div>
 
                     <div>
-                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-orange-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
+                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                             ご本人の照会・修正・削除
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -82,8 +82,8 @@ export default function PrivacyPage() {
                     </div>
 
                     <div>
-                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-orange-100 flex items-center gap-2">
-                            <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-emerald-100 flex items-center gap-2">
+                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                             お問い合せ
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
                             <p className="font-bold text-gray-900">実戦空手道 帯会</p>
                             <p className="text-gray-600 mt-2 text-sm">
                                 〒957-0053<br />
-                                新潟県新発田市東新町2-5-4-9<br />
+                                新潟県新発田市東新町2丁目5-4-9<br />
                                 TEL: 0254-42-9040
                             </p>
                         </div>

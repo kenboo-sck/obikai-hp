@@ -8,11 +8,10 @@ export default function BeginnersContent() {
         <div className="pt-32 pb-20 font-sans text-gray-800">
             {/* ヒーローセクション */}
             <section className="max-w-7xl mx-auto px-6 mb-24">
-                <div className="border-l-8 border-orange-500 pl-6 mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
-                        FOR <span className="text-orange-500">BEGINNERS</span>
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        初めての<span className="text-emerald-500">方へ</span>
                     </h1>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">初めての方へ</p>
                 </div>
 
                 <div className="relative aspect-[4/5] md:aspect-[21/9] w-full overflow-hidden shadow-lg rounded-xl mb-12 bg-gray-100">
@@ -39,11 +38,10 @@ export default function BeginnersContent() {
             {/* 帯会とは */}
             <section className="max-w-7xl mx-auto px-6 mb-24">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="border-l-8 border-orange-500 pl-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none mb-4">
-                            WHAT IS <span className="text-orange-500">OBIKAI?</span>
+                    <div className="border-l-8 border-emerald-500 pl-6">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-none mb-8 font-maru tracking-widest">
+                            帯会<span className="text-emerald-500">について</span>
                         </h2>
-                        <p className="text-orange-500 font-bold tracking-widest uppercase text-sm mb-8">実戦空手道 帯会とは</p>
                         <div className="text-gray-700 leading-relaxed space-y-4">
                             <p>
                                 帯会は、新潟県新発田市にある「実戦空手」と「キックボクシング」を学べる道場です。
@@ -67,15 +65,14 @@ export default function BeginnersContent() {
             </section>
 
             {/* 選ばれる理由 */}
-            <section className="bg-orange-50 text-gray-800 py-24 mb-24">
+            <section className="bg-emerald-50 text-gray-800 py-24 mb-24">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">WHY CHOOSE US</h2>
-                        <p className="text-orange-500 font-bold mt-2 tracking-widest text-sm">帯会が選ばれる理由</p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-widest font-maru">選ばれる理由</h2>
                     </div>
                     <div className="grid md:grid-cols-3 gap-12">
-                        <div className="text-center bg-[#fff5f5] p-8 rounded-xl shadow-md border border-orange-100 hover:shadow-xl transition-shadow">
-                            <div className="text-orange-500 text-4xl font-bold mb-4">01</div>
+                        <div className="text-center bg-[#fff5f5] p-8 rounded-xl shadow-md border border-emerald-100 hover:shadow-xl transition-shadow">
+                            <div className="text-emerald-500 text-4xl font-bold mb-4">01</div>
                             <h3 className="text-xl font-bold mb-4 text-gray-900">初心者・子供に優しい指導</h3>
                             <p className="text-gray-600 text-sm leading-relaxed">
                                 厳しいだけが武道ではありません。褒めて伸ばす指導方針で、初めての方やお子様でも安心して続けられます。
@@ -88,8 +85,8 @@ export default function BeginnersContent() {
                                 新発田市内の学校や公民館を利用して活動しています。お住まいの近くで無理なく通うことができます。
                             </p>
                         </div>
-                        <div className="text-center bg-[#f0fdf4] p-8 rounded-xl shadow-md border border-green-100 hover:shadow-xl transition-shadow">
-                            <div className="text-green-500 text-4xl font-bold mb-4">03</div>
+                        <div className="text-center bg-[#f0fdf4] p-8 rounded-xl shadow-md border border-emerald-100 hover:shadow-xl transition-shadow">
+                            <div className="text-emerald-500 text-4xl font-bold mb-4">03</div>
                             <h3 className="text-xl font-bold mb-4 text-gray-900">親子で学べるファミリープラン</h3>
                             <p className="text-gray-600 text-sm leading-relaxed">
                                 親子で一緒に稽古に参加できるクラスを用意。共通の趣味を持つことで、親子の絆がより深まります。
@@ -101,11 +98,10 @@ export default function BeginnersContent() {
 
             {/* こんな人におすすめ */}
             <section className="max-w-7xl mx-auto px-6 mb-24">
-                <div className="border-l-8 border-orange-500 pl-6 mb-12">
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-none">
-                        RECOMMENDED <span className="text-orange-500">FOR YOU</span>
+                <div className="border-l-8 border-emerald-500 pl-6 mb-12">
+                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-none tracking-widest font-maru">
+                        こんな方に<span className="text-emerald-500">おすすめ</span>
                     </h2>
-                    <p className="text-orange-500 font-bold mt-4 tracking-widest uppercase text-sm">こんな人におすすめ</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -137,9 +133,9 @@ export default function BeginnersContent() {
                     ].map((item, i) => (
                         <div
                             key={i}
-                            className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all hover:border-orange-200"
+                            className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all hover:border-emerald-200"
                         >
-                            <h3 className="font-bold text-lg text-gray-900 mb-2 text-orange-600">
+                            <h3 className="font-bold text-lg text-gray-900 mb-2 text-emerald-600">
                                 {item.title}
                             </h3>
                             <p className="text-sm text-gray-600 leading-relaxed">
@@ -154,8 +150,7 @@ export default function BeginnersContent() {
             <section className="bg-gray-50 py-24 mb-24">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">HOW TO START</h2>
-                        <p className="text-orange-500 font-bold mt-2 tracking-widest text-sm">ご利用開始までの流れ</p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-widest font-maru">ご利用の流れ</h2>
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-8 items-stretch justify-center">
@@ -177,22 +172,22 @@ export default function BeginnersContent() {
                             }
                         ].map((item, idx) => (
                             <div key={idx} className="flex-1 flex flex-col md:flex-row items-center">
-                                <div className="bg-white p-8 shadow-lg rounded-xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 w-full h-full flex flex-col justify-between border-b-4 border-transparent hover:border-orange-400">
-                                    <div className="text-6xl font-black text-gray-100 absolute top-2 right-4 group-hover:text-orange-50 transition-colors pointer-events-none">{item.step}</div>
+                                <div className="bg-white p-8 shadow-lg rounded-xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 w-full h-full flex flex-col justify-between border-b-4 border-transparent hover:border-emerald-400">
+                                    <div className="text-6xl font-black text-gray-100 absolute top-2 right-4 group-hover:text-emerald-50 transition-colors pointer-events-none">{item.step}</div>
                                     <div className="relative z-10">
-                                        <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 inline-block border-b-2 border-orange-500">{item.title}</h3>
+                                        <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 inline-block border-b-2 border-emerald-500">{item.title}</h3>
                                         <p className="text-gray-600 font-medium leading-relaxed text-sm">{item.desc}</p>
                                     </div>
                                 </div>
                                 {idx < 2 && (
-                                    <div className="hidden md:flex items-center justify-center px-4 text-orange-300">
+                                    <div className="hidden md:flex items-center justify-center px-4 text-emerald-300">
                                         <svg className="w-8 h-8 rotate-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                         </svg>
                                     </div>
                                 )}
                                 {idx < 2 && (
-                                    <div className="md:hidden py-4 text-orange-300">
+                                    <div className="md:hidden py-4 text-emerald-300">
                                         <svg className="w-8 h-8 rotate-90" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                         </svg>
@@ -210,11 +205,10 @@ export default function BeginnersContent() {
                 <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h2 className="text-3xl font-bold text-gray-900 mb-6">WHAT TO BRING</h2>
-                            <p className="text-orange-500 font-bold mb-6 tracking-widest text-sm">体験当日の持ち物</p>
+                            <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-widest font-maru">持ち物について</h2>
                             <ul className="space-y-4 text-gray-700">
                                 <li className="flex items-center gap-3">
-                                    <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                                     動きやすい服装（Tシャツ、ジャージなど）
                                 </li>
                                 <li className="flex items-center gap-3">
@@ -222,7 +216,7 @@ export default function BeginnersContent() {
                                     タオル
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                                     水分補給用の飲み物
                                 </li>
                             </ul>
@@ -242,8 +236,7 @@ export default function BeginnersContent() {
             {/* Q&Aセクション */}
             <section className="max-w-7xl mx-auto px-6 mb-24">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900">FAQ</h2>
-                    <p className="text-orange-500 font-bold mt-2 tracking-widest text-sm">よくある質問</p>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-widest font-maru">よくある質問</h2>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -275,11 +268,11 @@ export default function BeginnersContent() {
                     ].map((item, idx) => (
                         <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                             <h3 className="flex items-start gap-4 font-bold text-lg text-gray-900 mb-3">
-                                <span className="text-orange-500 font-black text-xl shrink-0">Q.</span>
+                                <span className="text-emerald-500 font-black text-xl shrink-0">Q.</span>
                                 {item.q}
                             </h3>
                             <div className="flex items-start gap-4">
-                                <span className="text-orange-300 font-black text-xl shrink-0">A.</span>
+                                <span className="text-emerald-300 font-black text-xl shrink-0">A.</span>
                                 <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                                     {item.a}
                                 </p>
@@ -291,10 +284,10 @@ export default function BeginnersContent() {
 
             {/* CTA */}
             <section className="max-w-7xl mx-auto px-6">
-                <div className="bg-orange-400 p-12 md:p-20 text-center text-white relative overflow-hidden rounded-2xl shadow-xl">
+                <div className="bg-emerald-400 p-12 md:p-20 text-center text-white relative overflow-hidden rounded-2xl shadow-xl">
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-5xl font-bold mb-8">
-                            Start Your <span className="text-orange-100">Journey</span>
+                            新しい挑戦を<span className="text-emerald-100">始めよう</span>
                         </h2>
                         <p className="font-medium max-w-xl mx-auto mb-12 text-lg text-white/90">
                             まずは一度、体験レッスンで道場の雰囲気を感じてみませんか？<br />
@@ -302,7 +295,7 @@ export default function BeginnersContent() {
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-block bg-white text-orange-500 px-12 py-5 font-bold text-xl hover:bg-orange-50 transition-all rounded-full shadow-lg"
+                            className="inline-block bg-white text-emerald-500 px-12 py-5 font-bold text-xl hover:bg-emerald-50 transition-all rounded-full shadow-lg"
                         >
                             体験レッスンを予約する
                         </Link>
