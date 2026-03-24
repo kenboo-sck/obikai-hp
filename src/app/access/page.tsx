@@ -10,35 +10,30 @@ export const metadata: Metadata = {
 const locations = [
   {
     name: "川東小学校体育館",
-    subName: "川東小学校体育館",
     zip: "957-0341",
     address: "新潟県新発田市下羽津1938番地",
     mapUrl: "https://maps.google.com/maps?q=新潟県新発田市下羽津1938番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
     name: "東豊コミニティー防災センター",
-    subName: "東豊コミニティー防災センター",
     zip: "957-0016",
     address: "新潟県新発田市豊町4丁目8-4",
     mapUrl: "https://maps.google.com/maps?q=新潟県新発田市豊町4丁目8-4&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
     name: "七葉コミュニティセンター",
-    subName: "七葉コミュニティセンター",
     zip: "957-0062",
     address: "新潟県新発田市三日市862番地",
     mapUrl: "https://maps.google.com/maps?q=新潟県新発田市三日市862番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
     name: "五十公野コミュニティセンター",
-    subName: "五十公野コミュニティセンター",
     zip: "957-0021",
     address: "新潟県新発田市五十公野4930番地1",
     mapUrl: "https://maps.google.com/maps?q=新潟県新発田市五十公野4930番地1&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
     name: "川東中学校体育館",
-    subName: "川東中学校体育館",
     zip: "957-0341",
     address: "新潟県新発田市下羽津1566-1",
     mapUrl: "https://maps.google.com/maps?q=新潟県新発田市下羽津1566-1&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -83,7 +78,7 @@ export default function AccessPage() {
                 <div className="mb-4">
                   <h3 className="text-2xl font-extrabold text-gray-900 mb-1">{loc.name}</h3>
                   <p className="text-emerald-600 font-bold text-sm flex items-center gap-1.5">
-                    <FaLocationDot /> {loc.subName}
+                    <FaLocationDot /> 新発田市
                   </p>
                 </div>
                 <div className="mb-8 flex-1">

@@ -393,171 +393,77 @@ export default function ScheduleContent() {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* 川東教室 */}
-                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
-                        <div className="relative h-48 w-full bg-gray-200">
-                            <iframe
-                                title="Map: 川東教室"
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                scrolling="no"
-                                src="https://maps.google.com/maps?q=新潟県新発田市下羽津1938番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                className="absolute inset-0"
-                            ></iframe>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {[
+                        {
+                            name: "川東小学校体育館",
+                            zip: "957-0341",
+                            address: "新潟県新発田市下羽津1938番地",
+                            mapUrl: "https://maps.google.com/maps?q=新潟県新発田市下羽津1938番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        },
+                        {
+                            name: "東豊コミニティー防災センター",
+                            zip: "957-0016",
+                            address: "新潟県新発田市豊町4丁目8-4",
+                            mapUrl: "https://maps.google.com/maps?q=新潟県新発田市豊町4丁目8-4&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        },
+                        {
+                            name: "七葉コミュニティセンター",
+                            zip: "957-0062",
+                            address: "新潟県新発田市三日市862番地",
+                            mapUrl: "https://maps.google.com/maps?q=新潟県新発田市三日市862番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        },
+                        {
+                            name: "五十公野コミュニティセンター",
+                            zip: "957-0021",
+                            address: "新潟県新発田市五十公野4930番地1",
+                            mapUrl: "https://maps.google.com/maps?q=新潟県新発田市五十公野4930番地1&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        },
+                        {
+                            name: "川東中学校体育館",
+                            zip: "957-0341",
+                            address: "新潟県新発田市下羽津1566-1",
+                            mapUrl: "https://maps.google.com/maps?q=新潟県新発田市下羽津1566-1&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        }
+                    ].map((loc, index) => (
+                        <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div className="relative h-64 w-full bg-gray-200">
+                                <iframe
+                                    title={`Map: ${loc.name}`}
+                                    width="100%"
+                                    height="100%"
+                                    frameBorder="0"
+                                    scrolling="no"
+                                    src={loc.mapUrl}
+                                    className="absolute inset-0"
+                                    loading="lazy"
+                                ></iframe>
+                            </div>
+                            <div className="p-8 flex-1 flex flex-col">
+                                <div className="mb-4">
+                                    <h3 className="text-2xl font-extrabold text-gray-900 mb-1 font-maru">{loc.name}</h3>
+                                    <p className="text-emerald-600 font-bold text-sm flex items-center gap-1.5">
+                                        <FaLocationDot /> 新発田市
+                                    </p>
+                                </div>
+                                <div className="mb-8 flex-1">
+                                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-2 leading-none">Address</p>
+                                    <p className="text-gray-700 leading-relaxed text-sm">
+                                        〒{loc.zip}<br />
+                                        {loc.address}
+                                    </p>
+                                </div>
+                                <a
+                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full text-center bg-emerald-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-4 rounded-xl transition-all duration-300 border border-emerald-100 font-maru"
+                                >
+                                    Google Mapで開く
+                                </a>
+                            </div>
                         </div>
-                        <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">川東教室</h3>
-                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 川東小学校 体育館
-                            </p>
-                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
-                                〒957-0341<br />
-                                新潟県新発田市下羽津1938番地
-                            </p>
-                            <a
-                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市下羽津1938番地"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
-                            >
-                                Google Mapで開く
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* 東豊防災センター */}
-                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
-                        <div className="relative h-48 w-full bg-gray-200">
-                            <iframe
-                                title="Map: 東豊防災センター"
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                scrolling="no"
-                                src="https://maps.google.com/maps?q=新潟県新発田市豊町4丁目8-4&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                className="absolute inset-0"
-                            ></iframe>
-                        </div>
-                        <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">東豊防災センター</h3>
-                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 東豊防災センター
-                            </p>
-                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
-                                〒957-0016<br />
-                                新潟県新発田市豊町4丁目8-4
-                            </p>
-                            <a
-                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市豊町4丁目8-4"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
-                            >
-                                Google Mapで開く
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* 七葉教室 */}
-                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
-                        <div className="relative h-48 w-full bg-gray-200">
-                            <iframe
-                                title="Map: 七葉教室"
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                scrolling="no"
-                                src="https://maps.google.com/maps?q=新潟県新発田市三日市862番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                className="absolute inset-0"
-                            ></iframe>
-                        </div>
-                        <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">七葉教室</h3>
-                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 七葉コミュニティセンター
-                            </p>
-                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
-                                〒957-0062<br />
-                                新潟県新発田市三日市862番地
-                            </p>
-                            <a
-                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市三日市862番地"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
-                            >
-                                Google Mapで開く
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* 五十公野教室 */}
-                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
-                        <div className="relative h-48 w-full bg-gray-200">
-                            <iframe
-                                title="Map: 五十公野教室"
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                scrolling="no"
-                                src="https://maps.google.com/maps?q=新潟県新発田市五十公野4930番地1&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                className="absolute inset-0"
-                            ></iframe>
-                        </div>
-                        <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">五十公野教室</h3>
-                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 五十公野コミュニティセンター
-                            </p>
-                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
-                                〒957-0021<br />
-                                新潟県新発田市五十公野4930番地1
-                            </p>
-                            <a
-                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市五十公野4930番地1"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
-                            >
-                                Google Mapで開く
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* 川東中学校 */}
-                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
-                        <div className="relative h-48 w-full bg-gray-200">
-                            <iframe
-                                title="Map: 川東中学校"
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                scrolling="no"
-                                src="https://maps.google.com/maps?q=新潟県新発田市下羽津1566-1&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                className="absolute inset-0"
-                            ></iframe>
-                        </div>
-                        <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">川東中学校</h3>
-                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
-                                <FaLocationDot /> 川東中学校 体育館
-                            </p>
-                            <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
-                                〒957-0341<br />
-                                新潟県新発田市下羽津1566-1
-                            </p>
-                            <a
-                                href="https://www.google.com/maps/search/?api=1&query=新潟県新発田市下羽津1566-1"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block w-full text-center bg-gray-50 hover:bg-gray-100 text-emerald-600 font-bold text-xs py-3 rounded-lg border border-gray-200 transition-colors"
-                            >
-                                Google Mapで開く
-                            </a>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
 
