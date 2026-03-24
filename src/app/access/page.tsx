@@ -77,9 +77,6 @@ export default function AccessPage() {
               <div className="p-8 flex-1 flex flex-col">
                 <div className="mb-4">
                   <h3 className="text-2xl font-extrabold text-gray-900 mb-1">{loc.name}</h3>
-                  <p className="text-emerald-600 font-bold text-sm flex items-center gap-1.5">
-                    <FaLocationDot /> 新発田市
-                  </p>
                 </div>
                 <div className="mb-8 flex-1">
                   <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1 leading-none">Address</p>
