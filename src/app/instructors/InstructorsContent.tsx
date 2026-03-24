@@ -51,7 +51,28 @@ export default function InstructorsContent() {
                                 初心者から経験者まで、一人ひとりに合わせた丁寧な指導を心がけています。
                             </p>
 
-
+                            {/* 実績（プレースホルダー） */}
+                            <div className="bg-gray-50 p-8 border border-gray-100 rounded-xl">
+                                <h3 className="text-lg font-bold text-gray-900 mb-4 border-b-2 border-emerald-500 pb-2 inline-block">
+                                    経歴・実績
+                                </h3>
+                                <ul className="space-y-4 text-sm text-gray-700">
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-emerald-500 font-bold mt-1">●</span>
+                                        <div>
+                                            <p className="font-bold">主な大会実績などをここに記載</p>
+                                            <p className="text-xs text-gray-500 mt-1">YYYY年 大会名 優勝</p>
+                                        </div>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-emerald-500 font-bold mt-1">●</span>
+                                        <div>
+                                            <p className="font-bold">指導実績などをここに記載</p>
+                                            <p className="text-xs text-gray-500 mt-1">これまでの指導経験など</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div className="pt-6">

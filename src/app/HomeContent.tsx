@@ -298,18 +298,95 @@ export default function HomeContent() {
                 </div>
             </section>
 
-            {/* 活動風景ギャラリー */}
-            <section className="py-24 bg-white">
+            {/* 大会実績セクション */}
+            <section className="py-20 bg-[#ffffff] border-t border-emerald-100">
                 <div className="container mx-auto px-6">
-                    <div className="text-center mb-16">
-                        <span className="text-emerald-500 font-bold tracking-widest text-sm uppercase">Gallery</span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-2 font-maru">
-                            活動の<span className="text-emerald-500">様子</span>
+                    <div className="text-center mb-12">
+                        <span className="text-emerald-400 font-bold tracking-widest text-sm">大会実績一覧</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2 font-maru">
+                            大会実績
                         </h2>
                         <div className="w-20 h-1.5 bg-emerald-500 mx-auto mt-6 rounded-full"></div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+                    <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mb-20">
+                        {/* 結果リストアイテム */}
+                        <div className="bg-white p-8 rounded-3xl shadow-lg border border-emerald-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
+                            <div className="mb-4">
+                                <span className="text-xs text-gray-400 font-bold flex items-center gap-1">
+                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    2025.10.15
+                                </span>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-8 font-maru leading-snug flex-1">
+                                第9回帯会スパーリング大会
+                            </h3>
+                            <Link
+                                href="/results/tourney-009"
+                                className="block w-full text-center bg-gray-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
+                            >
+                                詳細を見る
+                            </Link>
+                        </div>
+
+                        <div className="bg-white p-8 rounded-3xl shadow-lg border border-emerald-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
+                            <div className="mb-4">
+                                <span className="text-xs text-gray-400 font-bold flex items-center gap-1">
+                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    2025.09.20
+                                </span>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-8 font-maru leading-snug flex-1">
+                                第8回帯会スパーリング大会
+                            </h3>
+                            <Link
+                                href="/results/tourney-008"
+                                className="block w-full text-center bg-gray-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
+                            >
+                                詳細を見る
+                            </Link>
+                        </div>
+
+                        <div className="bg-white p-8 rounded-3xl shadow-lg border border-emerald-100 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
+                            <div className="mb-4">
+                                <span className="text-xs text-gray-400 font-bold flex items-center gap-1">
+                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    2025.08.05
+                                </span>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-8 font-maru leading-snug flex-1">
+                                第7回帯会スパーリング大会
+                            </h3>
+                            <Link
+                                href="/results/tourney-007"
+                                className="block w-full text-center bg-gray-50 hover:bg-emerald-500 hover:text-white text-emerald-600 font-bold py-3 rounded-xl transition-all duration-300 border border-gray-100 font-maru"
+                            >
+                                詳細を見る
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className="text-center mb-10">
+                        <Link href="/results" className="inline-block bg-white border-2 border-emerald-400 text-emerald-500 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 transition-all shadow-md group font-maru">
+                            大会結果一覧を見る <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                        </Link>
+                    </div>
+
+                    {/* 活動風景ギャラリー */}
+                    <div className="text-center mb-12 pt-12 border-t border-gray-100">
+                        <span className="text-emerald-500 font-bold tracking-widest text-sm uppercase">Gallery</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-2 font-maru">
+                            活動の<span className="text-emerald-500">様子</span>
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto mb-12">
                         <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg group">
                             <Image src="/activity-1.jpg" alt="稽古風景 1" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -332,7 +409,7 @@ export default function HomeContent() {
                         </div>
                     </div>
 
-                    <div className="text-center mt-12">
+                    <div className="text-center">
                         <p className="text-gray-500 font-medium mb-8">
                             帯会では、幼児から大人まで幅広い年代が楽しく、真剣に稽古に励んでいます。
                         </p>

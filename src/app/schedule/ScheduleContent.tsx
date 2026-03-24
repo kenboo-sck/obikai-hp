@@ -403,14 +403,15 @@ export default function ScheduleContent() {
                                 height="100%"
                                 frameBorder="0"
                                 scrolling="no"
-                                marginHeight={0}
-                                marginWidth={0}
                                 src="https://maps.google.com/maps?q=新潟県新発田市下羽津1938番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 className="absolute inset-0"
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">川東小学校体育館</h3>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">川東教室</h3>
+                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 川東小学校 体育館
+                            </p>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0341<br />
                                 新潟県新発田市下羽津1938番地
@@ -435,14 +436,15 @@ export default function ScheduleContent() {
                                 height="100%"
                                 frameBorder="0"
                                 scrolling="no"
-                                marginHeight={0}
-                                marginWidth={0}
                                 src="https://maps.google.com/maps?q=新潟県新発田市豊町4丁目8-4&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 className="absolute inset-0"
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">東豊コミニティー防災センター</h3>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">東豊防災センター</h3>
+                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 東豊防災センター
+                            </p>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0016<br />
                                 新潟県新発田市豊町4丁目8-4
@@ -467,14 +469,15 @@ export default function ScheduleContent() {
                                 height="100%"
                                 frameBorder="0"
                                 scrolling="no"
-                                marginHeight={0}
-                                marginWidth={0}
                                 src="https://maps.google.com/maps?q=新潟県新発田市三日市862番地&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 className="absolute inset-0"
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">七葉コミュニティセンター</h3>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">七葉教室</h3>
+                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 七葉コミュニティセンター
+                            </p>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0062<br />
                                 新潟県新発田市三日市862番地
@@ -499,14 +502,15 @@ export default function ScheduleContent() {
                                 height="100%"
                                 frameBorder="0"
                                 scrolling="no"
-                                marginHeight={0}
-                                marginWidth={0}
                                 src="https://maps.google.com/maps?q=新潟県新発田市五十公野4930番地1&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 className="absolute inset-0"
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">五十公野コミュニティセンター</h3>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">五十公野教室</h3>
+                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 五十公野コミュニティセンター
+                            </p>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0021<br />
                                 新潟県新発田市五十公野4930番地1
@@ -531,14 +535,15 @@ export default function ScheduleContent() {
                                 height="100%"
                                 frameBorder="0"
                                 scrolling="no"
-                                marginHeight={0}
-                                marginWidth={0}
                                 src="https://maps.google.com/maps?q=新潟県新発田市下羽津1566-1&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 className="absolute inset-0"
                             ></iframe>
                         </div>
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">川東中学校体育館</h3>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">川東中学校</h3>
+                            <p className="text-emerald-600 font-bold text-xs mb-4 flex items-center gap-1">
+                                <FaLocationDot /> 川東中学校 体育館
+                            </p>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
                                 〒957-0341<br />
                                 新潟県新発田市下羽津1566-1
