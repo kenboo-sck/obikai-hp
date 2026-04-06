@@ -103,7 +103,7 @@ export default function InstructorsContent() {
                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
                         <Image
-                            src="/IMG_1425.png"
+                            src="/activity-4.jpg"
                             alt="活動風景 01"
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-500"
@@ -127,7 +127,7 @@ export default function InstructorsContent() {
                     </div>
                     <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
                         <Image
-                            src="/IMG_0663.jpeg"
+                            src="/IMG_0677.png"
                             alt="活動風景 04"
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-500"

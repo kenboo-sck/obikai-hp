@@ -92,7 +92,7 @@ export default function ScheduleContent() {
             description: '基本的な動作から応用まで、幅広い年齢層で一緒に汗を流すクラスです。初心者から経験者まで、レベルに合わせた指導を行います。',
             recommended: ['武道を一から学びたい', '親子で参加したい', '礼儀作法を身につけたい'],
             color: '#10b981',
-            image: '/IMG_0663.png'
+            image: '/IMG_0694.jpeg'
         },
         {
             id: 'class-kickboxing',
