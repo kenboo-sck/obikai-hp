@@ -251,7 +251,7 @@ export default function ScheduleContent() {
                             className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden cursor-pointer h-full flex flex-col"
                         >
                             {cls.image && (
-                                <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+                                <div className="relative h-80 w-full overflow-hidden bg-gray-100">
                                     <Image
                                         src={cls.image}
                                         alt={cls.title}
@@ -308,7 +308,7 @@ export default function ScheduleContent() {
                         </div>
 
                         {selectedClass.image && (
-                            <div className="relative h-56 w-full bg-gray-100">
+                            <div className="relative h-72 w-full bg-gray-100">
                                 <Image
                                     src={selectedClass.image}
                                     alt={selectedClass.title}
