@@ -14,10 +14,6 @@ interface FormData {
     email: string;
     emailConfirm: string;
     phone: string;
-    zip: string;
-    prefecture: string;
-    city: string;
-    address: string;
     message: string;
 }
 
@@ -35,37 +31,12 @@ function ContactFormContent() {
         email: '',
         emailConfirm: '',
         phone: '',
-        zip: '',
-        prefecture: '',
-        city: '',
-        address: '',
         message: ''
     });
 
     const [emailError, setEmailError] = useState("");
     const [isConfirm, setIsConfirm] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
-
-    // 郵便番号から住所を検索する関数
-    const fetchAddress = async (zipCode: string) => {
-        if (zipCode.length === 7) {
-            try {
-                const res = await fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zipCode}`);
-                const data = await res.json();
-                if (data.status === 200 && data.results) {
-                    const result = data.results[0];
-                    setFormData(prev => ({
-                        ...prev,
-                        prefecture: result.address1,
-                        city: result.address2,
-                        address: result.address3
-                    }));
-                }
-            } catch (error) {
-                console.error("住所の取得に失敗しました", error);
-            }
-        }
-    };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -79,14 +50,6 @@ function ContactFormContent() {
             } else {
                 setEmailError("");
             }
-        }
-    };
-
-    const handleZipChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value.replace(/[^\d]/g, '');
-        setFormData(prev => ({ ...prev, zip: value }));
-        if (value.length === 7) {
-            fetchAddress(value);
         }
     };
 
@@ -134,8 +97,6 @@ function ContactFormContent() {
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone,
-                zip: formData.zip,
-                address: `${formData.prefecture}${formData.city}${formData.address}`,
                 message: formData.message,
                 recaptchaToken: recaptchaToken,
                 createdAt: serverTimestamp(),
@@ -169,10 +130,6 @@ function ContactFormContent() {
                 email: '',
                 emailConfirm: '',
                 phone: '',
-                zip: '',
-                prefecture: '',
-                city: '',
-                address: '',
                 message: ''
             });
         } catch (error) {
@@ -271,29 +228,7 @@ function ContactFormContent() {
                                 </div>
                             </div>
 
-                            <div className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold tracking-wider text-gray-500 block">郵便番号</label>
-                                        <div className="flex items-center gap-2">
-                                            <span className="font-bold text-gray-600">〒</span>
-                                            <input type="text" name="zip" value={formData.zip} onChange={handleZipChange} placeholder="1234567" maxLength={7} className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" />
-                                        </div>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold tracking-wider text-gray-500 block">都道府県</label>
-                                        <input type="text" name="prefecture" value={formData.prefecture} onChange={handleChange} className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold tracking-wider text-gray-500 block">市区町村</label>
-                                        <input type="text" name="city" value={formData.city} onChange={handleChange} className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" />
-                                    </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold tracking-wider text-gray-500 block">番地·建物名</label>
-                                    <input type="text" name="address" value={formData.address} onChange={handleChange} className="w-full border border-gray-300 p-3 focus:border-emerald-500 outline-none transition-colors" />
-                                </div>
-                            </div>
+
 
                             <div className="space-y-2">
                                 <label className="text-xs font-bold tracking-wider text-gray-500 block">お問い合わせ内容</label>
@@ -317,7 +252,6 @@ function ContactFormContent() {
                                     { label: "お名前", value: formData.name },
                                     { label: "電話番号", value: formData.phone || "未入力" },
                                     { label: "メールアドレス", value: formData.email },
-                                    { label: "住所", value: `〒${formData.zip} ${formData.prefecture}${formData.city}${formData.address}` },
                                 ].map((item) => (
                                     <div key={item.label} className="flex flex-col md:flex-row md:items-center border-b border-gray-50 py-2">
                                         <span className="text-xs font-bold text-gray-500 uppercase tracking-widest w-40">{item.label}</span>

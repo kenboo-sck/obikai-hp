@@ -109,7 +109,7 @@ export default function ScheduleContent() {
             description: '年中〜小学生や、初心者の方を対象としたクラスです。楽しみながら基本を学び、体を動かす楽しさを知ってもらうことを目標にしています。',
             recommended: ['初めての習い事として', '運動能力を向上させたい', '集中力を養いたい'],
             color: '#ef4444',
-            image: '/IMG_1423.png'
+            image: '/IMG_1297.jpeg'
         }
     ];
 

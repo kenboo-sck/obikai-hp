@@ -5,6 +5,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaInstagram } from 'react-icons/fa6';
 
 export default function HomeContent() {
     const [newsList, setNewsList] = useState<any[]>([]);
@@ -337,13 +338,24 @@ export default function HomeContent() {
                         </div>
                     </div>
 
-                    <div className="text-center mt-12">
-                        <p className="text-gray-500 font-medium mb-8">
+                    <div className="text-center mt-12 space-y-4">
+                        <p className="text-gray-500 font-medium mb-6">
                             帯会では、幼児から大人まで幅広い年代が楽しく、真剣に稽古に励んでいます。
                         </p>
-                        <Link href="/instructors" className="inline-block border-2 border-emerald-500 text-emerald-600 px-8 py-3 font-bold hover:bg-emerald-50 transition-all font-maru">
-                            指導員・活動風景をもっと見る
-                        </Link>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+                            <Link 
+                                href="https://www.instagram.com/obikai2018/?hl=ja" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white px-8 py-4 font-bold rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+                            >
+                                <FaInstagram className="text-2xl" />
+                                <span>公式Instagramで最新情報を見る</span>
+                            </Link>
+                            <Link href="/instructors" className="inline-block border-2 border-emerald-500 text-emerald-600 px-8 py-4 font-bold hover:bg-emerald-50 transition-all font-maru rounded-lg">
+                                指導員・活動風景をもっと見る
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>

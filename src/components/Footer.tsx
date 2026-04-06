@@ -106,12 +106,7 @@ export default function Footer() {
                   090-1039-3392
                 </a>
               </div>
-              <div>
-                <p className="text-[10px] text-stone-400 tracking-wider mb-2 font-bold bg-white/5 inline-block px-2 py-0.5">稽古時間</p>
-                <p className="text-white leading-relaxed">
-                  月・火・木・金・土 19:00 - 21:00
-                </p>
-              </div>
+
             </div>
           </div>
         </div>

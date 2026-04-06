@@ -10,7 +10,6 @@ export async function POST(req: NextRequest) {
         const {
             name, email, phone, message,
             subject, experience, contactMethod, gender,
-            zip, address,
             recaptchaToken
         } = await req.json();
 
@@ -47,7 +46,7 @@ export async function POST(req: NextRequest) {
       <p><strong>連絡方法：：</strong>${contactMethod}</p>
       <p><strong>経験：</strong>${experience}</p>
       <p><strong>性別：</strong>${gender}</p>
-      <p><strong>住所：</strong>〒${zip} ${address}</p>
+
       <p><strong>内容：</strong><br>${(message || "").replace(/\n/g, '<br>')}</p>
     `;
 

@@ -73,7 +73,7 @@ export default function InstructorsContent() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {[
                         { name: '狩野 修至', title: '帯会 師範代', img: '/is-02.png' },
-                        { name: '小林 誠', title: '新潟県議会議員', img: '/is-04.png' },
+                        { name: '小林 誠', title: '新潟県議会議員 / 帯会顧問', img: '/is-04.png' },
                         { name: '石井 鋼栄', title: '帯会 本部長', img: '/is-03.png' }
                     ].map((instructor, index) => (
                         <div key={index} className="group cursor-pointer">
@@ -121,6 +121,30 @@ export default function InstructorsContent() {
                         <Image
                             src="/IMG_1431.png"
                             alt="活動風景 03"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
+                        <Image
+                            src="/IMG_0663.jpeg"
+                            alt="活動風景 04"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
+                        <Image
+                            src="/IMG_1419.jpeg"
+                            alt="活動風景 05"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
+                        <Image
+                            src="/IMG_1519.jpeg"
+                            alt="活動風景 06"
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-500"
                         />
