@@ -149,6 +149,54 @@ export default function InstructorsContent() {
                             className="object-cover hover:scale-105 transition-transform duration-500"
                         />
                     </div>
+                    <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
+                        <Image
+                            src="/2604_18.jpeg"
+                            alt="活動風景 07"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
+                        <Image
+                            src="/2604_19.jpeg"
+                            alt="活動風景 08"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
+                        <Image
+                            src="/2604_20.jpeg"
+                            alt="活動風景 09"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
+                        <Image
+                            src="/2604_21.jpeg"
+                            alt="活動風景 10"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
+                        <Image
+                            src="/2604_22.jpeg"
+                            alt="活動風景 11"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shadow-md">
+                        <Image
+                            src="/2604_23.jpeg"
+                            alt="活動風景 12"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
                 </div>
             </section>
         </div>

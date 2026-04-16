@@ -484,6 +484,54 @@ export default function ScheduleContent() {
                     <div className="relative aspect-square overflow-hidden group">
                         <Image src="/activity-11.jpg" alt="稽古風景 4" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                     </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/activity-1.jpg" alt="稽古風景 5" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/activity-2.jpg" alt="稽古風景 6" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/activity-3.jpg" alt="稽古風景 7" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/activity-4.jpg" alt="稽古風景 8" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/activity-5.jpg" alt="稽古風景 9" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/2604_2.jpeg" alt="稽古風景 10" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/2604_4.jpeg" alt="稽古風景 11" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/2604_5.jpeg" alt="稽古風景 12" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/2604_6.jpeg" alt="稽古風景 13" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/2604_8.jpeg" alt="稽古風景 14" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/2604_9.jpeg" alt="稽古風景 15" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/2604_11.jpeg" alt="稽古風景 16" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/2604_12.jpeg" alt="稽古風景 17" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/2604_13.jpeg" alt="稽古風景 18" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/IMG_0677.png" alt="稽古風景 19" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden group">
+                        <Image src="/IMG_0663.jpeg" alt="稽古風景 20" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
                 </div>
             </section>
         </div>

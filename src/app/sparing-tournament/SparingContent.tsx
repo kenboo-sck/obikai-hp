@@ -121,13 +121,15 @@ export default function SparingContent() {
                                 大会の競技ルール（フルコンタクト空手・グローブ空手）および防具の詳細な規定については、以下の専用ページをご確認ください。<br />
                                 参加を希望される選手および関係者の皆様は、申込前に必ずご一読をお願いいたします。
                             </p>
-                            <Link 
-                                href="/sparing-tournament/rules" 
+                            <a 
+                                href="/Obikai_Sparring_Tournament_Competition_Rules.pdf" 
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                             >
                                 <FaFileAlt />
                                 競技ルールの詳細ページを開く
-                            </Link>
+                            </a>
                         </div>
                     </section>
 

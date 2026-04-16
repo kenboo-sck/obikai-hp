@@ -147,7 +147,19 @@ export default function ClassContent() {
                             <Image src="/activity-9.jpg" alt="稽古風景" fill className="object-cover" />
                         </div>
                         <div className="relative aspect-[3/4] overflow-hidden shadow-md mt-8 md:mt-12">
-                            <Image src="/o-1001.jpg" alt="稽古風景" fill className="object-cover" />
+                            <Image src="/IMG_1419.jpeg" alt="稽古風景" fill className="object-cover" />
+                        </div>
+                        <div className="relative aspect-[3/4] overflow-hidden shadow-md">
+                            <Image src="/2604_10.jpeg" alt="稽古風景" fill className="object-cover" />
+                        </div>
+                        <div className="relative aspect-[3/4] overflow-hidden shadow-md mt-8 md:mt-12">
+                            <Image src="/2604_16.jpeg" alt="稽古風景" fill className="object-cover" />
+                        </div>
+                        <div className="relative aspect-[3/4] overflow-hidden shadow-md">
+                            <Image src="/2604_15.jpeg" alt="稽古風景" fill className="object-cover" />
+                        </div>
+                        <div className="relative aspect-[3/4] overflow-hidden shadow-md mt-8 md:mt-12">
+                            <Image src="/2604_17.jpeg" alt="稽古風景" fill className="object-cover" />
                         </div>
                     </div>
                 </div>

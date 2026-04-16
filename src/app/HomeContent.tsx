@@ -44,7 +44,7 @@ export default function HomeContent() {
             <section className="relative min-h-[60vh] md:h-[80vh] flex items-center justify-center bg-emerald-50 overflow-hidden">
                 {/* 背景画像 */}
                 <Image
-                    src="/o-002.jpg"
+                    src="/2604_15.jpeg"
                     alt="Hero Background"
                     fill
                     className="object-cover"
@@ -204,7 +204,7 @@ export default function HomeContent() {
                             {/* 画像プレースホルダー */}
                             <div className="bg-white w-full aspect-video flex items-center justify-center overflow-hidden shadow-xl relative">
                                 <Image
-                                    src="/o-1006.jpg"
+                                    src="/2604_3.jpeg"
                                     alt="Activities"
                                     fill
                                     className="object-cover"
@@ -334,6 +334,42 @@ export default function HomeContent() {
                         </div>
                         <div className="relative aspect-square overflow-hidden shadow-lg group">
                             <Image src="/activity-5.jpg" alt="稽古風景 5" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
+                            <Image src="/2604_2.jpeg" alt="稽古風景 6" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
+                            <Image src="/2604_4.jpeg" alt="稽古風景 7" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
+                            <Image src="/2604_5.jpeg" alt="稽古風景 8" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
+                            <Image src="/2604_6.jpeg" alt="稽古風景 9" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
+                            <Image src="/2604_8.jpeg" alt="稽古風景 10" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
+                            <Image src="/2604_9.jpeg" alt="稽古風景 11" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
+                            <Image src="/2604_11.jpeg" alt="稽古風景 12" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
+                            <Image src="/2604_12.jpeg" alt="稽古風景 13" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden shadow-lg group">
+                            <Image src="/2604_13.jpeg" alt="稽古風景 14" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                     </div>

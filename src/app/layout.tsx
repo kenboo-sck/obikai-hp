@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import StickyCTA from "@/components/StickyCTA";
-import FloatingSocial from "@/components/FloatingSocial";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const notoSansJP = Noto_Sans_JP({
@@ -38,7 +37,6 @@ export default function RootLayout({
         <Breadcrumbs />
         <main>{children}</main>
         <StickyCTA />
-        <FloatingSocial />
         <Footer />
       </body>
     </html>
