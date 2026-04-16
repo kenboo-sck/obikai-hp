@@ -69,7 +69,6 @@ export default function NewsContent() {
                                         alt={item.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                        unoptimized={true}
                                     />
                                 ) : (
                                     <div className="flex items-center justify-center h-full text-gray-300 font-bold text-sm bg-gray-50">画像なし</div>

@@ -72,7 +72,6 @@ export default function NewsDetailClient() {
                         alt={news.title}
                         fill
                         className="object-contain"
-                        unoptimized={true}
                     />
                 </div>
             )}
