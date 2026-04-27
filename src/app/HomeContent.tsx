@@ -243,8 +243,8 @@ export default function HomeContent() {
                 </div>
             </section>
 
-            {/* ニュースセクション */}
-            <section className="py-20">
+            {/* ニュースセクション（一旦非表示） */}
+            {/* <section className="py-20">
                 <div className="container mx-auto px-6">
                     <div className="flex justify-between items-end mb-10 pb-4 border-b border-emerald-100">
                         <div>
@@ -302,7 +302,7 @@ export default function HomeContent() {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* 活動風景ギャラリー */}
             <section className="py-24 bg-white">

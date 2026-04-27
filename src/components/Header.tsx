@@ -8,7 +8,7 @@ const navItems = [
   { name: '初めての方へ', href: '/beginners' },
   { name: 'クラス紹介', href: '/class' },
   { name: '入会案内', href: '/membership' },
-  { name: 'お知らせ', href: '/news' },
+  // { name: 'お知らせ', href: '/news' },
   { name: '大会結果', href: '/results' },
   { name: '大会案内', href: '/sparing-tournament' },
   { name: 'スケジュール', href: '/schedule' },
