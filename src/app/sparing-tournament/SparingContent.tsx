@@ -111,25 +111,44 @@ export default function SparingContent() {
                         </div>
                     </section>
 
-                    {/* 競技ルール */}
+                    {/* 大会資料・ルール */}
                     <section>
                         <h2 className="text-3xl font-bold flex items-center gap-3 mb-8 border-b-2 border-emerald-500 pb-2 font-maru">
-                            <FaFileAlt className="text-emerald-500" /> 競技ルール
+                            <FaFileAlt className="text-emerald-500" /> 大会資料・ルール
                         </h2>
                         <div className="bg-gray-50 border border-gray-100 p-8">
                             <p className="text-gray-700 leading-relaxed mb-8">
-                                大会の競技ルール（フルコンタクト空手・グローブ空手）および防具の詳細な規定については、以下の専用ページをご確認ください。<br />
+                                大会に関する案内および競技ルールの詳細は、以下の各PDF資料をご確認ください。<br />
                                 参加を希望される選手および関係者の皆様は、申込前に必ずご一読をお願いいたします。
                             </p>
-                            <a 
-                                href="/Obikai_Sparring_Tournament_Competition_Rules.pdf" 
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-                            >
-                                <FaFileAlt />
-                                競技ルールの詳細ページを開く
-                            </a>
+                            <div className="grid gap-4">
+                                {[
+                                    { name: "① 帯会スパーリング大会開催のご案内", file: "Sparring_Tournament_Notice_20260621.pdf" },
+                                    { name: "② 帯会スパーリング大会 競技ルール", file: "Obikai_Sparring_Tournament_Competition_Rules.pdf" },
+                                    { name: "③ グローブ空手ルール", file: "Glove_Karate_Rules_2026.06.21.pdf" }
+                                ].map((doc, index) => (
+                                    <a 
+                                        key={index}
+                                        href={`/${doc.file}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex flex-col sm:flex-row sm:items-center justify-between bg-white border border-emerald-100 p-5 hover:bg-emerald-50 transition-all shadow-sm hover:shadow-md group gap-4"
+                                    >
+                                        <div className="flex items-center gap-4 flex-grow">
+                                            <div className="bg-emerald-500 text-white p-3 rounded-lg group-hover:bg-emerald-600 transition-colors flex-shrink-0">
+                                                <FaFileAlt className="text-xl" />
+                                            </div>
+                                            <span className="text-lg font-bold text-gray-800 leading-tight">{doc.name}</span>
+                                        </div>
+                                        <div className="flex justify-end sm:block">
+                                            <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-600 px-4 py-2 rounded-full font-bold text-sm border border-emerald-100 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 transition-all whitespace-nowrap">
+                                                PDFを開く
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
                         </div>
                     </section>
 

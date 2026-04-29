@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         }
 
         // 2. メール本文の作成
-        const adminTo = "kenzo_y@sputnikworks.co.jp";
+        const adminTo = "acou2@i.softbank.jp";
         const adminSubject = `【帯会】新規お問い合わせ：${name} 様`;
 
         const adminHtml = `
