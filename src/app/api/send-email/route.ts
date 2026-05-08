@@ -1,9 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-// 環境変数からキーを取得
-const resend = new Resend(process.env.RESEND_API_KEY || "re_fallback_key");
+// 環境変数から取得
+const GMAIL_USER = process.env.GMAIL_USER;           // 送信元Gmail
+const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD; // アプリパスワード
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "acou2@i.softbank.jp"; // 管理者通知先
 const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
+
+// Gmail SMTPトランスポーター
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: GMAIL_USER,
+        pass: GMAIL_APP_PASSWORD,
+    },
+});
 
 export async function POST(req: NextRequest) {
     try {
@@ -13,7 +24,7 @@ export async function POST(req: NextRequest) {
             recaptchaToken
         } = await req.json();
 
-        // 1. reCAPTCHA検証 (失敗してもログ出力のみで続行するFail-Safeモード)
+        // 1. reCAPTCHA検証
         if (recaptchaToken && RECAPTCHA_SECRET_KEY) {
             try {
                 const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
@@ -22,7 +33,7 @@ export async function POST(req: NextRequest) {
 
                 if (!verifyJson.success || (verifyJson.score !== undefined && verifyJson.score < 0.5)) {
                     console.warn(`[Warning] reCAPTCHA check failed or low score. Score: ${verifyJson.score}, Success: ${verifyJson.success}`);
-                    return NextResponse.json({ success: false, error: 'Spam detected' }, { status: 400 }); // 緊急対応のためコメントアウト
+                    return NextResponse.json({ success: false, error: 'Spam detected' }, { status: 400 });
                 }
             } catch (e) {
                 console.warn("[Warning] reCAPTCHA verification error:", e);
@@ -32,7 +43,6 @@ export async function POST(req: NextRequest) {
         }
 
         // 2. メール本文の作成
-        const adminTo = "acou2@i.softbank.jp";
         const adminSubject = `【帯会】新規お問い合わせ：${name} 様`;
 
         const adminHtml = `
@@ -40,10 +50,10 @@ export async function POST(req: NextRequest) {
       <p>以下の内容で受け付けました。</p>
       <hr>
       <p><strong>件名：</strong>${subject}</p>
-      <p><strong>お名前：：</strong>${name}</p>
+      <p><strong>お名前：</strong>${name}</p>
       <p><strong>メール：</strong>${email}</p>
       <p><strong>電話番号：</strong>${phone}</p>
-      <p><strong>連絡方法：：</strong>${contactMethod}</p>
+      <p><strong>連絡方法：</strong>${contactMethod}</p>
       <p><strong>経験：</strong>${experience}</p>
       <p><strong>性別：</strong>${gender}</p>
 
@@ -62,12 +72,12 @@ export async function POST(req: NextRequest) {
 
         // 3. 送信処理（管理者へ）
         try {
-            await resend.emails.send({
-                from: "帯会 <onboarding@resend.dev>",
-                to: adminTo,
+            await transporter.sendMail({
+                from: `帯会 <${GMAIL_USER}>`,
+                to: ADMIN_EMAIL,
                 subject: adminSubject,
                 html: adminHtml,
-                replyTo: email
+                replyTo: email,
             });
         } catch (adminError: any) {
             console.error("Admin mail failed:", adminError);
@@ -77,14 +87,14 @@ export async function POST(req: NextRequest) {
         // 4. 送信処理（ユーザーへ自動返信） - 失敗してもエラーにしない
         if (email) {
             try {
-                await resend.emails.send({
-                    from: "帯会 <onboarding@resend.dev>",
+                await transporter.sendMail({
+                    from: `帯会 <${GMAIL_USER}>`,
                     to: email,
                     subject: userSubject,
-                    html: userHtml
+                    html: userHtml,
                 });
             } catch (userMailError) {
-                // 自動返信が失敗しても（サンドボックス制限など）、管理者へ届いていればOKとする
+                // 自動返信が失敗しても、管理者へ届いていればOKとする
                 console.warn("User auto-reply failed (ignored):", userMailError);
             }
         }
