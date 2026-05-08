@@ -36,7 +36,10 @@ export async function POST(req: NextRequest) {
 
                 if (!verifyJson.success || (verifyJson.score !== undefined && verifyJson.score < 0.5)) {
                     console.warn(`[Warning] reCAPTCHA check failed or low score. Score: ${verifyJson.score}, Success: ${verifyJson.success}`);
-                    return NextResponse.json({ success: false, error: 'Spam detected' }, { status: 400 });
+                    return NextResponse.json({ 
+                        success: false, 
+                        error: `reCAPTCHA判定エラー (Success: ${verifyJson.success}, Score: ${verifyJson.score})` 
+                    }, { status: 400 });
                 }
             } catch (e) {
                 console.warn("[Warning] reCAPTCHA verification error or timeout:", e);
