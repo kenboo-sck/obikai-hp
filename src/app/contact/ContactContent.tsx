@@ -102,17 +102,34 @@ function ContactFormContent() {
                 createdAt: serverTimestamp(),
             });
 
-            // 3. メール送信APIを呼び出し (Vercel Serverless Function)
-            const emailRes = await fetch('/api/send-email', {
+            // 3. メール送信APIを呼び出し (さくらサーバー PHPプロキシ)
+            const proxyUrl = process.env.NEXT_PUBLIC_MAIL_PROXY_URL;
+            if (!proxyUrl) {
+                throw new Error("送信プロキシURLが設定されていません。");
+            }
+
+            const emailRes = await fetch(proxyUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...formData, recaptchaToken })
+                body: JSON.stringify({ 
+                    ...formData, 
+                    recaptchaToken,
+                    key: "obikai_secure_proxy_key_2026" // PHP側の $SECRET_KEY と一致させる
+                })
             });
 
             if (!emailRes.ok) {
                 const errorText = await emailRes.text();
                 console.error("メール送信失敗", errorText);
-                alert(`メール送信エラー詳細: ${errorText}`); // 詳細を表示
+                alert(`メール送信エラー: さくらサーバー側で問題が発生しました。`);
+                setIsSubmitting(false);
+                return;
+            }
+
+            const result = await emailRes.json();
+            if (!result.success) {
+                console.error("プロキシ送信エラー:", result.error);
+                alert(`送信失敗: ${result.error || "サーバーエラー"}`);
                 setIsSubmitting(false);
                 return;
             }
