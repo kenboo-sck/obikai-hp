@@ -99,7 +99,7 @@ export async function POST(req: NextRequest) {
             console.error("Admin mail failed:", adminResult.error);
             return NextResponse.json({ 
                 success: false, 
-                error: "管理者宛メールの送信に失敗しました。時間をおいて再度お試しください。" 
+                error: `管理者宛メールの送信に失敗しました: ${adminResult.error.message}` 
             }, { status: 500 });
         }
 
