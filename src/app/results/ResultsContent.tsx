@@ -13,10 +13,48 @@ type ResultItem = {
     rankColor: 'gold' | 'silver' | 'bronze' | 'default';
     name: string;
     image?: string;
+    organizer?: string; // 主催を追加
 };
 
-// 現在は表示する大会結果がないため空配列
-const resultsData: ResultItem[] = [];
+// 大会結果データ
+const resultsData: ResultItem[] = [
+    {
+        id: "climb-up-fight-2",
+        date: "2026.07.12",
+        title: "第2回CLIMB UP FIGHT",
+        organizer: "CLIMB UP 実行委員会",
+        rank: "他",
+        rankColor: "default",
+        name: "田坂 宗帯 他",
+    },
+    {
+        id: "niigata-boxing-karate-24",
+        date: "2026.07.05",
+        title: "第24回新潟県拳闘空手道選手権大会",
+        organizer: "拳闘空手道連合会",
+        rank: "優勝",
+        rankColor: "gold",
+        name: "井上 心太郎 他",
+    },
+    {
+        id: "ibaraki-karate-6",
+        date: "2026.06.28",
+        title: "第6回茨城県空手道選手権大会",
+        organizer: "武将會",
+        rank: "準優勝",
+        rankColor: "silver",
+        name: "井上 丈太郎 他",
+    },
+    {
+        id: "niigata-karate-27",
+        date: "2026.06.07",
+        title: "第27回新潟県空手道選手権大会",
+        organizer: "新極真会新潟支部",
+        rank: "優勝",
+        rankColor: "gold",
+        name: "村田 大珂 他",
+    }
+];
 
 export default function ResultsContent() {
     return (
@@ -41,9 +79,9 @@ export default function ResultsContent() {
                     {resultsData.length > 0 ? (
                         resultsData.map((item, idx) => (
                             <div key={idx} className="bg-white shadow-lg border border-emerald-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                                {/* 画像エリア */}
-                                <div className="relative aspect-video w-full overflow-hidden">
-                                    {item.image ? (
+                                {/* 画像エリア（画像がある場合のみ表示） */}
+                                {item.image && (
+                                    <div className="relative aspect-video w-full overflow-hidden">
                                         <Image
                                             src={item.image}
                                             alt={item.title}
@@ -51,12 +89,8 @@ export default function ResultsContent() {
                                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         />
-                                    ) : (
-                                        <div className="absolute inset-0 flex items-center justify-center bg-emerald-50/50">
-                                            <span className="text-emerald-200 font-bold text-lg tracking-widest">大会結果</span>
-                                        </div>
-                                    )}
-                                </div>
+                                    </div>
+                                )}
 
                                 {/* コンテンツエリア */}
                                 <div className="p-6 flex-1 flex flex-col">
@@ -66,6 +100,13 @@ export default function ResultsContent() {
                                         </svg>
                                         {item.date}
                                     </div>
+
+                                    {item.organizer && (
+                                        <div className="text-xs font-bold text-emerald-600 mb-3 flex items-center gap-1">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                            主催: {item.organizer}
+                                        </div>
+                                    )}
 
                                     <h3 className="text-lg font-bold text-gray-900 leading-tight mb-6 line-clamp-2 font-maru">
                                         {item.title}

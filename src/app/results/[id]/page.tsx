@@ -1,7 +1,7 @@
 import TournamentDetailContent from './TournamentDetailContent';
 
 export async function generateStaticParams() {
-    const ids = ['tourney-009', 'tourney-008', 'tourney-007', 'tourney-006', 'tourney-005'];
+    const ids = ['climb-up-fight-2', 'niigata-boxing-karate-24', 'ibaraki-karate-6', 'niigata-karate-27'];
     return ids.map((id) => ({
         id: id,
     }));
